@@ -1,40 +1,22 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "C:\\Users\\admin\\Downloads\\PersonalProject\\quan_ly_danh_ba\\quan_ly_danh_ba\\",
+  "WorkspaceRootPath": "C:\\Users\\admin\\Downloads\\PersonalProject\\Quan_Ly-Danh_Ba\\quan_ly_danh_ba\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{581F3230-B105-4665-812B-4FDAAEF4B728}|quan_ly_danh_ba.csproj|C:\\Users\\admin\\Downloads\\PersonalProject\\quan_ly_danh_ba\\quan_ly_danh_ba\\areas\\user\\views\\contact\\create.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{581F3230-B105-4665-812B-4FDAAEF4B728}|quan_ly_danh_ba.csproj|solutionrelative:areas\\user\\views\\contact\\create.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+      "AbsoluteMoniker": "D:0:0:{581F3230-B105-4665-812B-4FDAAEF4B728}|quan_ly_danh_ba.csproj|C:\\Users\\admin\\Downloads\\PersonalProject\\Quan_Ly-Danh_Ba\\quan_ly_danh_ba\\areas\\user\\views\\contact\\edit.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{581F3230-B105-4665-812B-4FDAAEF4B728}|quan_ly_danh_ba.csproj|solutionrelative:areas\\user\\views\\contact\\edit.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{581F3230-B105-4665-812B-4FDAAEF4B728}|quan_ly_danh_ba.csproj|C:\\Users\\admin\\Downloads\\PersonalProject\\quan_ly_danh_ba\\quan_ly_danh_ba\\areas\\user\\views\\contact\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{581F3230-B105-4665-812B-4FDAAEF4B728}|quan_ly_danh_ba.csproj|solutionrelative:areas\\user\\views\\contact\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+      "AbsoluteMoniker": "D:0:0:{581F3230-B105-4665-812B-4FDAAEF4B728}|quan_ly_danh_ba.csproj|C:\\Users\\admin\\Downloads\\PersonalProject\\Quan_Ly-Danh_Ba\\quan_ly_danh_ba\\areas\\user\\content\\script\\edit.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}",
+      "RelativeMoniker": "D:0:0:{581F3230-B105-4665-812B-4FDAAEF4B728}|quan_ly_danh_ba.csproj|solutionrelative:areas\\user\\content\\script\\edit.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{581F3230-B105-4665-812B-4FDAAEF4B728}|quan_ly_danh_ba.csproj|c:\\users\\admin\\downloads\\personalproject\\quan_ly_danh_ba\\quan_ly_danh_ba\\areas\\user\\content\\css\\data-table.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}",
-      "RelativeMoniker": "D:0:0:{581F3230-B105-4665-812B-4FDAAEF4B728}|quan_ly_danh_ba.csproj|solutionrelative:areas\\user\\content\\css\\data-table.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{581F3230-B105-4665-812B-4FDAAEF4B728}|quan_ly_danh_ba.csproj|C:\\Users\\admin\\Downloads\\PersonalProject\\quan_ly_danh_ba\\quan_ly_danh_ba\\areas\\user\\content\\script\\create.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}",
-      "RelativeMoniker": "D:0:0:{581F3230-B105-4665-812B-4FDAAEF4B728}|quan_ly_danh_ba.csproj|solutionrelative:areas\\user\\content\\script\\create.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{581F3230-B105-4665-812B-4FDAAEF4B728}|quan_ly_danh_ba.csproj|C:\\Users\\admin\\Downloads\\PersonalProject\\quan_ly_danh_ba\\quan_ly_danh_ba\\content\\lib\\scripts\\jquery.validate.min.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}",
-      "RelativeMoniker": "D:0:0:{581F3230-B105-4665-812B-4FDAAEF4B728}|quan_ly_danh_ba.csproj|solutionrelative:content\\lib\\scripts\\jquery.validate.min.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{DAE50114-CCC4-47C1-8B34-8AC814ED8C54}|..\\Data\\Data.csproj|c:\\users\\admin\\downloads\\personalproject\\quan_ly_danh_ba\\data\\mapdata\\contactdata\\mapcontact.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{581F3230-B105-4665-812B-4FDAAEF4B728}|quan_ly_danh_ba.csproj|c:\\users\\admin\\downloads\\personalproject\\quan_ly_danh_ba\\quan_ly_danh_ba\\areas\\user\\content\\script\\data-table.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}",
-      "RelativeMoniker": "D:0:0:{581F3230-B105-4665-812B-4FDAAEF4B728}|quan_ly_danh_ba.csproj|solutionrelative:areas\\user\\content\\script\\data-table.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{DAE50114-CCC4-47C1-8B34-8AC814ED8C54}|..\\Data\\Data.csproj|c:\\users\\admin\\downloads\\personalproject\\quan_ly_danh_ba\\data\\entity\\modelcontact.edmx||{C99AEA30-8E36-4515-B76F-496F5A48A6AA}|"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{581F3230-B105-4665-812B-4FDAAEF4B728}|quan_ly_danh_ba.csproj|C:\\Users\\admin\\Downloads\\PersonalProject\\quan_ly_danh_ba\\quan_ly_danh_ba\\areas\\user\\controllers\\contactcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{581F3230-B105-4665-812B-4FDAAEF4B728}|quan_ly_danh_ba.csproj|C:\\Users\\admin\\Downloads\\PersonalProject\\Quan_Ly-Danh_Ba\\quan_ly_danh_ba\\areas\\user\\controllers\\contactcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{581F3230-B105-4665-812B-4FDAAEF4B728}|quan_ly_danh_ba.csproj|solutionrelative:areas\\user\\controllers\\contactcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{581F3230-B105-4665-812B-4FDAAEF4B728}|quan_ly_danh_ba.csproj|C:\\Users\\admin\\Downloads\\PersonalProject\\Quan_Ly-Danh_Ba\\quan_ly_danh_ba\\areas\\user\\controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{581F3230-B105-4665-812B-4FDAAEF4B728}|quan_ly_danh_ba.csproj|solutionrelative:areas\\user\\controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -44,124 +26,62 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 6,
+          "SelectedChildIndex": 2,
           "Children": [
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "data-table.css",
-              "DocumentMoniker": "C:\\Users\\admin\\Downloads\\PersonalProject\\quan_ly_danh_ba\\quan_ly_danh_ba\\Areas\\User\\Content\\css\\data-table.css",
-              "RelativeDocumentMoniker": "Areas\\User\\Content\\css\\data-table.css",
-              "ToolTip": "C:\\Users\\admin\\Downloads\\PersonalProject\\quan_ly_danh_ba\\quan_ly_danh_ba\\Areas\\User\\Content\\css\\data-table.css",
-              "RelativeToolTip": "Areas\\User\\Content\\css\\data-table.css",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAABcAAAABAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003000|",
-              "WhenOpened": "2024-07-19T07:20:11.31Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "create.js",
-              "DocumentMoniker": "C:\\Users\\admin\\Downloads\\PersonalProject\\quan_ly_danh_ba\\quan_ly_danh_ba\\Areas\\User\\Content\\script\\create.js",
-              "RelativeDocumentMoniker": "Areas\\User\\Content\\script\\create.js",
-              "ToolTip": "C:\\Users\\admin\\Downloads\\PersonalProject\\quan_ly_danh_ba\\quan_ly_danh_ba\\Areas\\User\\Content\\script\\create.js",
-              "RelativeToolTip": "Areas\\User\\Content\\script\\create.js",
-              "ViewState": "AQIAABIAAAAAAAAAAAAcwCcAAAAPAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001646|",
-              "WhenOpened": "2024-07-19T01:06:49.302Z",
-              "EditorCaption": ""
-            },
             {
               "$type": "Bookmark",
               "Name": "ST:0:0:{3ae79031-e1bc-11d0-8f78-00a0c9110057}"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
-              "Title": "data-table.js",
-              "DocumentMoniker": "C:\\Users\\admin\\Downloads\\PersonalProject\\quan_ly_danh_ba\\quan_ly_danh_ba\\Areas\\User\\Content\\script\\data-table.js",
-              "RelativeDocumentMoniker": "Areas\\User\\Content\\script\\data-table.js",
-              "ToolTip": "C:\\Users\\admin\\Downloads\\PersonalProject\\quan_ly_danh_ba\\quan_ly_danh_ba\\Areas\\User\\Content\\script\\data-table.js",
-              "RelativeToolTip": "Areas\\User\\Content\\script\\data-table.js",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAQAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001646|",
-              "WhenOpened": "2024-07-19T03:02:09.271Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 7,
-              "Title": "ModelContact.edmx [Diagram1]",
-              "DocumentMoniker": "C:\\Users\\admin\\Downloads\\PersonalProject\\quan_ly_danh_ba\\Data\\Entity\\ModelContact.edmx",
-              "RelativeDocumentMoniker": "..\\Data\\Entity\\ModelContact.edmx",
-              "ToolTip": "C:\\Users\\admin\\Downloads\\PersonalProject\\quan_ly_danh_ba\\Data\\Entity\\ModelContact.edmx [Diagram1]",
-              "RelativeToolTip": "..\\Data\\Entity\\ModelContact.edmx [Diagram1]",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001116|",
-              "WhenOpened": "2024-07-19T02:50:33.383Z"
-            },
-            {
-              "$type": "Document",
               "DocumentIndex": 1,
-              "Title": "Index.cshtml",
-              "DocumentMoniker": "C:\\Users\\admin\\Downloads\\PersonalProject\\quan_ly_danh_ba\\quan_ly_danh_ba\\Areas\\User\\Views\\Contact\\Index.cshtml",
-              "RelativeDocumentMoniker": "Areas\\User\\Views\\Contact\\Index.cshtml",
-              "ToolTip": "C:\\Users\\admin\\Downloads\\PersonalProject\\quan_ly_danh_ba\\quan_ly_danh_ba\\Areas\\User\\Views\\Contact\\Index.cshtml",
-              "RelativeToolTip": "Areas\\User\\Views\\Contact\\Index.cshtml",
-              "ViewState": "AQIAAAEAAAAAAAAAAAAEwAoAAAAXAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-07-19T02:27:02.965Z",
+              "Title": "edit.js",
+              "DocumentMoniker": "C:\\Users\\admin\\Downloads\\PersonalProject\\Quan_Ly-Danh_Ba\\quan_ly_danh_ba\\Areas\\User\\Content\\script\\edit.js",
+              "RelativeDocumentMoniker": "Areas\\User\\Content\\script\\edit.js",
+              "ToolTip": "C:\\Users\\admin\\Downloads\\PersonalProject\\Quan_Ly-Danh_Ba\\quan_ly_danh_ba\\Areas\\User\\Content\\script\\edit.js",
+              "RelativeToolTip": "Areas\\User\\Content\\script\\edit.js",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAC0AAAAQAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001646|",
+              "WhenOpened": "2024-07-19T09:27:28.469Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "Create.cshtml",
-              "DocumentMoniker": "C:\\Users\\admin\\Downloads\\PersonalProject\\quan_ly_danh_ba\\quan_ly_danh_ba\\Areas\\User\\Views\\Contact\\Create.cshtml",
-              "RelativeDocumentMoniker": "Areas\\User\\Views\\Contact\\Create.cshtml",
-              "ToolTip": "C:\\Users\\admin\\Downloads\\PersonalProject\\quan_ly_danh_ba\\quan_ly_danh_ba\\Areas\\User\\Views\\Contact\\Create.cshtml",
-              "RelativeToolTip": "Areas\\User\\Views\\Contact\\Create.cshtml",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAA0AAAANAAAA",
+              "Title": "Edit.cshtml",
+              "DocumentMoniker": "C:\\Users\\admin\\Downloads\\PersonalProject\\Quan_Ly-Danh_Ba\\quan_ly_danh_ba\\Areas\\User\\Views\\Contact\\Edit.cshtml",
+              "RelativeDocumentMoniker": "Areas\\User\\Views\\Contact\\Edit.cshtml",
+              "ToolTip": "C:\\Users\\admin\\Downloads\\PersonalProject\\Quan_Ly-Danh_Ba\\quan_ly_danh_ba\\Areas\\User\\Views\\Contact\\Edit.cshtml",
+              "RelativeToolTip": "Areas\\User\\Views\\Contact\\Edit.cshtml",
+              "ViewState": "AQIAAAIAAAAAAAAAAAAhwBoAAABoAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-07-18T14:10:57.782Z",
+              "WhenOpened": "2024-07-19T08:57:14.415Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 8,
+              "DocumentIndex": 2,
               "Title": "ContactController.cs",
-              "DocumentMoniker": "C:\\Users\\admin\\Downloads\\PersonalProject\\quan_ly_danh_ba\\quan_ly_danh_ba\\Areas\\User\\Controllers\\ContactController.cs",
+              "DocumentMoniker": "C:\\Users\\admin\\Downloads\\PersonalProject\\Quan_Ly-Danh_Ba\\quan_ly_danh_ba\\Areas\\User\\Controllers\\ContactController.cs",
               "RelativeDocumentMoniker": "Areas\\User\\Controllers\\ContactController.cs",
-              "ToolTip": "C:\\Users\\admin\\Downloads\\PersonalProject\\quan_ly_danh_ba\\quan_ly_danh_ba\\Areas\\User\\Controllers\\ContactController.cs",
+              "ToolTip": "C:\\Users\\admin\\Downloads\\PersonalProject\\Quan_Ly-Danh_Ba\\quan_ly_danh_ba\\Areas\\User\\Controllers\\ContactController.cs",
               "RelativeToolTip": "Areas\\User\\Controllers\\ContactController.cs",
-              "ViewState": "AQIAAAsAAAAAAAAAAAA5wB4AAAAOAAAA",
+              "ViewState": "AQIAAAYAAAAAAAAAAAAQwDQAAAADAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-07-17T09:06:11.188Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "mapContact.cs",
-              "DocumentMoniker": "C:\\Users\\admin\\Downloads\\PersonalProject\\quan_ly_danh_ba\\Data\\mapdata\\contactData\\mapContact.cs",
-              "RelativeDocumentMoniker": "..\\Data\\mapdata\\contactData\\mapContact.cs",
-              "ToolTip": "C:\\Users\\admin\\Downloads\\PersonalProject\\quan_ly_danh_ba\\Data\\mapdata\\contactData\\mapContact.cs",
-              "RelativeToolTip": "..\\Data\\mapdata\\contactData\\mapContact.cs",
-              "ViewState": "AQIAABAAAAAAAAAAAAAowDgAAAAFAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-07-18T09:18:15.316Z",
+              "WhenOpened": "2024-07-19T08:54:29.882Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "jquery.validate.min.js",
-              "DocumentMoniker": "C:\\Users\\admin\\Downloads\\PersonalProject\\quan_ly_danh_ba\\quan_ly_danh_ba\\Content\\lib\\Scripts\\jquery.validate.min.js",
-              "RelativeDocumentMoniker": "Content\\lib\\Scripts\\jquery.validate.min.js",
-              "ToolTip": "C:\\Users\\admin\\Downloads\\PersonalProject\\quan_ly_danh_ba\\quan_ly_danh_ba\\Content\\lib\\Scripts\\jquery.validate.min.js",
-              "RelativeToolTip": "Content\\lib\\Scripts\\jquery.validate.min.js",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAMAAABSAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001646|",
-              "WhenOpened": "2024-07-19T01:05:52.968Z",
+              "DocumentIndex": 3,
+              "Title": "HomeController.cs",
+              "DocumentMoniker": "C:\\Users\\admin\\Downloads\\PersonalProject\\Quan_Ly-Danh_Ba\\quan_ly_danh_ba\\Areas\\User\\Controllers\\HomeController.cs",
+              "RelativeDocumentMoniker": "Areas\\User\\Controllers\\HomeController.cs",
+              "ToolTip": "C:\\Users\\admin\\Downloads\\PersonalProject\\Quan_Ly-Danh_Ba\\quan_ly_danh_ba\\Areas\\User\\Controllers\\HomeController.cs",
+              "RelativeToolTip": "Areas\\User\\Controllers\\HomeController.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAA8AAAAfAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-07-19T08:54:29.072Z",
               "EditorCaption": ""
             }
           ]
