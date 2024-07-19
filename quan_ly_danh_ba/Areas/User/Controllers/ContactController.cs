@@ -14,7 +14,7 @@ namespace quan_ly_danh_ba.Areas.User.Controllers
         // GET: User/Contact
         public ActionResult Index()
         {
-            var danhsach = new mapContact().listContacts().ToList();
+            var danhsach = new MapContact().ListContacts().ToList();
             return View(danhsach);
         }
         public ActionResult Create()
@@ -25,7 +25,7 @@ namespace quan_ly_danh_ba.Areas.User.Controllers
         [HttpPost]
         public ActionResult Create(Contact contact,string[] GroupName, string newGroupName) {
 
-            var position = new mapContact().insertContact(contact, GroupName.ToList(),newGroupName);
+            var position = new MapContact().InsertContact(contact, GroupName.ToList(),newGroupName);
             if (position != null)
             {
 				TempData["Message"] = "Tạo mới thành công!";
@@ -34,8 +34,25 @@ namespace quan_ly_danh_ba.Areas.User.Controllers
 			TempData["SuccessError"] = "Tạo mới thất bại!";
 			return View(new mapGroupContact().listGroupContacts().ToList());
         }
-        public ActionResult Delete(Guid id) {
-        var position=new mapContact().deleteContact(id);
+        public ActionResult Edit(Guid id) {
+			var model = Tuple.Create(new MapContact().FindById(id), new mapGroupContact().listGroupContacts().ToList());
+			return View(model);
+        }
+		[HttpPost]
+		public ActionResult Edit(Contact contact, string[] GroupName, string newGroupName)
+		{
+
+			var position = new MapContact().UpdateContact(contact, GroupName.ToList(), newGroupName);
+			if (position != null)
+			{
+				TempData["Message"] = "Sửa thành công!";
+				return RedirectToAction("Index");
+			}
+			TempData["SuccessError"] = "Sửa thất bại!";
+			return View(Tuple.Create(new MapContact().FindById(contact.ContactID), new mapGroupContact().listGroupContacts().ToList()));
+		}
+		public ActionResult Delete(Guid id) {
+        var position=new MapContact().DeleteContact(id);
             if (position != null) {
 				TempData["Message"] = "Xóa thành công!";
 				return RedirectToAction("Index");
@@ -43,5 +60,6 @@ namespace quan_ly_danh_ba.Areas.User.Controllers
 			TempData["Message"] = "Xóa thất bại!";
 			return RedirectToAction("Index");
         }
+
     }
 }

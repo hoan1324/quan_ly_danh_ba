@@ -1,0 +1,62 @@
+﻿@*@model data.entity.contact
+
+@{
+    viewbag.title = "usera";
+    layout = "~/areas/user/views/shared/_layout.cshtml";
+}
+
+<h2>usera</h2>
+
+@using (html.beginform())
+{
+    @html.antiforgerytoken()
+    
+    <div class="form-horizontal">
+        <h4>contact</h4>
+        <hr />
+        @html.validationsummary(true, "", new { @class = "text-danger" })
+        @html.hiddenfor(model => model.contactid)
+
+        <div class="form-group">
+            @html.labelfor(model => model.fullname, htmlattributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @html.editorfor(model => model.fullname, new { htmlattributes = new { @class = "form-control" } })
+                @html.validationmessagefor(model => model.fullname, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @html.labelfor(model => model.phonenumber, htmlattributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @html.editorfor(model => model.phonenumber, new { htmlattributes = new { @class = "form-control" } })
+                @html.validationmessagefor(model => model.phonenumber, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @html.labelfor(model => model.email, htmlattributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @html.editorfor(model => model.email, new { htmlattributes = new { @class = "form-control" } })
+                @html.validationmessagefor(model => model.email, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @html.labelfor(model => model.address, htmlattributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @html.editorfor(model => model.address, new { htmlattributes = new { @class = "form-control" } })
+                @html.validationmessagefor(model => model.address, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <input type="submit" value="save" class="btn btn-default" />
+            </div>
+        </div>
+    </div>
+}
+
+<div>
+    @html.actionlink("back to list", "index")
+</div>*@

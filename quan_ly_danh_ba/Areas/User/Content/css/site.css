@@ -34,17 +34,15 @@ body {
     max-width: 210px;
     scroll-behavior: smooth;
 }
-.left-navbar:hover {
-  overflow-y:auto;
-}
+
 
     .left-navbar::-webkit-scrollbar {
-        width: 5px;
+        width: 4px;
     }
 
     .left-navbar::-webkit-scrollbar-thumb {
         background-color: #c8d9b9;
-        border-radius: 20px;
+        border-radius: 10px;
         border: 1px solid #aaeb70;
     }
 
@@ -61,7 +59,7 @@ body {
 
 .left-navbar-click {
     max-width: 75px;
-    overflow:visible;
+    overflow-y:visible;
 }
 
     .left-navbar-click .navbar-logo span {

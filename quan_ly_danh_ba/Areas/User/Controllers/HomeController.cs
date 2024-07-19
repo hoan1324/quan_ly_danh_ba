@@ -13,5 +13,9 @@ namespace quan_ly_danh_ba.Areas.User.Controllers
         {
             return View();
         }
+        public ActionResult UserA()
+        {
+            return View();
+        }
     }
 }

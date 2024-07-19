@@ -36,19 +36,34 @@
         {
             foreach (var item in Model)
             {
+                int maxGroupsToShow = 3; // Giới hạn số nhóm liên lạc hiển thị
+                int i = 0;
+                var groupsToShow = item.GroupContacts.Take(maxGroupsToShow).ToList();
                 <tr>
                     <td class="text-start fs-6 p-2 border">@item.FullName</td>
                     <td class="text-start fs-6 p-2 border">@item.PhoneNumber</td>
                     <td class="text-start fs-6 p-2 border">@item.Address</td>
                     <td class="text-start fs-6 p-2 border">@item.Email</td>
                     <td class="text-start fs-6 p-2 border">
+
                         @foreach (var group in item.GroupContacts)
                         {
+                            if (i >= maxGroupsToShow)
+                            {
+                                <span>...</span>
+                                break;
+                            }
+                            if (i > 0)
+                            {
+                                <span>, </span>
+                            }
                             @group.GroupName
+                            i++;
+                           
                         }
                     </td>
                     <td class="text-center border function-data">
-                        <span class=" mx-1 rounded-circle" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Sửa "><a class="link-warning"><i class="fa-solid fa-wrench"></i></a></span>
+                        <span class=" mx-1 rounded-circle" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Sửa "><a class="link-warning" href="~/User/Contact/Edit?id=@item.ContactID"><i class="fa-solid fa-wrench"></i></a></span>
                         <span class=" mx-1 rounded-circle" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Xóa"><a data-bs-toggle="modal" data-bs-target="#exampleModal" class="link-danger delete-item" data-id="@item.ContactID"><i class="fa-solid fa-circle-xmark"></i></a></span>
                     </td>
 
