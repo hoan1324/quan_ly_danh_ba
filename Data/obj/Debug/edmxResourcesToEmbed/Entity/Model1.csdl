@@ -1,0 +1,45 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="quan_ly_danh_baModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="Contact">
+    <Key>
+      <PropertyRef Name="ContactID" />
+    </Key>
+    <Property Name="ContactID" Type="Guid" Nullable="false" />
+    <Property Name="FullName" Type="String" MaxLength="200" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="PhoneNumber" Type="String" MaxLength="30" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Email" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+    <Property Name="Address" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="GroupContacts" Relationship="Self.Group_Contact" FromRole="Contact" ToRole="GroupContact" />
+  </EntityType>
+  <EntityType Name="GroupContact">
+    <Key>
+      <PropertyRef Name="GroupContactID" />
+    </Key>
+    <Property Name="GroupContactID" Type="Guid" Nullable="false" />
+    <Property Name="GroupName" Type="String" MaxLength="500" FixedLength="false" Unicode="true" Nullable="false" />
+    <NavigationProperty Name="Contacts" Relationship="Self.Group_Contact" FromRole="GroupContact" ToRole="Contact" />
+  </EntityType>
+  <EntityType Name="sysdiagram">
+    <Key>
+      <PropertyRef Name="diagram_id" />
+    </Key>
+    <Property Name="name" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="principal_id" Type="Int32" Nullable="false" />
+    <Property Name="diagram_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="version" Type="Int32" />
+    <Property Name="definition" Type="Binary" MaxLength="Max" FixedLength="false" />
+  </EntityType>
+  <Association Name="Group_Contact">
+    <End Role="Contact" Type="Self.Contact" Multiplicity="*" />
+    <End Role="GroupContact" Type="Self.GroupContact" Multiplicity="*" />
+  </Association>
+  <EntityContainer Name="quan_ly_danh_baEntities1" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="Contacts" EntityType="Self.Contact" />
+    <EntitySet Name="GroupContacts" EntityType="Self.GroupContact" />
+    <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagram" />
+    <AssociationSet Name="Group_Contact" Association="Self.Group_Contact">
+      <End Role="Contact" EntitySet="Contacts" />
+      <End Role="GroupContact" EntitySet="GroupContacts" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

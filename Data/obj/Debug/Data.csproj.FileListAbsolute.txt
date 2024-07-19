@@ -1,0 +1,12 @@
+C:\Users\admin\Downloads\PersonalProject\quan_ly_danh_ba\Data\bin\Debug\Data.dll.config
+C:\Users\admin\Downloads\PersonalProject\quan_ly_danh_ba\Data\bin\Debug\Data.dll
+C:\Users\admin\Downloads\PersonalProject\quan_ly_danh_ba\Data\bin\Debug\Data.pdb
+C:\Users\admin\Downloads\PersonalProject\quan_ly_danh_ba\Data\bin\Debug\EntityFramework.dll
+C:\Users\admin\Downloads\PersonalProject\quan_ly_danh_ba\Data\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\admin\Downloads\PersonalProject\quan_ly_danh_ba\Data\bin\Debug\EntityFramework.xml
+C:\Users\admin\Downloads\PersonalProject\quan_ly_danh_ba\Data\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\admin\Downloads\PersonalProject\quan_ly_danh_ba\Data\obj\Debug\Data.csproj.AssemblyReference.cache
+C:\Users\admin\Downloads\PersonalProject\quan_ly_danh_ba\Data\obj\Debug\Data.csproj.CoreCompileInputs.cache
+C:\Users\admin\Downloads\PersonalProject\quan_ly_danh_ba\Data\obj\Debug\Data.csproj.Up2Date
+C:\Users\admin\Downloads\PersonalProject\quan_ly_danh_ba\Data\obj\Debug\Data.dll
+C:\Users\admin\Downloads\PersonalProject\quan_ly_danh_ba\Data\obj\Debug\Data.pdb

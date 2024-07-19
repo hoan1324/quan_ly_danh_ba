@@ -1,0 +1,81 @@
+﻿@model List<Data.Entity.Contact>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Areas/User/Views/Shared/_Layout.cshtml";
+}
+@if (TempData["Message"] != null)
+{
+    <div class="temp-alert">@TempData["Message"]</div>
+    <script>
+        $(function () {
+            $(".temp-alert").fadeIn().delay(2000).fadeOut();
+        });
+    </script>
+}
+@section linkCss{
+    <link href="~/Areas/User/Content/css/data-table.css" rel="stylesheet" type="text/css" />
+}
+
+<div class="danhsach mt-4">
+    <h1>QUẢN LÝ LIÊN LẠC</h1>
+    <div class="text-end create-data">
+       <span class="btn me-3 my-3"><a class="link-light fs-5" href="~/User/Contact/Create">Thêm mới</a></span>
+
+    </div>
+    <table class="w-100 overflow-auto data-table">
+        <tr class="title-table">
+            <th class="text-center  fs-5 p-3" scope="col">Họ và tên</th>
+            <th class="text-center  fs-5 p-3" scope="col">Số điện thoại</th>
+            <th class="text-center  fs-5 p-3" scope="col">Email</th>
+            <th class="text-center  fs-5 p-3" scope="col">Địa chỉ</th>
+            <th class="text-center  fs-5 p-3" scope="col">Quan hệ</th>
+            <th class="text-center  fs-5 p-3" scope="col">Chức năng </th>
+        </tr>
+        @if (@Model != null)
+        {
+            foreach (var item in Model)
+            {
+                <tr>
+                    <td class="text-start fs-6 p-2 border">@item.FullName</td>
+                    <td class="text-start fs-6 p-2 border">@item.PhoneNumber</td>
+                    <td class="text-start fs-6 p-2 border">@item.Address</td>
+                    <td class="text-start fs-6 p-2 border">@item.Email</td>
+                    <td class="text-start fs-6 p-2 border">
+                        @foreach (var group in item.GroupContacts)
+                        {
+                            @group.GroupName
+                        }
+                    </td>
+                    <td class="text-center border function-data">
+                        <span class=" mx-1 rounded-circle" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Sửa "><a class="link-warning"><i class="fa-solid fa-wrench"></i></a></span>
+                        <span class=" mx-1 rounded-circle" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Xóa"><a data-bs-toggle="modal" data-bs-target="#exampleModal" class="link-danger delete-item" data-id="@item.ContactID"><i class="fa-solid fa-circle-xmark"></i></a></span>
+                    </td>
+
+                </tr>
+            }
+        }
+    </table>
+    @*data-bs-toggle="modal" data-bs-target="#exampleModal"*@
+    <!-- Modal -->
+    <div class="modal fade" id="examplemodal" tabindex="-1" aria-labelledby="examplemodallabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="examplemodallabel">xóa</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="close"></button>
+                </div>
+                <div class="modal-body">
+                    <p>bạn có chắc chắn muốn xóa dữ liệu này không</p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">không</button>
+                    <a class=" btn btn-primary link-light" id="confirmdeletebtn">có</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+@section Scripts{
+    <script src="~/Areas/User/Content/script/data-table.js"></script>
+}

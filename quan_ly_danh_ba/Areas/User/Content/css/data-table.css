@@ -1,0 +1,24 @@
+﻿/*    //data-table*/
+.create-data span {
+    background-color: #99b97c ;
+    transition:background-color .4s
+}
+.create-data span:hover {
+    background-color: #c8d9b9;
+}
+.title-table {
+    background-color: #c8d9b9 !important;
+}
+    .title-table th {
+        border-right: 1px solid #8080804d;
+    }
+.data-table tr:nth-child(2n+1) {
+    background-color: #c8d9b96b;
+    
+}
+.data-table tr:nth-child(2n+1) td {
+   border-color:transparent!important;
+}
+.function-data span{
+cursor:pointer;
+}

@@ -1,0 +1,43 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="quan_ly_danh_baModelStoreContainer" CdmEntityContainer="quan_ly_danh_baEntities1">
+    <EntitySetMapping Name="Contacts">
+      <EntityTypeMapping TypeName="quan_ly_danh_baModel.Contact">
+        <MappingFragment StoreEntitySet="Contact">
+          <ScalarProperty Name="ContactID" ColumnName="ContactID" />
+          <ScalarProperty Name="FullName" ColumnName="FullName" />
+          <ScalarProperty Name="PhoneNumber" ColumnName="PhoneNumber" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="Address" ColumnName="Address" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="GroupContacts">
+      <EntityTypeMapping TypeName="quan_ly_danh_baModel.GroupContact">
+        <MappingFragment StoreEntitySet="GroupContact">
+          <ScalarProperty Name="GroupContactID" ColumnName="GroupContactID" />
+          <ScalarProperty Name="GroupName" ColumnName="GroupName" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="sysdiagrams">
+      <EntityTypeMapping TypeName="quan_ly_danh_baModel.sysdiagram">
+        <MappingFragment StoreEntitySet="sysdiagrams">
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="principal_id" ColumnName="principal_id" />
+          <ScalarProperty Name="diagram_id" ColumnName="diagram_id" />
+          <ScalarProperty Name="version" ColumnName="version" />
+          <ScalarProperty Name="definition" ColumnName="definition" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <AssociationSetMapping Name="Group_Contact" TypeName="quan_ly_danh_baModel.Group_Contact" StoreEntitySet="Group_Contact">
+      <EndProperty Name="Contact">
+        <ScalarProperty Name="ContactID" ColumnName="ContactID" />
+      </EndProperty>
+      <EndProperty Name="GroupContact">
+        <ScalarProperty Name="GroupContactID" ColumnName="GroupContactID" />
+      </EndProperty>
+    </AssociationSetMapping>
+  </EntityContainerMapping>
+</Mapping>
