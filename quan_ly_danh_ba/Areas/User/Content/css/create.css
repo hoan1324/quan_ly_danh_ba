@@ -1,18 +1,31 @@
 ﻿
 button[type="submit"] {
-    background-color: #99b97c;
+    background-color: #c8d9b9;
     transition: background-color .4s
 }
+
     button[type="submit"]:hover {
-        background-color: #c8d9b9;
+        background-color: #729e49;
     }
 
 .form-check-input:checked {
     background-color: #c8d9b9 !important;
     border-color: #99b97c !important;
 }
+
 .form-check-input:focus {
-    border-color: #86b7fe;
+    border-color: #729e49 !important;
     outline: 0;
     box-shadow: 0 0 0 .25rem #c5d4b8d4;
+}
+
+.form-control:focus {
+    box-shadow: 0 0 0 .25rem #c5d4b8d4;
+    border-color: #99b97c !important;
+}
+
+.error {
+    color: red;
+    margin-left: 7px;
+    display: block;
 }

@@ -107,7 +107,7 @@
     <Content Include="Areas\User\Content\css\site.css" />
     <Content Include="Content\lib\fontAwesome\fontawesome.min.css" />
     <Content Include="Content\img\logo.png" />
-    <Content Include="Content\lib\Scripts\bootstrap.min.js" />
+    <Content Include="Content\lib\Scripts\bootstrap.bundle.min.js" />
     <Content Include="Content\lib\Scripts\jquery-3.7.1.min.js" />
     <Content Include="Content\lib\Scripts\jquery.validate.min.js" />
     <Content Include="Global.asax" />
