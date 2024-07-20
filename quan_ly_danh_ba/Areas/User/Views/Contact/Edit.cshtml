@@ -26,9 +26,7 @@
 <div class="edit-data">
     <form id="form-edit" action="~/user/contact/edit" method="post" class="needs-validation" novalidate>
         <input data-val="true" data-val-required="The ContactID field is required." id="Item1_ContactID" name="ContactID" type="hidden" value="@contact.ContactID">
-        <div class=" mb-3 d-none">
-            <input type="text" class="form-control" id="fullname" value="@(string.IsNullOrEmpty(contact.FullName) ? "" : contact.FullName)" placeholder="Vui lòng nhập họ và tên" name="FullName">
-        </div>
+        
         <div class=" mb-3">
             <label for="fullname">Họ và tên</label>
             <input type="text" class="form-control" id="fullname" value="@(string.IsNullOrEmpty(contact.FullName) ? "" : contact.FullName)" placeholder="Vui lòng nhập họ và tên" name="FullName">

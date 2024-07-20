@@ -155,7 +155,7 @@ namespace Data.mapdata.contactData
 					}
 
 				}
-				var toRemove = contact.GroupContacts
+				var toRemove = oldContact.GroupContacts
 							 .Where(gc => !groupContactName.Contains(gc.GroupName, StringComparer.OrdinalIgnoreCase))
 							 .ToList();
 				foreach (var item in toRemove)

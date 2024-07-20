@@ -20,7 +20,7 @@
 <div class="danhsach mt-4">
     <h1>QUẢN LÝ LIÊN LẠC</h1>
     <div class="text-end create-data">
-       <span class="btn me-3 my-3"><a class="link-light fs-5" href="~/User/Contact/Create">Thêm mới</a></span>
+        <span class="btn me-3 my-3"><a class="link-light fs-5" href="~/User/Contact/Create">Thêm mới</a></span>
 
     </div>
     <table class="w-100 overflow-auto data-table">
@@ -59,12 +59,12 @@
                             }
                             @group.GroupName
                             i++;
-                           
+
                         }
                     </td>
                     <td class="text-center border function-data">
                         <span class=" mx-1 rounded-circle" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Sửa "><a class="link-warning" href="~/User/Contact/Edit?id=@item.ContactID"><i class="fa-solid fa-wrench"></i></a></span>
-                        <span class=" mx-1 rounded-circle" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Xóa"><a data-bs-toggle="modal" data-bs-target="#exampleModal" class="link-danger delete-item" data-id="@item.ContactID"><i class="fa-solid fa-circle-xmark"></i></a></span>
+                        <span class=" mx-1 rounded-circle" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Xóa"><a  class="link-danger delete-item" data-id="@item.ContactID"><i class="fa-solid fa-circle-xmark"></i></a></span>
                     </td>
 
                 </tr>
@@ -73,7 +73,7 @@
     </table>
     @*data-bs-toggle="modal" data-bs-target="#exampleModal"*@
     <!-- Modal -->
-    <div class="modal fade" id="examplemodal" tabindex="-1" aria-labelledby="examplemodallabel" aria-hidden="true">
+    @*<div class="modal fade" id="examplemodal" tabindex="-1" aria-labelledby="examplemodallabel" aria-hidden="true">
         <div class="modal-dialog modal-dialog-centered">
             <div class="modal-content">
                 <div class="modal-header">
@@ -87,6 +87,31 @@
                     <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">không</button>
                     <a class=" btn btn-primary link-light" id="confirmdeletebtn">có</a>
                 </div>
+            </div>
+        </div>
+    </div>*@
+</div>
+!-- Button trigger modal -->
+<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
+    Launch demo modal
+</button>
+
+<!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                ...
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-primary">Save changes</button>
             </div>
         </div>
     </div>

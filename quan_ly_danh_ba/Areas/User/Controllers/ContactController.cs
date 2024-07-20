@@ -35,9 +35,15 @@ namespace quan_ly_danh_ba.Areas.User.Controllers
 			return View(new mapGroupContact().listGroupContacts().ToList());
         }
         public ActionResult Edit(Guid id) {
+            if (id == null)
+            {
+				TempData["Message"] = "Lỗi hệ thống vui lòng thử lại";
+				return RedirectToAction("Index");
+
+			}
 			var model = Tuple.Create(new MapContact().FindById(id), new mapGroupContact().listGroupContacts().ToList());
 			return View(model);
-        }
+		}
 		[HttpPost]
 		public ActionResult Edit(Contact contact, string[] GroupName, string newGroupName)
 		{
@@ -49,7 +55,7 @@ namespace quan_ly_danh_ba.Areas.User.Controllers
 				return RedirectToAction("Index");
 			}
 			TempData["SuccessError"] = "Sửa thất bại!";
-			return View(Tuple.Create(new MapContact().FindById(contact.ContactID), new mapGroupContact().listGroupContacts().ToList()));
+			return View(Tuple.Create(new MapContact().FindById(position.ContactID), new mapGroupContact().listGroupContacts().ToList()));
 		}
 		public ActionResult Delete(Guid id) {
         var position=new MapContact().DeleteContact(id);
