@@ -4,36 +4,40 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>@ViewBag.Title</title>
-    <link href="~/Content/lib/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
     <link href="~/Conten/lib/fontAwesome/fontawesome.min.css" rel="stylesheet" type="text/css" />
     <link href="~/Content/lib/fontAwesome/all.min.css" rel="stylesheet" type="text/css" />
+    <link href="~/Content/lib/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
     <link href="~/Areas/User/Content/css/site.css" rel="stylesheet" type="text/css" />
     @RenderSection("linkCss", required: false)
 </head>
 <body>
     <div class=" container-fluid d-flex flex-column flex-md-row px-0 ms-0 ">
-        <div class="left-navbar w-100 ">
-            <div class="navbar-logo text-center mb-4 align-items-end d-flex justify-content-center">
-                <img class="w-100 " src="~/Content/img/logo.png" />
-                <span class="h4 ms-2 text-white fw-bold">NVH</span>
-            </div>
-            <div class="navigtion ms-3 category ">
-                <h4 class="fs-6 fw-bold my-3">NAVIGATION</h4>
-                <a class=" link-light" href="#">
-                    <i class="fa-solid fa-house me-2"></i>
-                    <span>Dashboard</span>
-                </a>
-            </div>
-            <div class="contact-function ms-3 category mt-3 ">
-                <h4 class="fs-6 fw-bold my-3">FUNCTION</h4>
-                <div class="function my-3">
-                    <a class=" link-light " href="~/User/Contact/Index">
-                        <i class="fa-solid fa-mobile-screen me-2"></i>
-                        <span>Contact</span>
+        <div class="left-navbar w-100  ">
+            <div class="position-relative">
+                <div class="icon-close  position-absolute top-0 mt-1 end-0 me-1 d-inline-block d-md-none">
+                    <i class="fa-solid fa-xmark link-light"></i>
+                </div>
+                <div class="navbar-logo text-center mb-4 align-items-end d-flex justify-content-center">
+                    <img class="w-100 " src="~/Content/img/logo.png" />
+                    <span class="h4 ms-2 text-white fw-bold">NVH</span>
+                </div>
+                <div class="navigtion ms-3 category ">
+                    <h4 class="fs-6 fw-bold my-3">NAVIGATION</h4>
+                    <a class=" link-light" href="#">
+                        <i class="fa-solid fa-house me-2"></i>
+                        <span>Dashboard</span>
                     </a>
                 </div>
+                <div class="contact-function ms-3 category mt-3 ">
+                    <h4 class="fs-6 fw-bold my-3">FUNCTION</h4>
+                    <div class="function my-3">
+                        <a class=" link-light " href="~/User/Contact/Index">
+                            <i class="fa-solid fa-mobile-screen me-2"></i>
+                            <span>Contact</span>
+                        </a>
+                    </div>
+                </div>
             </div>
-            <div class="content-navbar "></div>
         </div>
 
         <div class="container bg-light mx-0  px-0 overflow-hidden mw-100">
@@ -43,9 +47,9 @@
                         <i class="fa-solid fa-bars fs-2"></i>
                     </div>
                 </div>
-                <div class="account d-flex px-3 px-md-5 me-4 align-items-center">
+                <div class="account d-flex ps-3 px-lg-5 me-4 align-items-center">
                     <img class="rounded-circle me-md-3" src="~/Content/img/logo.png" alt="user-image" />
-                    <h1 class="userName lh-1 d-none d-md-block text-break">
+                    <h1 class="userName lh-1 d-none d-lg-block text-break">
                         hoan
                         <br /> <span class="text-break">Founder</span>
                     </h1>
@@ -60,6 +64,6 @@
     <script src="~/Content/lib/Scripts/bootstrap.bundle.min.js"></script>
     <script src="~/Content/lib/Scripts/jquery.validate.min.js"></script>
     <script src="~/Areas/User/Content/script/site.js"></script>
-    @RenderSection("Scripts", required: false);
+    @RenderSection("Scripts", required: false)
 </body>
 </html>

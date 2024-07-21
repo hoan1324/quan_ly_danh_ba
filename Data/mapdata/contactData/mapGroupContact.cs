@@ -16,7 +16,7 @@ namespace Data.mapdata.ContactData
         
 		public GroupContact findByName(string GroupContactName)
 		{
-			var groupContact = db.GroupContacts.FirstOrDefault(item => item.GroupName.ToUpper() == GroupContactName.ToUpper());
+			var groupContact = db.GroupContacts.FirstOrDefault(item => item.GroupName.ToLower() == GroupContactName.ToLower());
 			if (groupContact == null)
 			{
 				return null;

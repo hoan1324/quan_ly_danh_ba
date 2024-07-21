@@ -1,6 +1,7 @@
 ﻿using Data.Entity;
 using Data.mapdata.contactData;
 using Data.mapdata.ContactData;
+using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -12,10 +13,32 @@ namespace quan_ly_danh_ba.Areas.User.Controllers
     public class ContactController : Controller
     {
         // GET: User/Contact
-        public ActionResult Index()
+        public ActionResult Index(int? page,int? pageSize,string FullName,string PhoneNumber, string groupContact)
         {
-            var danhsach = new MapContact().ListContacts().ToList();
-            return View(danhsach);
+            page = page ?? 1;
+            pageSize = pageSize ?? 10;
+            var danhsach = new MapContact();
+            return View(danhsach.Search(FullName,PhoneNumber,groupContact));
+        }
+        [HttpGet]
+        public JsonResult DataJson(string FullName, string PhoneNumber, string groupContact)
+        {
+            var data = new MapContact().Search(FullName, PhoneNumber, groupContact);
+
+            // Chọn các thuộc tính cần thiết
+            var result = data.Select(c => new
+            {
+                c.ContactID,
+                c.FullName,
+                c.PhoneNumber,
+                GroupContacts = c.GroupContacts.Select(gc => new
+                {
+                    gc.GroupContactID,
+                    gc.GroupName
+                })
+            }).ToList();
+
+            return Json(result, JsonRequestBehavior.AllowGet);
         }
         public ActionResult Create()
         {

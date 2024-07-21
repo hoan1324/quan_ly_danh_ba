@@ -25,6 +25,24 @@ namespace Data.mapdata.contactData
 			}
 			return contact;
 		}
+		
+		//Search
+		public List<Contact> Search(string name,string phone,string groupContact)
+		{
+            var lowerName = name?.ToLower().Trim();
+            var lowerPhone = phone?.Trim().ToLower();
+            var lowerGroupContact = groupContact?.ToLower().Trim();
+
+            var searchResults = db.Contacts
+                .Where(item =>
+                    (string.IsNullOrEmpty(lowerName) || item.FullName.ToLower().Contains(lowerName)) &&
+                    (string.IsNullOrEmpty(lowerPhone) || item.PhoneNumber.Contains(lowerPhone)) &&
+                    (string.IsNullOrEmpty(lowerGroupContact) || item.GroupContacts.Any(itemG => itemG.GroupName.ToLower() == lowerGroupContact))
+                )
+                .ToList();
+
+            return searchResults;
+        }
 		//INSERT
 		public Contact InsertContact(Contact contact, List<string> groupContactName, string newGroupContactNames)
 		{
@@ -38,8 +56,8 @@ namespace Data.mapdata.contactData
 										      .ToList();
 
 					// Lấy danh sách các giá trị cần loại bỏ, những giá trị này đã tồn tại trong db.GroupContacts
-					var valuesToRemove = newGroupContactName
-										 .Except(db.GroupContacts.Select(g => g.GroupName), StringComparer.OrdinalIgnoreCase)
+					var valuesToRemove = db.GroupContacts.Select(g => g.GroupName)
+                                         .Except(newGroupContactName, StringComparer.OrdinalIgnoreCase)
 										 .ToList();
 
 					// Lọc những giá trị từ valuesToRemove mà không tồn tại trong groupContactName
@@ -124,12 +142,12 @@ namespace Data.mapdata.contactData
 											 .ToList();
 
 					// Lấy danh sách các giá trị cần loại bỏ, những giá trị này đã tồn tại trong db.GroupContacts
-					var valuesToRemove = newGroupContactName
-							             .Except(db.GroupContacts.Select(g => g.GroupName), StringComparer.OrdinalIgnoreCase)
+					var valuesToRemove = db.GroupContacts.Select(g => g.GroupName)
+										 .Except(newGroupContactName, StringComparer.OrdinalIgnoreCase)
 										 .ToList();
 
-					// Lọc những giá trị từ valuesToRemove mà không tồn tại trong groupContactName
-					var valuesAdd = valuesToRemove
+                    // Lọc những giá trị từ valuesToRemove mà không tồn tại trong groupContactName
+                    var valuesAdd = valuesToRemove
 									.Where(item => !groupContactName.Any(gItem => string.Equals(gItem, item, StringComparison.OrdinalIgnoreCase)))
 									.ToList();
 
