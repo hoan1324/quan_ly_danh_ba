@@ -47,7 +47,7 @@ body {
     }
 
     .left-navbar a {
-        color: #CCCCCC;
+        color: #CCCCCC!important;
         cursor: pointer;
         font-size: 20px;
         font-weight: 500;
@@ -110,6 +110,10 @@ body {
 .hidden-left-navbar{
     max-width:0;
 }
+.active-title{
+    color:#FFF;
+    font-weight:700
+}
 /*top-nav-bar*/
 .bars-icon {
     cursor: pointer;
@@ -128,12 +132,13 @@ body {
     }
 
 .userName {
-    max-width: 120px
+    max-width: 120px;
+    font-size:25px!important;
 }
 
     .userName span {
         font-weight: 400 !important;
-        font-size: 18px !important;
+        font-size: 16px !important;
     }
 
 
@@ -168,8 +173,10 @@ body {
     box-shadow: 0 0 0 .25rem #c5d4b8d4;
     border-color: #99b97c !important;
 }
-
-@media only screen and (max-width: 768px) {
+.link-light {
+    color: #CCCCCC !important;
+}
+@media only screen and (max-width: 992px) {
     .left-navbar{
         position:absolute;
         z-index:1000;
