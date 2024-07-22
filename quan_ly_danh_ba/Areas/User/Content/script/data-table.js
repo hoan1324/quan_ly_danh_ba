@@ -18,7 +18,7 @@
                 dataType: 'json',
                 data: dataJson,
                 success: function (response) {
-                    console.log(response);
+                    console.log($("tr:not(.title-table)").children());
                 },
                 error: function (xhr, status, error) {
                     console.error(error);

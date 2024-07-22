@@ -179,8 +179,35 @@ body {
 .dropdown-toggle::after {
     display: none!important;
 }
-@media only screen and (max-width: 992px) {
-    .left-navbar{
+.pagination-container ul.pagination {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+    .pagination-container ul.pagination li.active {
+        background-color: #c8d9b9;
+    }
+    .pagination-container ul.pagination li {
+        padding: 1px 6px;
+        border: 1px solid #8080807a;
+        transition: all .3s;
+        border-left: none;
+        cursor:pointer;
+    }
+        .pagination-container ul.pagination li:first-child {
+            border-bottom-left-radius: 5px;
+            border-top-left-radius: 5px;
+            border-left: 1px solid #8080807a;
+        }
+        .pagination-container ul.pagination li:last-child {
+            border-bottom-right-radius: 5px;
+            border-top-right-radius: 5px;
+        }
+        .pagination-container ul.pagination li:hover {
+            background-color: #c8d9b9;
+        }
+    @media only screen and (max-width: 992px) {
+        .left-navbar{
         position:absolute;
         z-index:1000;
     }
