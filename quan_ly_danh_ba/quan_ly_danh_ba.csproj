@@ -59,6 +59,9 @@
     <Reference Include="PagedList, Version=1.17.0.0, Culture=neutral, PublicKeyToken=abbb863e9397c5e1, processorArchitecture=MSIL">
       <HintPath>packages\PagedList.1.17.0.0\lib\net40\PagedList.dll</HintPath>
     </Reference>
+    <Reference Include="PagedList.Mvc, Version=4.5.0.0, Culture=neutral, PublicKeyToken=abbb863e9397c5e1, processorArchitecture=MSIL">
+      <HintPath>packages\PagedList.Mvc.4.5.0.0\lib\net40\PagedList.Mvc.dll</HintPath>
+    </Reference>
     <Reference Include="System.Web.DynamicData" />
     <Reference Include="System.Web.Entity" />
     <Reference Include="System.Web.ApplicationServices" />
@@ -115,11 +118,13 @@
     <Content Include="Content\lib\Scripts\bootstrap.bundle.min.js" />
     <Content Include="Content\lib\Scripts\jquery-3.7.1.min.js" />
     <Content Include="Content\lib\Scripts\jquery.validate.min.js" />
+    <Content Include="Content\lib\css\PagedList.css" />
     <Content Include="Global.asax" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Areas\User\Constant\ImageConst.cs" />
     <Compile Include="Areas\User\Controllers\ContactController.cs" />
     <Compile Include="Areas\User\Controllers\HomeController.cs" />
     <Compile Include="Areas\User\UserAreaRegistration.cs" />

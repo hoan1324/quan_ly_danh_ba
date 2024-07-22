@@ -140,3 +140,7 @@ C:\Users\admin\Downloads\PersonalProject\Quan_Ly-Danh_Ba\quan_ly_danh_ba\bin\ros
 C:\Users\admin\Downloads\PersonalProject\Quan_Ly-Danh_Ba\quan_ly_danh_ba\bin\roslyn\System.Runtime.CompilerServices.Unsafe.dll
 C:\Users\admin\Downloads\PersonalProject\Quan_Ly-Danh_Ba\quan_ly_danh_ba\bin\Newtonsoft.Json.dll
 C:\Users\admin\Downloads\PersonalProject\Quan_Ly-Danh_Ba\quan_ly_danh_ba\bin\Newtonsoft.Json.xml
+C:\Users\admin\Downloads\PersonalProject\Quan_Ly-Danh_Ba\quan_ly_danh_ba\bin\PagedList.dll
+C:\Users\admin\Downloads\PersonalProject\Quan_Ly-Danh_Ba\quan_ly_danh_ba\bin\PagedList.xml
+C:\Users\admin\Downloads\PersonalProject\Quan_Ly-Danh_Ba\quan_ly_danh_ba\bin\PagedList.Mvc.dll
+C:\Users\admin\Downloads\PersonalProject\Quan_Ly-Danh_Ba\quan_ly_danh_ba\bin\PagedList.Mvc.xml

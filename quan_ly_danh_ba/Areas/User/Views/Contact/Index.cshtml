@@ -52,11 +52,11 @@
                 var groupsToShow = item.GroupContacts.Take(maxGroupsToShow).ToList();
                 <tr>
                     <td class="text-start fs-6 p-2 border text-center">@(++j)</td>
-                    <td class="text-start fs-6 p-2 border">@item.FullName</td>
-                    <td class="text-start fs-6 p-2 border">@item.PhoneNumber</td>
+                    <td class="text-start fs-6 p-2 border full-name">@item.FullName</td>
+                    <td class="text-start fs-6 p-2 border phone-number">@item.PhoneNumber</td>
                     <td class="text-start fs-6 p-2 border">@((string.IsNullOrEmpty(item.Address)?"Không có dữ liệu":item.Address))</td>
                     <td class="text-start fs-6 p-2 border">@((string.IsNullOrEmpty(item.Email)?"Không có dữ liệu":item.Email))</td>
-                    <td class="text-start fs-6 p-2 border">
+                    <td class="text-start fs-6 p-2 border group-contact">
 
                         @foreach (var group in item.GroupContacts)
                         {
