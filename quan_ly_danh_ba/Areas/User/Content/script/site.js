@@ -1,15 +1,17 @@
 ﻿$(".left-navbar a.link-light").on("click", function (e) {
     e.preventDefault();
-    // Loại bỏ class 'active-title' khỏi tất cả các tiêu đề
-    $(".title-item").removeClass("active-title");
+    // Loại bỏ class 'active-title' khỏi tất cả các liên kết
+    $(".left-navbar a.link-light").removeClass("active-title");
 
-    // Thêm class 'active-title' vào tiêu đề được nhấn
+    // Thêm class 'active-title' vào liên kết được nhấn
     $(this).addClass("active-title");
 
     // Lấy liên kết từ thuộc tính data-link và chuyển sang trang đích
     var link = $(this).data("link");
-    window.location.href = link;
-})
+    if (link) {
+        window.location.href = link;
+    }
+});
 $(".bars-icon").on('click', function () {
     if ($(window.width() > 992)) {
         if ($(".category").hasClass("click-menu-bar")) {
@@ -28,9 +30,11 @@ $(".bars-icon").on('click', function () {
 });
 
 $(document).on('click', function () {
-    if (!$(".left-navbar").hasClass("hidden-left-navbar")) {
-        $(".left-navbar").addClass("hidden-left-navbar")
+    if (window.width() <= 992) {
+        if (!$(".left-navbar").hasClass("hidden-left-navbar")) {
+            $(".left-navbar").addClass("hidden-left-navbar")
 
+        }
     }
-})
+    });
 

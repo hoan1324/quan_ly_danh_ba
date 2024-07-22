@@ -1,11 +1,9 @@
 ﻿/*    //data-table*/
 .create-data span {
-    background-color: #c8d9b9;
+    background-color: #729e49;
     transition: background-color .4s
 }
-    .create-data span:hover {
-        background-color: #729e49;
-    }
+ 
 .title-table {
     background-color: #c8d9b9 !important;
 }
