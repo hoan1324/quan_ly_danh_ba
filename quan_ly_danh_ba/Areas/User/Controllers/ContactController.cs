@@ -2,6 +2,7 @@
 using Data.mapdata.contactData;
 using Data.mapdata.ContactData;
 using Newtonsoft.Json;
+using PagedList;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -18,7 +19,7 @@ namespace quan_ly_danh_ba.Areas.User.Controllers
             page = page ?? 1;
             pageSize = pageSize ?? 10;
             var danhsach = new MapContact();
-            return View(danhsach.Search(FullName,PhoneNumber,groupContact));
+            return View(danhsach.Search(FullName,PhoneNumber,groupContact).ToPagedList((int)page,(int)pageSize));
         }
         [HttpGet]
         public JsonResult DataJson(string FullName, string PhoneNumber, string groupContact)
@@ -39,6 +40,10 @@ namespace quan_ly_danh_ba.Areas.User.Controllers
             }).ToList();
 
             return Json(result, JsonRequestBehavior.AllowGet);
+        }
+        public ActionResult Detail(Guid id)
+        {
+            return View(new MapContact().FindById(id));
         }
         public ActionResult Create()
         {

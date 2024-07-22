@@ -13,7 +13,7 @@ namespace Data.mapdata.contactData
 		//list
 		public List<Contact> ListContacts()
 		{
-			return db.Contacts.ToList();
+			return db.Contacts.OrderBy(item=>item.FullName).ToList();
 		}
 		//find by id
 		public Contact FindById(Guid contactID)
@@ -39,7 +39,7 @@ namespace Data.mapdata.contactData
                     (string.IsNullOrEmpty(lowerPhone) || item.PhoneNumber.Contains(lowerPhone)) &&
                     (string.IsNullOrEmpty(lowerGroupContact) || item.GroupContacts.Any(itemG => itemG.GroupName.ToLower() == lowerGroupContact))
                 )
-                .ToList();
+                .OrderBy(item=>item.FullName).ToList();
 
             return searchResults;
         }
