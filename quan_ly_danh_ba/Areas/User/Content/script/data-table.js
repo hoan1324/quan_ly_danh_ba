@@ -20,14 +20,13 @@
                 success: function (response) {
                     $(response).each(function (index, elementData) {
                         $("tr:not(.title-table)").each(function (index, elementTr) {
-                            var $td = $(elementTr).children();
-                            var fullName = $td.find(".full-name").text();
-                            var phoneNumber = $td.find(".phone-number").text();
-                            var groupContact = $td.find(".group-contact").text();
+                            var fullName = $(elementTr).find("td.full-name").text();
+                            var phoneNumber = $(elementTr).find("td.phone-number").text();
+                            var groupContact = $(elementTr).find("td.group-contact").text();
 
                             if (fullName !== elementData.FullName &&
                                 phoneNumber !== elementData.PhoneNumber &&
-                                groupContact.indexOf(elementData.groupContact[0].GroupName) === -1) {
+                                groupContact.indexOf(elementData.groupContacts[0].GroupName) === -1) {
                                 $td.remove();
                             }
                         });

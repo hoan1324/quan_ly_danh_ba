@@ -1,6 +1,7 @@
 ﻿using AutoMapper;
 using Configuration;
-
+using quan_ly_danh_ba.Respository.Implements;
+using quan_ly_danh_ba.Respository.Interfaces;
 using System;
 
 using Unity;
@@ -14,7 +15,7 @@ namespace quan_ly_danh_ba
     public static class UnityConfig
     {
         #region Unity Container
-        private static Lazy<IUnityContainer> container =
+        private static readonly Lazy<IUnityContainer> container =
           new Lazy<IUnityContainer>(() =>
           {
               var container = new UnityContainer();
@@ -63,6 +64,9 @@ namespace quan_ly_danh_ba
 
             //Respository
             #region
+            container.RegisterType<IContactRespository, ContactRespository>();
+            container.RegisterType<IGroupContactRespository, GroupContactRespository>();
+
             #endregion
         }
     }

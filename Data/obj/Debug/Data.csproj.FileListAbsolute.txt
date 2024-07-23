@@ -22,3 +22,5 @@ C:\Users\admin\Downloads\PersonalProject\Quan_Ly-Danh_Ba\Data\obj\Debug\Data.csp
 C:\Users\admin\Downloads\PersonalProject\Quan_Ly-Danh_Ba\Data\obj\Debug\Data.csproj.Up2Date
 C:\Users\admin\Downloads\PersonalProject\Quan_Ly-Danh_Ba\Data\obj\Debug\Data.dll
 C:\Users\admin\Downloads\PersonalProject\Quan_Ly-Danh_Ba\Data\obj\Debug\Data.pdb
+C:\Users\admin\Downloads\PersonalProject\Quan_Ly-Danh_Ba\Data\bin\Debug\System.Runtime.CompilerServices.Unsafe.dll
+C:\Users\admin\Downloads\PersonalProject\Quan_Ly-Danh_Ba\Data\bin\Debug\System.Runtime.CompilerServices.Unsafe.xml

@@ -144,3 +144,17 @@ C:\Users\admin\Downloads\PersonalProject\Quan_Ly-Danh_Ba\quan_ly_danh_ba\bin\Pag
 C:\Users\admin\Downloads\PersonalProject\Quan_Ly-Danh_Ba\quan_ly_danh_ba\bin\PagedList.xml
 C:\Users\admin\Downloads\PersonalProject\Quan_Ly-Danh_Ba\quan_ly_danh_ba\bin\PagedList.Mvc.dll
 C:\Users\admin\Downloads\PersonalProject\Quan_Ly-Danh_Ba\quan_ly_danh_ba\bin\PagedList.Mvc.xml
+C:\Users\admin\Downloads\PersonalProject\Quan_Ly-Danh_Ba\quan_ly_danh_ba\bin\AutoMapper.dll
+C:\Users\admin\Downloads\PersonalProject\Quan_Ly-Danh_Ba\quan_ly_danh_ba\bin\System.Runtime.CompilerServices.Unsafe.dll
+C:\Users\admin\Downloads\PersonalProject\Quan_Ly-Danh_Ba\quan_ly_danh_ba\bin\System.Threading.Tasks.Extensions.dll
+C:\Users\admin\Downloads\PersonalProject\Quan_Ly-Danh_Ba\quan_ly_danh_ba\bin\Unity.Abstractions.dll
+C:\Users\admin\Downloads\PersonalProject\Quan_Ly-Danh_Ba\quan_ly_danh_ba\bin\Unity.Container.dll
+C:\Users\admin\Downloads\PersonalProject\Quan_Ly-Danh_Ba\quan_ly_danh_ba\bin\Unity.Mvc.dll
+C:\Users\admin\Downloads\PersonalProject\Quan_Ly-Danh_Ba\quan_ly_danh_ba\bin\WebActivatorEx.dll
+C:\Users\admin\Downloads\PersonalProject\Quan_Ly-Danh_Ba\quan_ly_danh_ba\bin\AutoMapper.xml
+C:\Users\admin\Downloads\PersonalProject\Quan_Ly-Danh_Ba\quan_ly_danh_ba\bin\System.Runtime.CompilerServices.Unsafe.xml
+C:\Users\admin\Downloads\PersonalProject\Quan_Ly-Danh_Ba\quan_ly_danh_ba\bin\System.Threading.Tasks.Extensions.xml
+C:\Users\admin\Downloads\PersonalProject\Quan_Ly-Danh_Ba\quan_ly_danh_ba\bin\Unity.Abstractions.pdb
+C:\Users\admin\Downloads\PersonalProject\Quan_Ly-Danh_Ba\quan_ly_danh_ba\bin\Unity.Container.pdb
+C:\Users\admin\Downloads\PersonalProject\Quan_Ly-Danh_Ba\quan_ly_danh_ba\bin\Unity.Mvc.pdb
+C:\Users\admin\Downloads\PersonalProject\Quan_Ly-Danh_Ba\quan_ly_danh_ba\bin\Unity.Mvc.xml
