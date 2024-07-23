@@ -151,6 +151,8 @@
     <Compile Include="Areas\User\Controllers\ContactController.cs" />
     <Compile Include="Areas\User\Controllers\HomeController.cs" />
     <Compile Include="Areas\User\UserAreaRegistration.cs" />
+    <Compile Include="Configuration\MappingProfile.cs" />
+    <Compile Include="Dtos\ContactCreateDto.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -186,12 +188,13 @@
     </None>
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="App_Data\" />
     <Folder Include="Areas\User\Data\" />
     <Folder Include="Content\css\" />
     <Folder Include="Content\Scripts\" />
     <Folder Include="Controllers\" />
     <Folder Include="Models\" />
+    <Folder Include="Respository\" />
+    <Folder Include="Services\" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Data\Data.csproj">

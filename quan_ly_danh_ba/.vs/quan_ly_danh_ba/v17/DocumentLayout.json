@@ -3,7 +3,16 @@
   "WorkspaceRootPath": "C:\\Users\\admin\\Downloads\\PersonalProject\\Quan_Ly-Danh_Ba\\quan_ly_danh_ba\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{DAE50114-CCC4-47C1-8B34-8AC814ED8C54}|..\\Data\\Data.csproj|c:\\users\\admin\\downloads\\personalproject\\quan_ly-danh_ba\\data\\dto\\contactcreatedto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{581F3230-B105-4665-812B-4FDAAEF4B728}|quan_ly_danh_ba.csproj|c:\\users\\admin\\downloads\\personalproject\\quan_ly-danh_ba\\quan_ly_danh_ba\\areas\\services\\servicesarearegistration.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{581F3230-B105-4665-812B-4FDAAEF4B728}|quan_ly_danh_ba.csproj|solutionrelative:areas\\services\\servicesarearegistration.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{581F3230-B105-4665-812B-4FDAAEF4B728}|quan_ly_danh_ba.csproj|c:\\users\\admin\\downloads\\personalproject\\quan_ly-danh_ba\\quan_ly_danh_ba\\app_start\\unityconfig.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{581F3230-B105-4665-812B-4FDAAEF4B728}|quan_ly_danh_ba.csproj|solutionrelative:app_start\\unityconfig.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{581F3230-B105-4665-812B-4FDAAEF4B728}|quan_ly_danh_ba.csproj|c:\\users\\admin\\downloads\\personalproject\\quan_ly-danh_ba\\quan_ly_danh_ba\\configuration\\mappingprofile.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{581F3230-B105-4665-812B-4FDAAEF4B728}|quan_ly_danh_ba.csproj|solutionrelative:configuration\\mappingprofile.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -22,14 +31,40 @@
             {
               "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "ContactCreateDto.cs",
-              "DocumentMoniker": "C:\\Users\\admin\\Downloads\\PersonalProject\\Quan_Ly-Danh_Ba\\Data\\Dto\\ContactCreateDto.cs",
-              "RelativeDocumentMoniker": "..\\Data\\Dto\\ContactCreateDto.cs",
-              "ToolTip": "C:\\Users\\admin\\Downloads\\PersonalProject\\Quan_Ly-Danh_Ba\\Data\\Dto\\ContactCreateDto.cs",
-              "RelativeToolTip": "..\\Data\\Dto\\ContactCreateDto.cs",
-              "ViewState": "AQIAAAsAAAAAAAAAAAAxwBMAAABFAAAA",
+              "Title": "ServicesAreaRegistration.cs",
+              "DocumentMoniker": "C:\\Users\\admin\\Downloads\\PersonalProject\\Quan_Ly-Danh_Ba\\quan_ly_danh_ba\\Areas\\Services\\ServicesAreaRegistration.cs",
+              "RelativeDocumentMoniker": "Areas\\Services\\ServicesAreaRegistration.cs",
+              "ToolTip": "C:\\Users\\admin\\Downloads\\PersonalProject\\Quan_Ly-Danh_Ba\\quan_ly_danh_ba\\Areas\\Services\\ServicesAreaRegistration.cs",
+              "RelativeToolTip": "Areas\\Services\\ServicesAreaRegistration.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-07-23T08:06:34.675Z",
+              "WhenOpened": "2024-07-23T09:23:50.333Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "UnityConfig.cs",
+              "DocumentMoniker": "C:\\Users\\admin\\Downloads\\PersonalProject\\Quan_Ly-Danh_Ba\\quan_ly_danh_ba\\App_Start\\UnityConfig.cs",
+              "RelativeDocumentMoniker": "App_Start\\UnityConfig.cs",
+              "ToolTip": "C:\\Users\\admin\\Downloads\\PersonalProject\\Quan_Ly-Danh_Ba\\quan_ly_danh_ba\\App_Start\\UnityConfig.cs",
+              "RelativeToolTip": "App_Start\\UnityConfig.cs",
+              "ViewState": "AQIAADkAAAAAAAAAAAAYwAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-07-23T09:22:55.577Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "MappingProfile.cs",
+              "DocumentMoniker": "C:\\Users\\admin\\Downloads\\PersonalProject\\Quan_Ly-Danh_Ba\\quan_ly_danh_ba\\Configuration\\MappingProfile.cs",
+              "RelativeDocumentMoniker": "Configuration\\MappingProfile.cs",
+              "ToolTip": "C:\\Users\\admin\\Downloads\\PersonalProject\\Quan_Ly-Danh_Ba\\quan_ly_danh_ba\\Configuration\\MappingProfile.cs",
+              "RelativeToolTip": "Configuration\\MappingProfile.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-07-23T09:22:53.555Z",
               "EditorCaption": ""
             }
           ]

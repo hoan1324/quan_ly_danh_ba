@@ -1,6 +1,10 @@
+﻿using AutoMapper;
+using Configuration;
+
 using System;
 
 using Unity;
+using Unity.Injection;
 
 namespace quan_ly_danh_ba
 {
@@ -36,12 +40,30 @@ namespace quan_ly_danh_ba
         /// </remarks>
         public static void RegisterTypes(IUnityContainer container)
         {
+            container.RegisterFactory<IMapper>(c =>
+            {
+                var config = new MapperConfiguration(cfg =>
+                {
+                    cfg.AddProfile<MappingProfile>(); // Thay MappingProfile bằng lớp profile của bạn
+                });
+
+                return config.CreateMapper();
+            });
             // NOTE: To load from web.config uncomment the line below.
             // Make sure to add a Unity.Configuration to the using statements.
             // container.LoadConfiguration();
 
             // TODO: Register your type's mappings here.
             // container.RegisterType<IProductRepository, ProductRepository>();
+
+            //Service
+            #region
+
+            #endregion
+
+            //Respository
+            #region
+            #endregion
         }
     }
 }
