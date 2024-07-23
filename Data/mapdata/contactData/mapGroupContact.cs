@@ -7,14 +7,14 @@ using System.Threading.Tasks;
 
 namespace Data.mapdata.ContactData
 {
-    public class mapGroupContact:Quan_ly_danh_baEntity
+    public class MapGroupContact:Quan_ly_danh_baEntity
     {
-        public List<GroupContact> listGroupContacts()
+        public List<GroupContact> ListGroupContacts()
         {
             return db.GroupContacts.ToList();
         }
         
-		public GroupContact findByName(string GroupContactName)
+		public GroupContact FindByName(string GroupContactName)
 		{
 			var groupContact = db.GroupContacts.FirstOrDefault(item => item.GroupName.ToLower() == GroupContactName.ToLower());
 			if (groupContact == null)

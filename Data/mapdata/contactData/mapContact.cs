@@ -40,8 +40,7 @@ namespace Data.mapdata.contactData
                     (string.IsNullOrEmpty(lowerGroupContact) || item.GroupContacts.Any(itemG => itemG.GroupName.ToLower() == lowerGroupContact))
                 )
                 .OrderBy(item=>item.FullName).ToList();
-
-            return searchResults;
+			return searchResults;
         }
 		//INSERT
 		public Contact InsertContact(Contact contact, List<string> groupContactName, string newGroupContactNames)

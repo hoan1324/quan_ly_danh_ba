@@ -38,8 +38,9 @@ namespace quan_ly_danh_ba.Areas.User.Controllers
                     gc.GroupName
                 })
             }).ToList();
+           
 
-            return Json(result, JsonRequestBehavior.AllowGet);
+            return Json(result,JsonRequestBehavior.AllowGet);
         }
         public ActionResult Detail(Guid id)
         {
@@ -47,7 +48,7 @@ namespace quan_ly_danh_ba.Areas.User.Controllers
         }
         public ActionResult Create()
         {
-            var danhsach=new mapGroupContact().listGroupContacts().ToList();
+            var danhsach=new MapGroupContact().ListGroupContacts().ToList();
             return View(danhsach);
         }
         [HttpPost]
@@ -60,7 +61,7 @@ namespace quan_ly_danh_ba.Areas.User.Controllers
 				return RedirectToAction("Index");
             }
 			TempData["SuccessError"] = "Tạo mới thất bại!";
-			return View(new mapGroupContact().listGroupContacts().ToList());
+			return View(new MapGroupContact().ListGroupContacts().ToList());
         }
         public ActionResult Edit(Guid id) {
             if (id == null)
@@ -69,7 +70,7 @@ namespace quan_ly_danh_ba.Areas.User.Controllers
 				return RedirectToAction("Index");
 
 			}
-			var model = Tuple.Create(new MapContact().FindById(id), new mapGroupContact().listGroupContacts().ToList());
+			var model = Tuple.Create(new MapContact().FindById(id), new MapGroupContact().ListGroupContacts().ToList());
 			return View(model);
 		}
 		[HttpPost]
@@ -83,7 +84,7 @@ namespace quan_ly_danh_ba.Areas.User.Controllers
 				return RedirectToAction("Index");
 			}
 			TempData["SuccessError"] = "Sửa thất bại!";
-			return View(Tuple.Create(new MapContact().FindById(position.ContactID), new mapGroupContact().listGroupContacts().ToList()));
+			return View(Tuple.Create(new MapContact().FindById(position.ContactID), new MapGroupContact().ListGroupContacts().ToList()));
 		}
 		public ActionResult Delete(Guid id) {
         var position=new MapContact().DeleteContact(id);

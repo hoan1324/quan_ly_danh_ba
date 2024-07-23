@@ -18,12 +18,21 @@
                 dataType: 'json',
                 data: dataJson,
                 success: function (response) {
-                    console.log(response);
-                    console.log($("tr:not(.title-table)"));
+                    $(response).each(function (index, elementData) {
+                        $("tr:not(.title-table)").each(function (index, elementTr) {
+                            var $td = $(elementTr).children();
+                            var fullName = $td.find(".full-name").text();
+                            var phoneNumber = $td.find(".phone-number").text();
+                            var groupContact = $td.find(".group-contact").text();
+
+                            if (fullName !== elementData.FullName &&
+                                phoneNumber !== elementData.PhoneNumber &&
+                                groupContact.indexOf(elementData.groupContact[0].GroupName) === -1) {
+                                $td.remove();
+                            }
+                        });
+                    });
                 },
-                error: function (xhr, status, error) {
-                    console.error(error);
-                }
             });
         }
     })
