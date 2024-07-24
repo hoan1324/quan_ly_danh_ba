@@ -7,12 +7,14 @@ using System.Threading.Tasks;
 
 namespace quan_ly_danh_ba.Respository.Interfaces
 {
-    interface IGroupContactRespository
+    public interface IGroupContactRespository
     {
         List<GroupContact> ListGroupContact();
-        GroupContact FindById(Guid id);
-        GroupContact Insert(GroupContact groupContact);
-        GroupContact Delete(GroupContact groupContact);
-        GroupContact Update(GroupContact groupContact);
+        GroupContact FindByName(string name);
+        void Insert(GroupContact groupContact);
+        void  Delete(GroupContact groupContact);
+        void Update(GroupContact groupContact);
+        
+
     }
 }

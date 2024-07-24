@@ -9,11 +9,10 @@ namespace quan_ly_danh_ba.Respository.Implements
 {
     public class ContactRespository : Quan_ly_danh_baEntity, IContactRespository
     {
-        public Contact Delete(Contact contact)
+        public void Delete(Contact contact)
         {
                 db.Contacts.Remove(contact);
                 db.SaveChanges();
-                return contact;
         }
 
         public Contact FindById(Guid id)
@@ -26,11 +25,10 @@ namespace quan_ly_danh_ba.Respository.Implements
             return contact;
         }
 
-        public Contact Insert(Contact contact)
+        public void Insert(Contact contact)
         {
             db.Contacts.Add(contact);
             db.SaveChanges();
-            return contact;
         }
 
         public List<Contact> ListContact()
@@ -43,21 +41,15 @@ namespace quan_ly_danh_ba.Respository.Implements
            return search.ToList();
         }
 
-        public Contact Update(Contact newContact)
+        public void Update(Contact newContact)
         {
             var contact = db.Contacts.FirstOrDefault(item => item.ContactID == newContact.ContactID);
-            var newGroupContact = newContact.GroupContacts.ToList();
             contact.FullName = newContact.FullName;
             contact.PhoneNumber = newContact.PhoneNumber;
             contact.Address = newContact.Address;
             contact.Email = newContact.Email;
-            contact.GroupContacts.Clear();
-            foreach (var item in newGroupContact)
-            {
-                contact.GroupContacts.Add(item);
-            }
+           
             db.SaveChanges();
-            return contact;
 
         }
     }

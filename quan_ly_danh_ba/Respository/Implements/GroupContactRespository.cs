@@ -9,16 +9,15 @@ namespace quan_ly_danh_ba.Respository.Implements
 {
     public class GroupContactRespository : Quan_ly_danh_baEntity, IGroupContactRespository
     {
-        public GroupContact Delete(GroupContact groupContact)
+        public void Delete(GroupContact groupContact)
         {
             db.GroupContacts.Remove(groupContact);
             db.SaveChanges();
-            return groupContact;
         }
 
-        public GroupContact FindById(Guid id)
+        public GroupContact FindByName(string name)
         {
-            var groupContact = db.GroupContacts.FirstOrDefault(item => item.GroupContactID == id);
+            var groupContact = db.GroupContacts.FirstOrDefault(item => item.GroupName.Equals(name,StringComparison.OrdinalIgnoreCase));
             if (groupContact == null)
             {
                 return null;
@@ -26,11 +25,11 @@ namespace quan_ly_danh_ba.Respository.Implements
             return groupContact;
         }
 
-        public GroupContact Insert(GroupContact groupContact)
+        public void Insert(GroupContact groupContact)
         {
             db.GroupContacts.Add(groupContact);
             db.SaveChanges();
-            return groupContact;
+
         }
 
         public List<GroupContact> ListGroupContact()
@@ -38,18 +37,13 @@ namespace quan_ly_danh_ba.Respository.Implements
             return db.GroupContacts.ToList();
         }
 
-        public GroupContact Update(GroupContact newGroupContact)
+        public void Update(GroupContact newGroupContact)
         {
             var groupContact = db.GroupContacts.FirstOrDefault(item => item.GroupContactID == newGroupContact.GroupContactID);
-            var newContact = newGroupContact.Contacts.ToList();
             groupContact.GroupName = newGroupContact.GroupName;
-            
-            foreach (var item in newContact)
-            {
-                groupContact.Contacts.Add(item);
-            }
+           
             db.SaveChanges();
-            return groupContact;
+            
 
         }
     }

@@ -1,4 +1,4 @@
-﻿@model Tuple<Data.Entity.Contact, List<Data.Entity.GroupContact>>
+﻿@model Tuple<Dtos.ContactCreateDto, List<Dtos.GroupContactDto>>
 @{
     var contact = Model.Item1;
     var groupContacts = Model.Item2;
@@ -9,12 +9,8 @@
 }
 @if (TempData["ErrorMessage"] != null)
 {
-    <div class="temp-alert">@TempData["ErrorMessage"]</div>
-    <script>
-        $(function () {
-            $(".temp-alert").fadeIn().delay(2000).fadeOut();
-        });
-    </script>
+    <div class="temp-alert alert alert-danger">@TempData["ErrorMessage"]</div>
+
 }
 @section linkCss{
     <link href="~/Areas/User/Content/css/edit.css" rel="stylesheet" type="text/css" />
@@ -50,12 +46,12 @@
                             <div class="form-check mx-4">
                                 @if (i == 0)
                                 {
-                                    <input class="form-check-input check-input" type="checkbox" value="@groupContacts[i].GroupName" name="GroupName" id="@groupContacts[i].GroupName" @(contact.GroupContacts.Any(item => item.GroupName == groupContacts[i].GroupName) ? "checked" : "")>
+                                    <input class="form-check-input check-input" type="checkbox" value="@groupContacts[i].GroupName" name="GroupNames" id="@groupContacts[i].GroupName" @(contact.GroupNames.Any(item => item == groupContacts[i].GroupName) ? "checked" : "")>
 
                                 }
                                 else
                                 {
-                                    <input class="form-check-input check-input" type="checkbox" value="@groupContacts[i].GroupName" name="GroupName" id="@groupContacts[i].GroupName" @(contact.GroupContacts.Any(item => item.GroupName == groupContacts[i].GroupName) ? "checked" : "")>
+                                    <input class="form-check-input check-input" type="checkbox" value="@groupContacts[i].GroupName" name="GroupNames" id="@groupContacts[i].GroupName" @(contact.GroupNames.Any(item => item == groupContacts[i].GroupName) ? "checked" : "")>
 
                                 }
                                 <label class="form-check-label" for="@groupContacts[i].GroupName">
@@ -78,7 +74,7 @@
                             @for (int j = 35; j < groupContacts.Count(); j++)
                             {
                                 <div class="form-check mx-4">
-                                    <input class="form-check-input check-input" type="checkbox" value="@groupContacts[j].GroupName" name="GroupName" id="@groupContacts[j].GroupName" @(contact.GroupContacts.Any(item => item.GroupName == groupContacts[j].GroupName) ? "checked" : "")>
+                                    <input class="form-check-input check-input" type="checkbox" value="@groupContacts[j].GroupName" name="GroupNames" id="@groupContacts[j].GroupName" @(contact.GroupNames.Any(item => item == groupContacts[j].GroupName) ? "checked" : "")>
                                     <label class="form-check-label check-input" for="@groupContacts[j].GroupName">
                                         @groupContacts[j].GroupName
                                     </label>

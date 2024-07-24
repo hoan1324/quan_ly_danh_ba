@@ -7,14 +7,14 @@ using System.Threading.Tasks;
 
 namespace quan_ly_danh_ba.Respository.Interfaces
 {
-     interface IContactRespository
+     public interface IContactRespository
     {
         List<Contact> ListContact();
         List<Contact> ListContactSearch(List<Contact> search);
         Contact FindById(Guid id);
-        Contact Insert(Contact contact);
-        Contact Delete(Contact contact);
-        Contact Update(Contact contact);
+        void Insert(Contact contact);
+       void  Delete(Contact contact);
+        void Update(Contact contact);
 
     }
 }

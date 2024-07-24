@@ -2,6 +2,8 @@
 using Configuration;
 using quan_ly_danh_ba.Respository.Implements;
 using quan_ly_danh_ba.Respository.Interfaces;
+using quan_ly_danh_ba.Services.Implements;
+using quan_ly_danh_ba.Services.Interfaces;
 using System;
 
 using Unity;
@@ -59,13 +61,15 @@ namespace quan_ly_danh_ba
 
             //Service
             #region
-
+            container.RegisterType<IContactService, ContactService>();
+            container.RegisterType<IGroupContactService, GroupContactService>();
             #endregion
 
             //Respository
             #region
             container.RegisterType<IContactRespository, ContactRespository>();
             container.RegisterType<IGroupContactRespository, GroupContactRespository>();
+            container.RegisterType<IConnectContact_GroupContactRespository, ConnectContact_GroupContactRespository>();
 
             #endregion
         }

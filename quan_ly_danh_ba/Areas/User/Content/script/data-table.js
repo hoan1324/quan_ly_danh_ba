@@ -4,6 +4,12 @@
         $('#confirmdeletebtn').attr('href', `/user/contact/delete?id=${itemid}`); // cập nhật link với id
     });
 
+    $(".temp-alert").fadeIn();
+    var clearTime = setTimeout(function () {
+        $('.temp-alert').fadeOut();
+    }, 3000);
+    clearTimeout(clearTime);
+
     $(document).on('keydown', '.form-control', function (e) {
         if (e.key == 'Enter') {
 
@@ -26,7 +32,7 @@
 
                             if (fullName !== elementData.FullName &&
                                 phoneNumber !== elementData.PhoneNumber &&
-                                groupContact.indexOf(elementData.groupContacts[0].GroupName) === -1) {
+                                (elementData.GroupNames && elementData.GroupNames.includes(groupContact))) {
                                 $td.remove();
                             }
                         });
