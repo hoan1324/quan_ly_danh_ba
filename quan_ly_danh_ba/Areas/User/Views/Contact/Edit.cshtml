@@ -44,16 +44,8 @@
 
 
                             <div class="form-check mx-4">
-                                @if (i == 0)
-                                {
+                               
                                     <input class="form-check-input check-input" type="checkbox" value="@groupContacts[i].GroupName" name="GroupNames" id="@groupContacts[i].GroupName" @(contact.GroupNames.Any(item => item == groupContacts[i].GroupName) ? "checked" : "")>
-
-                                }
-                                else
-                                {
-                                    <input class="form-check-input check-input" type="checkbox" value="@groupContacts[i].GroupName" name="GroupNames" id="@groupContacts[i].GroupName" @(contact.GroupNames.Any(item => item == groupContacts[i].GroupName) ? "checked" : "")>
-
-                                }
                                 <label class="form-check-label" for="@groupContacts[i].GroupName">
                                     @groupContacts[i].GroupName
                                 </label>

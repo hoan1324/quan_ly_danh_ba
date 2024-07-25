@@ -9,10 +9,16 @@ namespace quan_ly_danh_ba.Respository.Implements
 {
     public class GroupContactRespository : Quan_ly_danh_baEntity, IGroupContactRespository
     {
-        public void Delete(GroupContact groupContact)
+        public GroupContact Delete(GroupContact groupContact)
         {
-            db.GroupContacts.Remove(groupContact);
-            db.SaveChanges();
+            var position = db.GroupContacts.FirstOrDefault(item => item.GroupContactID == groupContact.GroupContactID);
+if(position != null)
+            {
+                db.GroupContacts.Remove(groupContact);
+                db.SaveChanges();
+                return position;
+            }
+return null;
         }
 
         public GroupContact FindByName(string name)
@@ -25,11 +31,17 @@ namespace quan_ly_danh_ba.Respository.Implements
             return groupContact;
         }
 
-        public void Insert(GroupContact groupContact)
+        public GroupContact Insert(GroupContact groupContact)
         {
-            db.GroupContacts.Add(groupContact);
-            db.SaveChanges();
-
+            var position = db.GroupContacts.FirstOrDefault(item => item.GroupContactID == groupContact.GroupContactID);
+            if (position != null)
+            {
+                db.GroupContacts.Add(groupContact);
+                db.SaveChanges();
+                return groupContact;
+            }
+            return null;
+            
         }
 
         public List<GroupContact> ListGroupContact()
@@ -37,13 +49,17 @@ namespace quan_ly_danh_ba.Respository.Implements
             return db.GroupContacts.ToList();
         }
 
-        public void Update(GroupContact newGroupContact)
+        public GroupContact Update(GroupContact groupContact)
         {
-            var groupContact = db.GroupContacts.FirstOrDefault(item => item.GroupContactID == newGroupContact.GroupContactID);
-            groupContact.GroupName = newGroupContact.GroupName;
-           
-            db.SaveChanges();
-            
+            var position = db.GroupContacts.FirstOrDefault(item => item.GroupContactID == groupContact.GroupContactID);
+            if (position != null)
+            {
+               position.GroupName=groupContact.GroupName;
+                db.SaveChanges();
+                return position;
+            }
+            return null;
+
 
         }
     }

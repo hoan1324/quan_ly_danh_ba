@@ -48,8 +48,8 @@ namespace quan_ly_danh_ba.Services.Implements
         public ContactCreateDto Insert(ContactCreateDto contactCreateDto,  string newGroupContactNames)
         {
             contactCreateDto.ContactID = Guid.NewGuid();
-            _contactRepo.Insert(_mapper.Map<Contact>(contactCreateDto));
-            var position = _contactRepo.FindById(contactCreateDto.ContactID);
+            var position =_contactRepo.Insert(_mapper.Map<Contact>(contactCreateDto));
+            
             if (!string.IsNullOrEmpty(newGroupContactNames))
             {
                 var newGroupContactName = newGroupContactNames.Split(',')
@@ -116,11 +116,13 @@ namespace quan_ly_danh_ba.Services.Implements
 
         public ContactCreateDto Update(ContactCreateDto contactCreateDto, string newGroupContactNames)
         {
-            _contactRepo.Update(_mapper.Map<Contact>(contactCreateDto));
+             _contactRepo.Update(_mapper.Map<Contact>(contactCreateDto));
+            //var oldContact = db.Contacts.FirstOrDefault(item => item.ContactID.ToString() == contactCreateDto.ContactID.ToString());
             var oldContact = _contactRepo.FindById(contactCreateDto.ContactID);
+
             if (oldContact != null)
             {
-                
+               
                 if (!string.IsNullOrEmpty(newGroupContactNames))
                 {
                     var newGroupContactName = newGroupContactNames.Split(',')
@@ -129,7 +131,7 @@ namespace quan_ly_danh_ba.Services.Implements
                                              .ToList();
 
                     // Lấy danh sách các giá trị cần loại bỏ, những giá trị này đã tồn tại trong db.GroupContacts
-                    var valuesToRemove = _groupContactService.ListGroupContact().Select(g => g.GroupName)
+                    var valuesToRemove = db.GroupContacts.Select(g => g.GroupName)
                                          .Except(newGroupContactName, StringComparer.OrdinalIgnoreCase)
                                          .ToList();
 
@@ -148,39 +150,102 @@ namespace quan_ly_danh_ba.Services.Implements
 
                     foreach (var item in newGroupContactName)
                     {
-                        var newGroupContact = _groupContactService.Insert(item);
-                        var transform = _mapper.Map<GroupContact>(newGroupContact);
-                        _connect.AddContact(transform,oldContact);
-                        _connect.AddGroupContact(oldContact, transform);
+                        GroupContact newGroupContact = new GroupContact
+                        {
+                            GroupContactID = Guid.NewGuid(),
+                            GroupName = char.ToUpper(item[0]) + item.Substring(1)
+                        };
+
+                        oldContact.GroupContacts.Add(newGroupContact);
+                        newGroupContact.Contacts.Add(oldContact);
+                        db.GroupContacts.Add(newGroupContact);
                     }
 
                 }
-                var toRemove = _connect.GetAllGroups(oldContact)
-                             .Where(gc => contactCreateDto.GroupNames.Contains(gc.GroupName, StringComparer.OrdinalIgnoreCase))
+                var toRemove = oldContact.GroupContacts
+                             .Where(gc => !contactCreateDto.GroupNames.Contains(gc.GroupName, StringComparer.OrdinalIgnoreCase))
                              .ToList();
                 foreach (var item in toRemove)
                 {
-                    _connect.RemoveContact(item,oldContact);
+                    _connect.RemoveContact(item, oldContact);
                     _connect.RemoveGroupContact(oldContact, item);
                 }
                 foreach (var groupName in contactCreateDto.GroupNames)
                 {
-                    var groupContact = _groupContactService.FindByName(groupName);
-                    var transform = _mapper.Map<GroupContact>(groupContact);
-                    if (groupContact != null && !_connect.GetAllGroups(oldContact).Contains(transform))
+                    var groupContact = db.GroupContacts.FirstOrDefault(gc => gc.GroupName.Equals(groupName, StringComparison.OrdinalIgnoreCase));
+                    if (groupContact != null && !oldContact.GroupContacts.Contains(groupContact))
                     {
-                        _connect.AddContact(transform, oldContact);
-                        _connect.AddGroupContact(oldContact, transform);
+                        _connect.AddContact(groupContact, oldContact);
+                        _connect.AddGroupContact(oldContact, groupContact);
                     }
 
                 }
-                var a = oldContact;
-                var b = _mapper.Map<ContactCreateDto>(oldContact);
-
-
+               _connect.ConnectSave(db);
+              
                 return _mapper.Map<ContactCreateDto>(oldContact);
             }
             return null;
+
+            //if (oldContact != null)
+            //{
+
+            //    if (!string.IsNullOrEmpty(newGroupContactNames))
+            //    {
+            //        var newGroupContactName = newGroupContactNames.Split(',')
+            //                                 .Select(item => item.Trim())
+            //                                 .Distinct(StringComparer.OrdinalIgnoreCase)  // Loại bỏ trùng lặp không phân biệt hoa thường
+            //                                 .ToList();
+
+            //        // Lấy danh sách các giá trị cần loại bỏ, những giá trị này đã tồn tại trong db.GroupContacts
+            //        var valuesToRemove = _groupContactService.ListGroupContact().Select(g => g.GroupName)
+            //                             .Except(newGroupContactName, StringComparer.OrdinalIgnoreCase)
+            //                             .ToList();
+
+            //        // Lọc những giá trị từ valuesToRemove mà không tồn tại trong groupContactName
+            //        var valuesAdd = valuesToRemove
+            //                        .Where(item => !contactCreateDto.GroupNames.Any(gItem => string.Equals(gItem, item, StringComparison.OrdinalIgnoreCase)))
+            //                        .ToList();
+
+            //        // Xóa các giá trị cần loại bỏ khỏi newGroupContactName
+            //        newGroupContactName.RemoveAll(item => valuesToRemove.Contains(item, StringComparer.OrdinalIgnoreCase));
+
+            //        // Thêm các giá trị từ valuesAdd vào groupContactName
+            //        contactCreateDto.GroupNames.AddRange(valuesAdd);
+
+
+
+            //        foreach (var item in newGroupContactName)
+            //        {
+            //            var newGroupContact = _groupContactService.Insert(item);
+            //            var transform = _mapper.Map<GroupContact>(newGroupContact);
+            //            _connect.AddContact(transform,oldContact);
+            //            _connect.AddGroupContact(oldContact, transform);
+            //        }
+
+            //    }
+            //    var toRemove = _connect.GetAllGroups(oldContact)
+            //                 .Where(gc => contactCreateDto.GroupNames.Contains(gc.GroupName, StringComparer.OrdinalIgnoreCase))
+            //                 .ToList();
+            //    foreach (var item in toRemove)
+            //    {
+            //        _connect.RemoveContact(item, oldContact);
+            //        oldContact=_connect.RemoveGroupContact(oldContact, item);
+            //    }
+            //    foreach (var groupName in contactCreateDto.GroupNames)
+            //    {
+            //        var groupContact = _groupContactService.FindByName(groupName);
+            //        var transform = _mapper.Map<GroupContact>(groupContact);
+            //        if (groupContact != null && !_connect.GetAllGroups(oldContact).Contains(transform))
+            //        {
+            //            _connect.AddContact(transform, oldContact);
+            //            oldContact=_connect.AddGroupContact(oldContact, transform);
+            //        }
+
+            //    }
+
+            //    return _mapper.Map<ContactCreateDto>(oldContact);
+            //}
+            //return null;
         }
     }
 }

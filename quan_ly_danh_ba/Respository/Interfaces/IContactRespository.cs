@@ -12,9 +12,9 @@ namespace quan_ly_danh_ba.Respository.Interfaces
         List<Contact> ListContact();
         List<Contact> ListContactSearch(List<Contact> search);
         Contact FindById(Guid id);
-        void Insert(Contact contact);
-       void  Delete(Contact contact);
-        void Update(Contact contact);
+        Contact Insert(Contact contact);
+        Contact  Delete(Contact contact);
+        Contact Update(Contact contact);
 
     }
 }

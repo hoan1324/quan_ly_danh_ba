@@ -11,9 +11,9 @@ namespace quan_ly_danh_ba.Respository.Interfaces
     {
         List<GroupContact> ListGroupContact();
         GroupContact FindByName(string name);
-        void Insert(GroupContact groupContact);
-        void  Delete(GroupContact groupContact);
-        void Update(GroupContact groupContact);
+        GroupContact Insert(GroupContact groupContact);
+        GroupContact  Delete(GroupContact groupContact);
+        GroupContact Update(GroupContact groupContact);
         
 
     }

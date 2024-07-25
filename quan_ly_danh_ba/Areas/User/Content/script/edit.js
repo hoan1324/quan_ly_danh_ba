@@ -12,15 +12,15 @@ jQuery('#form-edit').validate({
             digits: true,
             minlength: 10
         },
-        GroupName: {
+        GroupNames: {
             requireOneOrInput: {
-                checkboxes: 'input[name="GroupName"]',
+                checkboxes: 'input[name="GroupNames"]',
                 input: 'input[name="newGroupName"]'
             }
         },
         newGroupName: {
             requireOneOrInput: {
-                checkboxes: 'input[name="GroupName"]',
+                checkboxes: 'input[name="GroupNames"]',
                 input: 'input[name="newGroupName"]'
             }
         }
@@ -34,7 +34,7 @@ jQuery('#form-edit').validate({
         }
     },
     errorPlacement: function (error, element) {
-        if (element.attr("name") == "GroupName" || element.attr("name") == "newGroupName") {
+        if (element.attr("name") == "GroupNames" || element.attr("name") == "newGroupName") {
             error.insertAfter(".visible-error"); // Chèn thông báo lỗi ngay sau nhãn của "Tạo quan hệ mới"
         } else {
             error.insertAfter(element); // Chèn thông báo lỗi sau phần tử input khác

@@ -33,8 +33,8 @@ namespace quan_ly_danh_ba.Services.Implements
                    GroupContactID=Guid.NewGuid(),
                    GroupName=groupName.Substring(0, 1).ToUpper() + groupName.Substring(1, groupName.Length - 1)
                };
-                _groupContactRepo.Insert(_mapper.Map<GroupContact>(newGroupContactDto));
-                return newGroupContactDto;
+               var done= _groupContactRepo.Insert(_mapper.Map<GroupContact>(newGroupContactDto));
+                return _mapper.Map<GroupContactDto>(done);
             }
             return null;
         }

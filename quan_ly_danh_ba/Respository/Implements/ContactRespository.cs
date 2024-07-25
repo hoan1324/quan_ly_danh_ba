@@ -9,10 +9,16 @@ namespace quan_ly_danh_ba.Respository.Implements
 {
     public class ContactRespository : Quan_ly_danh_baEntity, IContactRespository
     {
-        public void Delete(Contact contact)
+        public Contact Delete(Contact contact)
         {
-                db.Contacts.Remove(contact);
+            var position = db.Contacts.FirstOrDefault(item => item.ContactID == contact.ContactID);
+            if (position != null)
+            {
+                db.Contacts.Remove(position);
                 db.SaveChanges();
+                return position;
+            }
+            return null;
         }
 
         public Contact FindById(Guid id)
@@ -25,10 +31,16 @@ namespace quan_ly_danh_ba.Respository.Implements
             return contact;
         }
 
-        public void Insert(Contact contact)
+        public Contact Insert(Contact contact)
         {
-            db.Contacts.Add(contact);
-            db.SaveChanges();
+            var position = db.Contacts.FirstOrDefault(item => item.ContactID == contact.ContactID);
+            if (position == null)
+            {
+                db.Contacts.Add(contact);
+                db.SaveChanges();
+                return contact;
+            }
+            return null;
         }
 
         public List<Contact> ListContact()
@@ -41,15 +53,20 @@ namespace quan_ly_danh_ba.Respository.Implements
            return search.ToList();
         }
 
-        public void Update(Contact newContact)
+        public Contact Update(Contact contact)
         {
-            var contact = db.Contacts.FirstOrDefault(item => item.ContactID == newContact.ContactID);
-            contact.FullName = newContact.FullName;
-            contact.PhoneNumber = newContact.PhoneNumber;
-            contact.Address = newContact.Address;
-            contact.Email = newContact.Email;
-           
-            db.SaveChanges();
+            var position = db.Contacts.FirstOrDefault(item => item.ContactID == contact.ContactID);
+           if(position != null)
+            {
+                position.FullName = position.FullName;
+                position.PhoneNumber = contact.PhoneNumber;
+                position.Address = contact.Address;
+                position.Email = contact.Email;
+
+                db.SaveChanges();
+                return position;
+            }
+           return null;
 
         }
     }

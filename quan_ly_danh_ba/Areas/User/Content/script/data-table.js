@@ -26,14 +26,14 @@
                 success: function (response) {
                     $(response).each(function (index, elementData) {
                         $("tr:not(.title-table)").each(function (index, elementTr) {
-                            var fullName = $(elementTr).find("td.full-name").text();
-                            var phoneNumber = $(elementTr).find("td.phone-number").text();
-                            var groupContact = $(elementTr).find("td.group-contact").text();
+                            var fullName = $(elementTr).find("td.full-name").text().trim();
+                            var phoneNumber = $(elementTr).find("td.phone-number").text().trim();
+                            var groupContact = $(elementTr).find("td.group-contact").text().trim();
 
-                            if (fullName !== elementData.FullName &&
-                                phoneNumber !== elementData.PhoneNumber &&
-                                (elementData.GroupNames && elementData.GroupNames.includes(groupContact))) {
-                                $td.remove();
+                            if ((elementData.FullName && fullName !== elementData.FullName) ||
+                                (elementData.PhoneNumber && phoneNumber !== elementData.PhoneNumber) ||
+                                (elementData.GroupNames && !elementData.GroupNames.includes(groupContact))) {
+                                $(elementTr).remove();
                             }
                         });
                     });
