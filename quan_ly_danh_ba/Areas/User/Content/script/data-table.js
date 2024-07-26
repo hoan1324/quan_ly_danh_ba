@@ -1,4 +1,19 @@
-﻿$(function () {
+﻿function printGroup(groupData, maxGroupsToShow) {
+    let output = ``;
+    groupData.forEach((element, index) => {
+        if (index >= maxGroupsToShow) {
+            output += `...`;
+            return false; // Exit the loop
+        }
+        if (index > 0) {
+            output += `, `; // Add comma separator for groups
+        }
+        output += `${element}`;
+    });
+    return output;
+}
+}
+$(function () {
     $('.delete-item').on('click', function () {
         const itemid = $(this).data('id');
         $('#confirmdeletebtn').attr('href', `/user/contact/delete?id=${itemid}`); // cập nhật link với id
@@ -24,26 +39,22 @@
                 dataType: 'json',
                 data: dataJson,
                 success: function (response) {
+                    $("tr:not(.title-table").remove();
+                    let j = 0;
                     $(response).each(function (index, elementData) {
-                        var fullName = elementData.FullName ? elementData.FullName.toLowerCase() : null;
-                        var phoneNumber = elementData.PhoneNumber ? elementData.PhoneNumber.toLowerCase() : null;
-                        var groupNames = elementData.GroupNames ? elementData.GroupNames.map(name => name.toLowerCase()) : [];
+                        var tr = `
+                       <tr>
+     <td class="text-start fs-6 p-2 border text-center">${++j}</td>
+     <td class="text-start fs-6 p-2 border full-name">${elementData.FullName}</td>
+     <td class="text-start fs-6 p-2 border phone-number">${elementData.PhoneNumber}</td>
+     <td class="text-start fs-6 p-2 border">${elementData.Address ? elementData.Address : "Không có dữ liệu"}</td>
+     <td class="text-start fs-6 p-2 border">${elementData.Email ? elementData.Email : "Không có dữ liệu"}</td>
+     <td class="text-start fs-6 p-2 border group-contact">${printGroup(elementData.GroupNames, 3)}</td>
+                        </tr>`
+                        $("tr.title-table").after(tr);
 
-                        $("tr:not(.title-table)").each(function (index, elementTr) {
-                            var trFullName = $(elementTr).find("td.full-name").text().trim().toLowerCase();
-                            var trPhoneNumber = $(elementTr).find("td.phone-number").text().trim().toLowerCase();
-                            var trGroupContact = $(elementTr).find("td.group-contact").text().trim().toLowerCase();
-
-                            var matchFullName = fullName ? trFullName === fullName : true;
-                            var matchPhoneNumber = phoneNumber ? trPhoneNumber === phoneNumber : true;
-                            var matchGroupContact = groupNames.length > 0 ? groupNames.includes(trGroupContact) : true;
-
-                            if (matchFullName && matchPhoneNumber && matchGroupContact) {
-                                $(elementTr).addClass("search-done");
-                            }
-                        });
                     });
-                    $("tr:not(.title-table,search-done)").remove();
+
                 },
             });
         }
