@@ -52,7 +52,7 @@ $(function () {
      <td class="text-start fs-6 p-2 border group-contact">${printGroup(elementData.GroupNames, 3)}</td>
       <td class=" border function-data">
                         <div class="d-flex justify-content-center align-items-center flex-wrap">
-                            <span class=" mx-1 rounded-circle" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Chi tiết"><a class="link-info" href="User/Contact/Detail?id=${elementData.ContactID}"><i class="fa-solid fa-circle-info"></i></a></span>
+                            <span class=" mx-1 rounded-circle" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Chi tiết"><a class="link-info" href="user/contact/Detail?id=${elementData.ContactID}"><i class="fa-solid fa-circle-info"></i></a></span>
                             <span class=" mx-1 rounded-circle" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Sửa "><a class="link-warning" href="User/Contact/Edit?id=${elementData.ContactID}"><i class="fa-solid fa-wrench"></i></a></span>
                             <span class=" mx-1 rounded-circle" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Xóa"><a data-bs-toggle="modal" data-bs-target="#exampleModal" class="link-danger delete-item" data-id="${elementData.ContactID}"><i class="fa-solid fa-circle-xmark"></i></a></span>
                         </div>
