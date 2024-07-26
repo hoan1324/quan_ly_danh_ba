@@ -51,8 +51,13 @@ $(function () {
      <td class="text-start fs-6 p-2 border">${elementData.Email ? elementData.Email : "Không có dữ liệu"}</td>
      <td class="text-start fs-6 p-2 border group-contact">${printGroup(elementData.GroupNames, 3)}</td>
                         </tr>`
-                        
-                            $("(tr:last").after(tr);
+
+                        if (index == 0) {
+                            $("tr.title-table").after(tr)
+                        }
+                        else {
+                            $("tr:last").after(tr);
+                        }
                         
 
                     });
