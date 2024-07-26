@@ -7,23 +7,23 @@ using System.Web;
 
 namespace quan_ly_danh_ba.Respository.Implements
 {
-    public class ContactRespository : Quan_ly_danh_baEntity, IContactRespository
+    public class ContactRespository :  IContactRespository
     {
         public Contact Delete(Contact contact)
         {
-            var position = db.Contacts.FirstOrDefault(item => item.ContactID == contact.ContactID);
+            var position = Quan_ly_danh_baEntity.db.Contacts.FirstOrDefault(item => item.ContactID == contact.ContactID);
             if (position != null)
             {
-                db.Contacts.Remove(position);
-                db.SaveChanges();
+                Quan_ly_danh_baEntity.db.Contacts.Remove(position);
+                Quan_ly_danh_baEntity.db.SaveChanges();
                 return position;
             }
             return null;
         }
 
-        public Contact FindById(Guid id)
+       public Contact FindById(Guid id)
         {
-            var contact = db.Contacts.FirstOrDefault(item => item.ContactID == id);
+            var contact = Quan_ly_danh_baEntity.db.Contacts.FirstOrDefault(item => item.ContactID == id);
             if (contact == null)
             {
                 return null;
@@ -33,11 +33,11 @@ namespace quan_ly_danh_ba.Respository.Implements
 
         public Contact Insert(Contact contact)
         {
-            var position = db.Contacts.FirstOrDefault(item => item.ContactID == contact.ContactID);
+            var position = Quan_ly_danh_baEntity.db.Contacts.FirstOrDefault(item => item.ContactID == contact.ContactID);
             if (position == null)
             {
-                db.Contacts.Add(contact);
-                db.SaveChanges();
+                Quan_ly_danh_baEntity.db.Contacts.Add(contact);
+                Quan_ly_danh_baEntity.db.SaveChanges();
                 return contact;
             }
             return null;
@@ -45,7 +45,7 @@ namespace quan_ly_danh_ba.Respository.Implements
 
         public List<Contact> ListContact()
         {
-            return db.Contacts.ToList();
+            return Quan_ly_danh_baEntity.db.Contacts.ToList();
         }
 
         public List<Contact> ListContactSearch(List<Contact> search )
@@ -55,7 +55,7 @@ namespace quan_ly_danh_ba.Respository.Implements
 
         public Contact Update(Contact contact)
         {
-            var position = db.Contacts.FirstOrDefault(item => item.ContactID == contact.ContactID);
+            var position = Quan_ly_danh_baEntity.db.Contacts.FirstOrDefault(item => item.ContactID == contact.ContactID);
            if(position != null)
             {
                 position.FullName = position.FullName;
@@ -63,7 +63,7 @@ namespace quan_ly_danh_ba.Respository.Implements
                 position.Address = contact.Address;
                 position.Email = contact.Email;
 
-                db.SaveChanges();
+                Quan_ly_danh_baEntity.db.SaveChanges();
                 return position;
             }
            return null;

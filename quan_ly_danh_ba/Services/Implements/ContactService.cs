@@ -10,7 +10,7 @@ using System.Web;
 
 namespace quan_ly_danh_ba.Services.Implements
 {
-    public class ContactService : Quan_ly_danh_baEntity, IContactService
+    public class ContactService : IContactService
     {
         private readonly IContactRespository _contactRepo;
         private readonly IGroupContactService _groupContactService;
@@ -131,34 +131,42 @@ namespace quan_ly_danh_ba.Services.Implements
                                              .ToList();
 
                     // Lấy danh sách các giá trị cần loại bỏ, những giá trị này đã tồn tại trong db.GroupContacts
-                    var valuesToRemove = db.GroupContacts.Select(g => g.GroupName)
-                                         .Except(newGroupContactName, StringComparer.OrdinalIgnoreCase)
-                                         .ToList();
-
+                    var valuesToRemove = newGroupContactName.Where(item => _groupContactService.ListGroupContact().Any(gItem => string.Equals(gItem.GroupName, item, StringComparison.OrdinalIgnoreCase))).ToList();
+                                         
+                    if (contactCreateDto.GroupNames == null)
+                    {
+                        contactCreateDto.GroupNames = new List<string>() ;
+                    }
                     // Lọc những giá trị từ valuesToRemove mà không tồn tại trong groupContactName
-                    var valuesAdd = valuesToRemove
-                                    .Where(item => !contactCreateDto.GroupNames.Any(gItem => string.Equals(gItem, item, StringComparison.OrdinalIgnoreCase)))
+                    var valuesAdd = valuesToRemove?
+                                    .Where(item => contactCreateDto.GroupNames?.Any(gItem => string.Equals(gItem, item, StringComparison.OrdinalIgnoreCase))==false)
                                     .ToList();
 
                     // Xóa các giá trị cần loại bỏ khỏi newGroupContactName
                     newGroupContactName.RemoveAll(item => valuesToRemove.Contains(item, StringComparer.OrdinalIgnoreCase));
 
                     // Thêm các giá trị từ valuesAdd vào groupContactName
-                    contactCreateDto.GroupNames.AddRange(valuesAdd);
+                    
+                        contactCreateDto.GroupNames.AddRange(valuesAdd);
 
+                    
 
 
                     foreach (var item in newGroupContactName)
                     {
-                        GroupContact newGroupContact = new GroupContact
+                        var existingContact = _groupContactService.GetById(item.Id);
+                        if (existingContact == null)
                         {
-                            GroupContactID = Guid.NewGuid(),
-                            GroupName = char.ToUpper(item[0]) + item.Substring(1)
-                        };
+                            var newGroupContact = _groupContactService.Insert(item);
+                            var transform = _mapper.Map<GroupContact>(newGroupContact);
+                            if (transform != null)
+                            {
+                                _connect.AddGroupContact(oldContact, transform);
+                                _connect.AddContact(transform, oldContact);
+                                _connect.ConnectSave();
+                            }
+                        }
 
-                        oldContact.GroupContacts.Add(newGroupContact);
-                        newGroupContact.Contacts.Add(oldContact);
-                        db.GroupContacts.Add(newGroupContact);
                     }
 
                 }
@@ -172,7 +180,7 @@ namespace quan_ly_danh_ba.Services.Implements
                 }
                 foreach (var groupName in contactCreateDto.GroupNames)
                 {
-                    var groupContact = db.GroupContacts.FirstOrDefault(gc => gc.GroupName.Equals(groupName, StringComparison.OrdinalIgnoreCase));
+                    var groupContact = Quan_ly_danh_baEntity.db.GroupContacts.FirstOrDefault(gc => gc.GroupName.Equals(groupName, StringComparison.OrdinalIgnoreCase));
                     if (groupContact != null && !oldContact.GroupContacts.Contains(groupContact))
                     {
                         _connect.AddContact(groupContact, oldContact);
@@ -180,7 +188,7 @@ namespace quan_ly_danh_ba.Services.Implements
                     }
 
                 }
-               _connect.ConnectSave(db);
+               _connect.ConnectSave();
               
                 return _mapper.Map<ContactCreateDto>(oldContact);
             }

@@ -15,7 +15,7 @@ namespace quan_ly_danh_ba.Respository.Interfaces
         Contact RemoveGroupContact(Contact contact, GroupContact groupContact);
         List<Contact> GetAllContacts(GroupContact groupContact);
         List<GroupContact> GetAllGroups(Contact contact);
-        void ConnectSave(quan_ly_danh_baEntity db);
+        void ConnectSave();
 
 
     }

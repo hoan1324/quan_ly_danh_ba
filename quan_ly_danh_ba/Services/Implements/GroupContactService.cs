@@ -10,7 +10,7 @@ using System.Web;
 
 namespace quan_ly_danh_ba.Services.Implements
 {
-    public class GroupContactService : Quan_ly_danh_baEntity, IGroupContactService
+    public class GroupContactService :  IGroupContactService
     {
         private readonly IGroupContactRespository _groupContactRepo;
         private readonly IMapper _mapper;

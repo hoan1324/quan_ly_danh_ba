@@ -21,9 +21,9 @@ namespace quan_ly_danh_ba.Respository.Implements
             return contact;
         }
 
-        public void ConnectSave(quan_ly_danh_baEntity db)
+        public void ConnectSave()
         {
-            db.SaveChanges();
+            Quan_ly_danh_baEntity.db.SaveChanges();
         }
 
         public List<Contact> GetAllContacts(GroupContact groupContact)
