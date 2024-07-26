@@ -23,6 +23,9 @@ jQuery('#form-create').validate({
                 checkboxes: 'input[name="GroupNames"]',
                 input: 'input[name="newGroupName"]'
             }
+        },
+        Email: {
+            email: true
         }
     },
     messages: {
@@ -31,6 +34,9 @@ jQuery('#form-create').validate({
             required: "Vui lòng nhập số điện thoại",
             digits: "Vui lòng nhập định dạng là số",
             minlength: "Số tối thiểu có 10 chữ số"
+        },
+        Email: {
+            email: "Vui lòng nhập đúng định dạng email"
         }
     },
     errorPlacement: function (error, element) {

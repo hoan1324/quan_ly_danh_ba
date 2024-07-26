@@ -33,15 +33,34 @@ return null;
 
         public GroupContact Insert(GroupContact groupContact)
         {
-            var position = Quan_ly_danh_baEntity.db.GroupContacts.FirstOrDefault(item => item.GroupContactID == groupContact.GroupContactID);
-            if (position == null)
+            using (var transaction = Quan_ly_danh_baEntity.db.Database.BeginTransaction())
             {
-                Quan_ly_danh_baEntity.db.GroupContacts.Add(groupContact);
-                Quan_ly_danh_baEntity.db.SaveChanges();
-                return groupContact;
+                try
+                {
+                    var position = Quan_ly_danh_baEntity.db.GroupContacts
+                        .FirstOrDefault(item => item.GroupContactID == groupContact.GroupContactID);
+                    if (position == null)
+                    {
+                        Quan_ly_danh_baEntity.db.GroupContacts.Add(groupContact);
+                        Quan_ly_danh_baEntity.db.SaveChanges();
+                        transaction.Commit();
+                        return groupContact;
+                    }
+                    else
+                    {
+                        transaction.Rollback();
+                        // Thêm xử lý khi nhóm liên hệ đã tồn tại
+                    }
+                }
+                catch (Exception ex)
+                {
+                    transaction.Rollback();
+                    // Bắt và xử lý ngoại lệ
+                    Console.WriteLine("An error occurred: " + ex.Message);
+                }
             }
             return null;
-            
+
         }
 
         public List<GroupContact> ListGroupContact()

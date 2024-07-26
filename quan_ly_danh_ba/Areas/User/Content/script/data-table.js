@@ -25,18 +25,25 @@
                 data: dataJson,
                 success: function (response) {
                     $(response).each(function (index, elementData) {
-                        $("tr:not(.title-table)").each(function (index, elementTr) {
-                            var fullName = $(elementTr).find("td.full-name").text().trim();
-                            var phoneNumber = $(elementTr).find("td.phone-number").text().trim();
-                            var groupContact = $(elementTr).find("td.group-contact").text().trim();
+                        var fullName = elementData.FullName ? elementData.FullName.toLowerCase() : null;
+                        var phoneNumber = elementData.PhoneNumber ? elementData.PhoneNumber.toLowerCase() : null;
+                        var groupNames = elementData.GroupNames ? elementData.GroupNames.map(name => name.toLowerCase()) : [];
 
-                            if ((elementData.FullName && fullName !== elementData.FullName) ||
-                                (elementData.PhoneNumber && phoneNumber !== elementData.PhoneNumber) ||
-                                (elementData.GroupNames && !elementData.GroupNames.includes(groupContact))) {
-                                $(elementTr).remove();
+                        $("tr:not(.title-table)").each(function (index, elementTr) {
+                            var trFullName = $(elementTr).find("td.full-name").text().trim().toLowerCase();
+                            var trPhoneNumber = $(elementTr).find("td.phone-number").text().trim().toLowerCase();
+                            var trGroupContact = $(elementTr).find("td.group-contact").text().trim().toLowerCase();
+
+                            var matchFullName = fullName ? trFullName === fullName : true;
+                            var matchPhoneNumber = phoneNumber ? trPhoneNumber === phoneNumber : true;
+                            var matchGroupContact = groupNames.length > 0 ? groupNames.includes(trGroupContact) : true;
+
+                            if (matchFullName && matchPhoneNumber && matchGroupContact) {
+                                $(elementTr).addClass("search-done");
                             }
                         });
                     });
+                    $("tr:not(.title-table,search-done)").remove();
                 },
             });
         }

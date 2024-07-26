@@ -27,13 +27,16 @@ namespace quan_ly_danh_ba.Services.Implements
 
         public GroupContactDto Insert(string groupName)
         {
-            var position=_groupContactRepo.FindByName(groupName);
-            if (position == null) {
-               var newGroupContactDto= new GroupContactDto{
-                   GroupContactID=Guid.NewGuid(),
-                   GroupName=groupName.Substring(0, 1).ToUpper() + groupName.Substring(1, groupName.Length - 1)
-               };
-               var done= _groupContactRepo.Insert(_mapper.Map<GroupContact>(newGroupContactDto));
+
+            var position = _groupContactRepo.FindByName(groupName);
+            if (position == null)
+            {
+                var newGroupContactDto = new GroupContactDto
+                {
+                    GroupContactID = Guid.NewGuid(),
+                    GroupName = groupName.Substring(0, 1).ToUpper() + groupName.Substring(1, groupName.Length - 1)
+                };
+                var done = _groupContactRepo.Insert(_mapper.Map<GroupContact>(newGroupContactDto));
                 return _mapper.Map<GroupContactDto>(done);
             }
             return null;
