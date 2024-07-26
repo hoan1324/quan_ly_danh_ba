@@ -12,7 +12,7 @@
     });
     return output;
 }
-}
+
 $(function () {
     $('.delete-item').on('click', function () {
         const itemid = $(this).data('id');
@@ -51,7 +51,9 @@ $(function () {
      <td class="text-start fs-6 p-2 border">${elementData.Email ? elementData.Email : "Không có dữ liệu"}</td>
      <td class="text-start fs-6 p-2 border group-contact">${printGroup(elementData.GroupNames, 3)}</td>
                         </tr>`
-                        $("tr.title-table").after(tr);
+                        
+                            $("(tr:last").after(tr);
+                        
 
                     });
 
