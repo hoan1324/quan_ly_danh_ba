@@ -14,16 +14,17 @@
 }
 
 $(function () {
-    $('.delete-item').on('click', function () {
+    $(".temp-alert").fadeIn();
+
+    setTimeout(function () {
+        $('.temp-alert').fadeOut();
+    }, 3000);
+    $(document).on('click', '.delete-item', function () {
         const itemid = $(this).data('id');
         $('#confirmdeletebtn').attr('href', `/user/contact/delete?id=${itemid}`); // cập nhật link với id
     });
 
-    $(".temp-alert").fadeIn();
-    var clearTime = setTimeout(function () {
-        $('.temp-alert').fadeOut();
-    }, 3000);
-    clearTimeout(clearTime);
+    
 
     $(document).on('keydown', '.form-control', function (e) {
         if (e.key == 'Enter') {
@@ -52,8 +53,8 @@ $(function () {
      <td class="text-start fs-6 p-2 border group-contact">${printGroup(elementData.GroupNames, 3)}</td>
       <td class=" border function-data">
                         <div class="d-flex justify-content-center align-items-center flex-wrap">
-                            <span class=" mx-1 rounded-circle" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Chi tiết"><a class="link-info" href="user/contact/Detail?id=${elementData.ContactID}"><i class="fa-solid fa-circle-info"></i></a></span>
-                            <span class=" mx-1 rounded-circle" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Sửa "><a class="link-warning" href="User/Contact/Edit?id=${elementData.ContactID}"><i class="fa-solid fa-wrench"></i></a></span>
+                            <span class=" mx-1 rounded-circle" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Chi tiết"><a class="link-info" href="/user/contact/Detail?id=${elementData.ContactID}"><i class="fa-solid fa-circle-info"></i></a></span>
+                            <span class=" mx-1 rounded-circle" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Sửa "><a class="link-warning" href="/User/Contact/Edit?id=${elementData.ContactID}"><i class="fa-solid fa-wrench"></i></a></span>
                             <span class=" mx-1 rounded-circle" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Xóa"><a data-bs-toggle="modal" data-bs-target="#exampleModal" class="link-danger delete-item" data-id="${elementData.ContactID}"><i class="fa-solid fa-circle-xmark"></i></a></span>
                         </div>
                     </td>

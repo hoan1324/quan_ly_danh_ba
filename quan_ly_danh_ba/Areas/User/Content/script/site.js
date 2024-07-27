@@ -34,6 +34,11 @@
             $(".left-navbar").addClass("hidden-left-navbar");
         }
     });
+    $(".icon-close").on('click', function () {
+
+        $(".left-navbar").addClass("hidden-left-navbar");
+
+    });
 
     $(".PagedList-skipToNext").text("Next").on("click", function () {
         var numberActive = parseInt($(".pagination-container ul.pagination li.active a").text());

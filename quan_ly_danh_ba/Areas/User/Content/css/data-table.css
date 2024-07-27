@@ -3,7 +3,19 @@
     background-color: #729e49;
     transition: background-color .4s
 }
- 
+
+.data-table-parent::-webkit-scrollbar {
+    height: 3px;
+}
+
+.data-table-parent::-webkit-scrollbar-thumb {
+    background-color: #c8d9b9;
+    border-radius: 10px;
+    border: 1px solid #aaeb70;
+    cursor: pointer;
+}
+
+
 .title-table {
     background-color: #c8d9b9 !important;
 }

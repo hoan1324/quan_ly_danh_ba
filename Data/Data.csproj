@@ -83,8 +83,6 @@
     <Compile Include="Entity\sysdiagram.cs">
       <DependentUpon>ModelContact.tt</DependentUpon>
     </Compile>
-    <Compile Include="mapdata\contactData\mapContact.cs" />
-    <Compile Include="mapdata\contactData\mapGroupContact.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

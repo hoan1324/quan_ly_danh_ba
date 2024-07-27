@@ -1,6 +1,5 @@
 ﻿using Data.Entity;
-using Data.mapdata.contactData;
-using Data.mapdata.ContactData;
+
 using Dtos;
 using Newtonsoft.Json;
 using PagedList;
@@ -55,8 +54,9 @@ namespace quan_ly_danh_ba.Areas.User.Controllers
 				return RedirectToAction("Index");
             }
 			TempData["SuccessError"] = "Tạo mới thất bại!";
-			return View(new MapGroupContact().ListGroupContacts().ToList());
+			return View(_groupContactService.ListGroupContact());
         }
+       
         public ActionResult Edit(Guid id) {
             if (id == null)
             {

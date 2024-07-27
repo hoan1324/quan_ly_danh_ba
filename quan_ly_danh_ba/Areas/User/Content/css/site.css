@@ -44,6 +44,7 @@ body {
         background-color: #c8d9b9;
         border-radius: 10px;
         border: 1px solid #aaeb70;
+        cursor:pointer;
     }
 
     .left-navbar a {
