@@ -141,6 +141,7 @@
     <Content Include="Content\lib\Scripts\jquery-3.7.1.min.js" />
     <Content Include="Content\lib\Scripts\jquery.validate.min.js" />
     <Content Include="Content\lib\css\PagedList.css" />
+    <Content Include="Content\css\site.css" />
     <Content Include="Global.asax" />
     <Content Include="Web.config" />
   </ItemGroup>
@@ -154,6 +155,7 @@
     <Compile Include="Areas\User\Controllers\HomeController.cs" />
     <Compile Include="Areas\User\UserAreaRegistration.cs" />
     <Compile Include="Configuration\MappingProfile.cs" />
+    <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Dtos\ContactCreateDto.cs" />
     <Compile Include="Dtos\GroupContactDto.cs" />
     <Compile Include="Global.asax.cs">
@@ -194,6 +196,7 @@
     <Content Include="Areas\User\Views\Contact\Detail.cshtml" />
     <Content Include="Areas\User\Views\GroupContact\Index.cshtml" />
     <None Include="packages.config" />
+    <Content Include="Views\Shared\_Layout.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -203,9 +206,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Areas\User\Data\" />
-    <Folder Include="Content\css\" />
     <Folder Include="Content\Scripts\" />
-    <Folder Include="Controllers\" />
     <Folder Include="Models\" />
   </ItemGroup>
   <ItemGroup>

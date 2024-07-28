@@ -1,0 +1,42 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title</title>
+    <link href="~/Conten/lib/fontAwesome/fontawesome.min.css" rel="stylesheet" type="text/css" />
+    <link href="~/Content/lib/fontAwesome/all.min.css" rel="stylesheet" type="text/css" />
+    <link href="~/Content/lib/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
+    <link href="~/Content/css/site.css" rel="stylesheet" type="text/css" />
+    @RenderSection("linkCss", required: false)
+</head>
+<body>
+    <div class="content">
+        <div class="header shadow-sm">
+            <div class="navbar">
+                <nav class="navbar bg-body-tertiary container">
+                    <div>
+                        <a class="navbar-brand">
+                            <img src="~/Content/img/logo.png" alt="Logo" width="30" height="24" class="d-inline-block align-text-top">
+                           NVH
+                        </a>
+                        <div class="btn-login">
+                            <span class="sign-in">Đăng nhập</span>
+                            <span class="sign-up">Tạo tài khoản</span>
+                        </div>
+                    </div>
+                </nav>
+            </div>
+        </div>
+        <div class="body-content container">
+            @RenderBody()
+        </div>
+
+    </div>
+    <script src="~/Content/lib/Scripts/jquery-3.7.1.min.js"></script>
+    <script src="~/Content/lib/Scripts/bootstrap.bundle.min.js"></script>
+    <script src="~/Content/lib/Scripts/jquery.validate.min.js"></script>
+    <script src="~/Content/Scripts/site.js"></script>
+    @RenderSection("Scripts", required: false)
+</body>
+</html>
