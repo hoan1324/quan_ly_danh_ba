@@ -14,15 +14,15 @@
 <div class="danhsach mt-4">
     <h1>QUẢN LÝ CÁC NHÓM LIÊN LẠC</h1>
     <div class="text-end create-data d-flex justify-content-end flex-wrap align-items-center">
-        <span class="btn btn-success me-3 my-3 " disabled><a data-id="" data-bs-toggle="modal" data-bs-target="#exampleModal" class="text-light fs-5" href="~/User/Contact/Create">Thêm mới</a></span>
+        <span class="btn btn-success me-3 my-3 delete-group disabled " disabled><a data-id="" data-bs-toggle="modal" data-bs-target="#exampleModal" class="text-light fs-5" href="~/User/Contact/Create">Thêm mới</a></span>
     </div>
-    <div class="data-groupContact">
+    <div class="data-groupContact d-flex flex-wrap">
 
         @if (Model != null)
         {
             foreach (var item in Model)
             {
-                <div class="form-check mx-4">
+                <div class="form-check mx-4 my-2">
                     <input class="form-check-input check-input" type="checkbox" value="@item.GroupName" name="GroupNames" id="@item.GroupName">
                     <label class="form-check-label check-input" for="@item.GroupName">
                         @item.GroupName

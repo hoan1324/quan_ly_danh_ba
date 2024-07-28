@@ -12,15 +12,16 @@ namespace quan_ly_danh_ba.Areas.User.Controllers
     {
         private readonly IGroupContactService _groupContactService;
 
-        public GroupContactController( IGroupContactService groupContactService)
+        public GroupContactController(IGroupContactService groupContactService)
         {
-            
+
             _groupContactService = groupContactService;
         }
         // GET: User/GroupContact
         public ActionResult Index()
         {
-           return View(_groupContactService.ListGroupContact());
+            return View(_groupContactService.ListGroupContact());
         }
-        
+
+    }
 }
