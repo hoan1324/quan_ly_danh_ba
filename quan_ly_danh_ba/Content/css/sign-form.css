@@ -1,11 +1,22 @@
-﻿.body-content{
-height:100vh;
+﻿.body-content {
+    height: 100vh;
+    background-position: center;
+    background-repeat: repeat;
+    background-attachment: fixed;
+    background-size: cover;
+    background-image: linear-gradient(359deg, #6be585b5, #dd3e548c), url(https://png.pngtree.com/background/20230525/original/pngtree-images-of-people-sharing-to-connect-with-one-another-picture-image_2725814.jpg);
 }
+
 .body-form{
     max-width:500px;
+    max-height:75vh;
+}
+.different-solution{
+    cursor:pointer;
 }
 .logo img {
-    max-width: 40px
+    max-width: 40px;
+    cursor:pointer;
 }
 
 .form-check-input:checked {

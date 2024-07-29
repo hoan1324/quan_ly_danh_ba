@@ -144,6 +144,7 @@
     <Content Include="Content\lib\Scripts\jquery.validate.min.js" />
     <Content Include="Content\lib\css\PagedList.css" />
     <Content Include="Content\css\site.css" />
+    <Content Include="Content\Scripts\sign-in.js" />
     <Content Include="Global.asax" />
     <Content Include="Web.config" />
   </ItemGroup>
@@ -211,7 +212,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Areas\User\Data\" />
-    <Folder Include="Content\Scripts\" />
     <Folder Include="Models\" />
   </ItemGroup>
   <ItemGroup>
