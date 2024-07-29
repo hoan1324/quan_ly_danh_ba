@@ -1,0 +1,25 @@
+﻿.body-content{
+height:100vh;
+}
+.body-form{
+    max-width:500px;
+}
+.logo img {
+    max-width: 40px
+}
+
+.form-check-input:checked {
+    background-color: #c8d9b9 !important;
+    border-color: #99b97c !important;
+}
+
+.form-check-input:focus {
+    border-color: #729e49 !important;
+    outline: 0;
+    box-shadow: 0 0 0 .25rem #c5d4b8d4;
+}
+
+.form-control:focus {
+    box-shadow: 0 0 0 .25rem #c5d4b8d4;
+    border-color: #99b97c !important;
+}

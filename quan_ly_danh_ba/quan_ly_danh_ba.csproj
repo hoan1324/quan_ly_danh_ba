@@ -132,6 +132,8 @@
     <Content Include="Areas\User\Content\script\create.js" />
     <Content Include="Areas\User\Content\script\data-table.js" />
     <Content Include="Areas\User\Content\script\site.js" />
+    <Content Include="Content\css\sign-form.css" />
+    <Content Include="Content\img\home-img.jpg" />
     <Content Include="Content\lib\css\bootstrap.min.css" />
     <Content Include="Content\lib\fontAwesome\all.min.css" />
     <Content Include="Areas\User\Content\css\site.css" />
@@ -156,6 +158,7 @@
     <Compile Include="Areas\User\UserAreaRegistration.cs" />
     <Compile Include="Configuration\MappingProfile.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\LoginController.cs" />
     <Compile Include="Dtos\ContactCreateDto.cs" />
     <Compile Include="Dtos\GroupContactDto.cs" />
     <Compile Include="Global.asax.cs">
@@ -198,6 +201,7 @@
     <None Include="packages.config" />
     <Content Include="Views\Shared\_Layout.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
+    <Content Include="Views\Login\SignIn.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

@@ -1,8 +1,68 @@
 ﻿
 @{
-    ViewBag.Title = "Index";
+    ViewBag.Title = "Trang chủ";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h2>Index</h2>
+<div class="container">
+    <div class=" px-4 py-5">
+        <div class="row flex-lg-row-reverse align-items-center g-5 py-5">
+            <div class=" col-lg-6">
+                <img src="~/Content/img/home-img.jpg" class="d-block mx-lg-auto img-fluid" alt="Bootstrap Themes" width="700" height="500" loading="lazy">
+            </div>
+            <div class="col-lg-6">
+                <h1 class="display-5 fw-bold text-body-emphasis lh-1 mb-3">Quản lý Danh bạ</h1>
+                <p class="lead">
+                    Nhanh chóng thiết kế và tùy chỉnh hệ thống quản lý danh bạ với bộ công cụ giao diện đẹp mắt, giúp bạn quản lý danh bạ một cách hiệu quả và tiện lợi.
+                    Dễ dàng lưu trữ, tìm kiếm và quản lý thông tin liên lạc của bạn với giao diện trực quan và các tính năng mạnh mẽ. Hãy để việc quản lý danh bạ trở nên dễ dàng và thú vị hơn bao giờ hết.
+                </p>
+                <div class="d-grid gap-2 d-md-flex justify-content-md-start">
+                    <button type="button" class="btn btn-success btn-lg px-4 me-sm-3">Tạo tài khoản</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="px-4 py-5" id="icon-grid">
+        <h2 class="pb-2 border-bottom">Chức năng nổi bật</h2>
 
+        <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3  g-4 py-5">
+            <div class="col d-flex align-items-baseline">
+                <i class="fa-solid fa-address-book"></i>
+                <div>
+                    <h3 class="fw-bold mb-0 fs-4 text-body-emphasis ms-1">Lưu trữ thông tin</h3>
+                    <p>Quản lý và lưu trữ thông tin liên lạc của bạn một cách an toàn và có tổ chức.</p>
+                </div>
+            </div>
+            <div class="col d-flex align-items-baseline">
+                <i class="fa-solid fa-magnifying-glass"></i>
+                <div>
+                    <h3 class="fw-bold mb-0 fs-4 text-body-emphasis  ms-1">Tìm kiếm nhanh chóng</h3>
+                    <p>Dễ dàng tìm kiếm và truy xuất thông tin liên lạc khi cần thiết.</p>
+                </div>
+            </div>
+            <div class="col d-flex align-items-baseline">
+                <i class="fa-regular fa-calendar"></i>
+                <div>
+                    <h3 class="fw-bold mb-0 fs-4 text-body-emphasis  ms-1">Quản lý sự kiện</h3>
+                    <p>Tạo và quản lý các sự kiện liên quan đến danh bạ của bạn.</p>
+                </div>
+            </div>
+            <div class="col d-flex align-items-baseline">
+                <i class="fa-solid fa-envelope"></i>
+                <div>
+                    <h3 class="fw-bold mb-0 fs-4 text-body-emphasis  ms-1">Gửi tin nhắn</h3>
+                    <p>Dễ dàng gửi tin nhắn hoặc email tới các liên hệ trong danh bạ.</p>
+                </div>
+            </div>
+            <div class="col d-flex align-items-baseline">
+                <i class="fa-solid fa-gear"></i>
+                <div>
+                    <h3 class="fw-bold mb-0 fs-4 text-body-emphasis  ms-1">Tùy chỉnh danh bạ</h3>
+                    <p>Tùy chỉnh và sắp xếp danh bạ theo cách bạn muốn.</p>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+</div>

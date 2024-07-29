@@ -12,7 +12,7 @@
 </head>
 <body>
     <div class="content">
-        <div class="header shadow-sm">
+        <div class="fixed-top header bg-light bg-gradient shadow-sm">
             <div class="navbar">
                 <nav class="container ">
                     <div class="d-flex justify-content-between align-items-center w-100">
@@ -21,18 +21,18 @@
                             <span class="ms-1 text-body-tertiary ">NVH</span>
                         </a>
                         <div class="btn-login">
-                            <span class="sign-in btn btn-outline-success me-1">Đăng nhập</span>
-                            <span class="sign-up btn btn-success ">Tạo tài khoản</span>
+                            <span class="sign-in btn btn-outline-success me-1 ">Đăng nhập</span>
+                            <span class="sign-up btn btn-success d-none d-sm-inline-block ">Tạo tài khoản</span>
                         </div>
                     </div>
                 </nav>
             </div>
         </div>
-        <div class="body-content container">
+        <div class="body-content ">
             @RenderBody()
         </div>
-        <footer class="shadow">
-            <div class="d-flex flex-wrap justify-content-between align-items-center py-3 my-4  container">
+        <footer class="shadow bg-light bg-gradient">
+            <div class="d-flex flex-wrap justify-content-between align-items-center py-3 mt-4  container">
                 <div class="col-md-4 d-flex align-items-center">
                     <a href="/" class="mb-3 me-2 mb-md-0 text-body-secondary text-decoration-none lh-1">
                         <img src="~/Content/img/logo.png" alt="Logo" class="logo">
@@ -41,9 +41,9 @@
                 </div>
 
                 <ul class="nav col-md-4 justify-content-end list-unstyled d-flex">
-                    <li class="ms-3"><a class="text-body-secondary" href="#"><i class="fa-brands fa-tiktok"></i></a></li>
-                    <li class="ms-3"><a class="text-body-secondary" href="#"><i class="fa-brands fa-instagram"></i></a></li>
-                    <li class="ms-3"><a class="text-body-secondary" href="#"><i class="fa-brands fa-facebook"></i></a></li>
+                    <li class="ms-3"><a class="text-body-secondary link-light btn btn-outline-success rounded-circle" href="#"><i class="fa-brands fa-tiktok"></i></a></li>
+                    <li class="ms-3"><a class="text-body-secondary link-light btn btn-outline-success rounded-circle" href="#"><i class="fa-brands fa-instagram"></i></a></li>
+                    <li class="ms-3"><a class="text-body-secondary link-light btn btn-outline-success rounded-circle" href="#"><i class="fa-brands fa-facebook"></i></a></li>
                 </ul>
             </div>
         </footer>
