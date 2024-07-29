@@ -16,7 +16,9 @@ namespace quan_ly_danh_ba
             routes.MapRoute(
                 name: "Default",
                 url: "{controller}/{action}/{id}",
-                defaults: new { controller = "Home", action = "Index", id = UrlParameter.Optional }
+                defaults: new { controller = "Home", action = "Index", id = UrlParameter.Optional },
+                 namespaces: new[] { "quan_ly_danh_ba.Controllers" } // Thêm dòng này
+
             );
         }
     }

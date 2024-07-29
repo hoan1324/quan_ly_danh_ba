@@ -1,2 +1,31 @@
-﻿body {
+﻿
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box
 }
+
+body {
+    font-family: 'OpenSans';
+    font-weight: 400;
+    font-size: 16px;
+    color: #414B5B;
+    line-height: 24px;
+}
+
+    body a {
+        text-decoration: none;
+        color: #414B5B;
+    }
+
+    body h1 {
+        font-weight: 700 !important;
+        font-size: 32px !important;
+        line-height: 48px !important;
+    }
+
+
+.logo{
+    max-width:25px;
+}
+
