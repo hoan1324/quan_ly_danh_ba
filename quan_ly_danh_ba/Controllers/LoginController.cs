@@ -26,7 +26,7 @@ namespace quan_ly_danh_ba.Controllers
             var done = _userService.FindByUser(user);
             if (done != null)
             {
-                SessionConfig.SaveUser(user);
+                SessionConfig.SaveUser(done);
                 return RedirectToAction("Index", "Home", new { area = "User" });
 
             }

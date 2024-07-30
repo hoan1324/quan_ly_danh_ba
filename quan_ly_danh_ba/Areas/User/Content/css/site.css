@@ -123,7 +123,8 @@ body {
 .account {
     border-right: 1px solid #80808059;
     border-left: 1px solid #80808059;
-    background-color: lightcyan;
+    background-image: linear-gradient(45deg,#c2e59c, #64b3f4);
+    max-width: 60px
 }
 
     .account img {
@@ -132,15 +133,8 @@ body {
         object-fit: cover;
     }
 
-.userName {
-    max-width: 120px;
-    font-size: .936rem !important;
-}
 
-    .userName span {
-        font-weight: 400 !important;
-        font-size: .765rem !important;
-    }
+
 
 
 .icon-close{
