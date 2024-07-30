@@ -28,5 +28,7 @@ namespace Data.Entity
         public virtual DbSet<Contact> Contacts { get; set; }
         public virtual DbSet<GroupContact> GroupContacts { get; set; }
         public virtual DbSet<sysdiagram> sysdiagrams { get; set; }
+        public virtual DbSet<Admin> Admins { get; set; }
+        public virtual DbSet<User> Users { get; set; }
     }
 }

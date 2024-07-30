@@ -1,5 +1,13 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Schema Namespace="quan_ly_danh_baModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="Admin">
+    <Key>
+      <PropertyRef Name="AdminID" />
+    </Key>
+    <Property Name="AdminID" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="UserName" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="Password" Type="varchar" MaxLength="50" Nullable="false" />
+  </EntityType>
   <EntityType Name="Contact">
     <Key>
       <PropertyRef Name="ContactID" />
@@ -35,6 +43,21 @@
     <Property Name="version" Type="int" />
     <Property Name="definition" Type="varbinary(max)" />
   </EntityType>
+  <EntityType Name="User">
+    <Key>
+      <PropertyRef Name="UserID" />
+    </Key>
+    <Property Name="UserID" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="UserName" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="Avatar" Type="image" />
+    <Property Name="Email" Type="varchar" MaxLength="500" Nullable="false" />
+    <Property Name="Password" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="PhoneNumber" Type="varchar" MaxLength="50" />
+    <Property Name="Address" Type="varchar" MaxLength="500" />
+    <Property Name="LinkFacebook" Type="varchar" MaxLength="500" />
+    <Property Name="LinkTikTok" Type="varchar" MaxLength="500" />
+    <Property Name="LinkInstagram" Type="varchar" MaxLength="500" />
+  </EntityType>
   <Association Name="FK_Group_Contact_Contact">
     <End Role="Contact" Type="Self.Contact" Multiplicity="1">
       <OnDelete Action="Cascade" />
@@ -64,10 +87,12 @@
     </ReferentialConstraint>
   </Association>
   <EntityContainer Name="quan_ly_danh_baModelStoreContainer">
+    <EntitySet Name="Admin" EntityType="Self.Admin" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Contact" EntityType="Self.Contact" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Group_Contact" EntityType="Self.Group_Contact" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="GroupContact" EntityType="Self.GroupContact" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="User" EntityType="Self.User" Schema="dbo" store:Type="Tables" />
     <AssociationSet Name="FK_Group_Contact_Contact" Association="Self.FK_Group_Contact_Contact">
       <End Role="Contact" EntitySet="Contact" />
       <End Role="Group_Contact" EntitySet="Group_Contact" />

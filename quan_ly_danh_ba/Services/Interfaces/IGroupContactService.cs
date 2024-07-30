@@ -11,5 +11,6 @@ namespace quan_ly_danh_ba.Services.Interfaces
         List<GroupContactDto> ListGroupContact();
         GroupContactDto Insert(string groupName);
         GroupContactDto FindByName(string groupName);
+        Boolean DeleteList(List<string> groupNames);
     }
 }

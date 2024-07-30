@@ -58,6 +58,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Entity\Admin.cs">
+      <DependentUpon>ModelContact.tt</DependentUpon>
+    </Compile>
     <Compile Include="Entity\Contact.cs">
       <DependentUpon>ModelContact.tt</DependentUpon>
     </Compile>
@@ -81,6 +84,9 @@
     </Compile>
     <Compile Include="Entity\Quan_ly_danh_baEntity.cs" />
     <Compile Include="Entity\sysdiagram.cs">
+      <DependentUpon>ModelContact.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entity\User.cs">
       <DependentUpon>ModelContact.tt</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />

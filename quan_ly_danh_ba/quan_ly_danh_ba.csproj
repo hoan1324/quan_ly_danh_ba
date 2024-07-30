@@ -134,6 +134,7 @@
     <Content Include="Areas\User\Content\script\site.js" />
     <Content Include="Content\css\sign-form.css" />
     <Content Include="Content\img\home-img.jpg" />
+    <Content Include="Content\img\login-img.jpg" />
     <Content Include="Content\lib\css\bootstrap.min.css" />
     <Content Include="Content\lib\fontAwesome\all.min.css" />
     <Content Include="Areas\User\Content\css\site.css" />
@@ -150,7 +151,9 @@
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="App_Start\RoleUser.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="App_Start\SessionConfig.cs" />
     <Compile Include="App_Start\UnityConfig.cs" />
     <Compile Include="App_Start\UnityMvcActivator.cs" />
     <Compile Include="Areas\User\Constant\ImageConst.cs" />
@@ -163,19 +166,24 @@
     <Compile Include="Controllers\LoginController.cs" />
     <Compile Include="Dtos\ContactCreateDto.cs" />
     <Compile Include="Dtos\GroupContactDto.cs" />
+    <Compile Include="Dtos\UserDto.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Respository\Implements\ConnectContact_GroupContactRespository.cs" />
+    <Compile Include="Respository\Implements\UserRespository.cs" />
     <Compile Include="Respository\Implements\ContactRespository.cs" />
     <Compile Include="Respository\Implements\GroupContactRespository.cs" />
     <Compile Include="Respository\Interfaces\IConnectContact_GroupContactRespository.cs" />
+    <Compile Include="Respository\Interfaces\IUserRespository.cs" />
     <Compile Include="Respository\Interfaces\IContactRespository.cs" />
     <Compile Include="Respository\Interfaces\IGroupContactRespository.cs" />
     <Compile Include="Services\Implements\ContactService.cs" />
+    <Compile Include="Services\Implements\UserService.cs" />
     <Compile Include="Services\Implements\GroupContactService.cs" />
     <Compile Include="Services\Interfaces\IContactService.cs" />
+    <Compile Include="Services\Interfaces\IUserService.cs" />
     <Compile Include="Services\Interfaces\IGroupContactService.cs" />
   </ItemGroup>
   <ItemGroup>

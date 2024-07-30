@@ -8,6 +8,8 @@
       <End Role="Contact" EntitySet="Contacts" />
       <End Role="GroupContact" EntitySet="GroupContacts" />
     </AssociationSet>
+    <EntitySet Name="Admins" EntityType="quan_ly_danh_baModel.Admin" />
+    <EntitySet Name="Users" EntityType="quan_ly_danh_baModel.User" />
   </EntityContainer>
   <EntityType Name="Contact">
     <Key>
@@ -42,4 +44,27 @@
     <End Type="quan_ly_danh_baModel.Contact" Role="Contact" Multiplicity="*" />
     <End Type="quan_ly_danh_baModel.GroupContact" Role="GroupContact" Multiplicity="*" />
   </Association>
+  <EntityType Name="Admin">
+    <Key>
+      <PropertyRef Name="AdminID" />
+    </Key>
+    <Property Name="AdminID" Type="Guid" Nullable="false" />
+    <Property Name="UserName" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Password" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="User">
+    <Key>
+      <PropertyRef Name="UserID" />
+    </Key>
+    <Property Name="UserID" Type="Guid" Nullable="false" />
+    <Property Name="UserName" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Avatar" Type="Binary" MaxLength="Max" FixedLength="false" />
+    <Property Name="Email" Type="String" Nullable="false" MaxLength="500" FixedLength="false" Unicode="false" />
+    <Property Name="Password" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="PhoneNumber" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Address" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+    <Property Name="LinkFacebook" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+    <Property Name="LinkTikTok" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+    <Property Name="LinkInstagram" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+  </EntityType>
 </Schema>

@@ -22,13 +22,13 @@
                     <img class="w-100 " src="~/Content/img/logo.png" />
                     <span class="h4 ms-2 text-white fw-bold">NVH</span>
                 </div>
-                <div class="navigtion ms-3 category ">
+                @*<div class="navigtion ms-3 category ">
                     <h4 class="fs-6 fw-bold my-3">NAVIGATION</h4>
                     <a class=" link-light active-title" href="/User/Home/Index">
                         <i class="fa-solid fa-house me-2"></i>
                         <span>Dashboard</span>
                     </a>
-                </div>
+                </div>*@
                 <div class="contact-function ms-3 category mt-3 ">
                     <h4 class="fs-6 fw-bold my-3">FUNCTION</h4>
                     <div class="function my-3">
@@ -55,17 +55,21 @@
                     </div>
                 </div>
                 <div class="dropdown-center me-4">
-                    <div class="account d-flex ps-3 px-lg-3  align-items-center dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
-                        <img class="rounded-circle me-md-3" src="~/Content/img/logo.png" alt="user-image" />
+                    <div class="account d-flex py-2 ps-3 px-lg-3  align-items-center dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+                        <img class="rounded-circle me-md-3" src="@((SessionConfig.GetUser().Avatar==null)?"/Content/img/logo.png":SessionConfig.GetUser().Avatar)" alt="user-image" />
                         <h1 class="userName lh-1 d-none d-lg-block text-break">
-                            hoan
-                            <br /> <span class="text-break">Founder</span>
+                            @SessionConfig.GetUser().UserName
                         </h1>
                     </div>
                     <ul class="dropdown-menu">
-                        <li><a class="dropdown-item" href="#">Action</a></li>
-                        <li><a class="dropdown-item" href="#">Another action</a></li>
-                        <li><a class="dropdown-item" href="#">Something else here</a></li>
+                        <li><a class="dropdown-item" href="#">
+                          <i class="fa-regular fa-circle-user"></i>
+                            My Account
+                           </a></li>
+                        <li><a class="dropdown-item" href="#">
+                                <i class="fa-solid fa-right-from-bracket"></i>
+                            Logout
+                            </a></li>
                     </ul>
                 </div>
             </div>

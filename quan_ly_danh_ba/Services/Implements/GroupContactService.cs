@@ -20,6 +20,21 @@ namespace quan_ly_danh_ba.Services.Implements
             _mapper = mapper;
         }
 
+        public Boolean DeleteList(List<string> groupNames)
+        {
+            foreach (var groupName in groupNames) {
+            var position =_groupContactRepo.FindByName(groupName);
+                if (position == null) {
+                    return false;
+                 }
+                var delete=_groupContactRepo.Delete(position);
+                if (delete == null) {
+                    return false;
+                }
+            }
+            return true;
+        }
+
         public GroupContactDto FindByName(string groupName)
         {
             return _mapper.Map<GroupContactDto>(_groupContactRepo.FindByName(groupName));

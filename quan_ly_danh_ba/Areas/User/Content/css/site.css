@@ -68,7 +68,6 @@ body {
     }
 
     .left-navbar-click .click-menu-bar {
-        position: relative;
         text-align: center;
         margin: 0 !important;
         padding: 12px 0px;
@@ -76,6 +75,7 @@ body {
 
         .left-navbar-click .click-menu-bar .function {
             margin: 0 !important;
+            position:relative;
         }
 
         .left-navbar-click .click-menu-bar h4 {
@@ -95,18 +95,18 @@ body {
                 transition:background-color .3s;
             }
 
-        .left-navbar-click .click-menu-bar:hover {
+        .left-navbar-click .click-menu-bar .function:hover {
             background-color: #c8d9b9;
         }
 
-            .left-navbar-click .click-menu-bar:hover a {
+            .left-navbar-click .click-menu-bar .function:hover a {
                 color: white;
             }
 
-                .left-navbar-click .click-menu-bar:hover a span {
-                    display:unset;
-                    background-color: #c8d9b9;
-                }
+        .left-navbar-click .click-menu-bar .function:hover a span {
+            display: unset;
+            background-color: #c8d9b9;
+        }
 
 .hidden-left-navbar{
     max-width:0;

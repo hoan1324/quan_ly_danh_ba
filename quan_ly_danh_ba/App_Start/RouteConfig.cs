@@ -17,7 +17,7 @@ namespace quan_ly_danh_ba
                 name: "Default",
                 url: "{controller}/{action}/{id}",
                 defaults: new { controller = "Home", action = "Index", id = UrlParameter.Optional },
-                 namespaces: new[] { "quan_ly_danh_ba.Controllers" } // Thêm dòng này
+                namespaces: new[] { "quan_ly_danh_ba.Controllers" } // Thêm dòng này
 
             );
         }

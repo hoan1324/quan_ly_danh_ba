@@ -12,6 +12,7 @@ using System.Web.Mvc;
 
 namespace quan_ly_danh_ba.Areas.User.Controllers
 {
+    [RoleUser]
     public class ContactController : Controller
     {
         private readonly IContactService _contactService;

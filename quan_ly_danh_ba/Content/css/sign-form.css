@@ -4,12 +4,12 @@
     background-repeat: repeat;
     background-attachment: fixed;
     background-size: cover;
-    background-image: linear-gradient(359deg, #6be585b5, #dd3e548c), url(https://png.pngtree.com/background/20230525/original/pngtree-images-of-people-sharing-to-connect-with-one-another-picture-image_2725814.jpg);
+    background-image: linear-gradient(359deg, #6be585b5, #dd3e548c), url("/Content/img/login-img.jpg");
 }
 
 .body-form{
     max-width:500px;
-    max-height:90vh;
+    max-height:75vh;
 }
 .different-solution{
     cursor:pointer;

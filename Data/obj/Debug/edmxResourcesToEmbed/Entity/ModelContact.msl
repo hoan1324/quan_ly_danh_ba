@@ -39,5 +39,30 @@
         <ScalarProperty Name="ContactID" ColumnName="ContactID" />
       </EndProperty>
     </AssociationSetMapping>
+    <EntitySetMapping Name="Admins">
+      <EntityTypeMapping TypeName="quan_ly_danh_baModel.Admin">
+        <MappingFragment StoreEntitySet="Admin">
+          <ScalarProperty Name="Password" ColumnName="Password" />
+          <ScalarProperty Name="UserName" ColumnName="UserName" />
+          <ScalarProperty Name="AdminID" ColumnName="AdminID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Users">
+      <EntityTypeMapping TypeName="quan_ly_danh_baModel.User">
+        <MappingFragment StoreEntitySet="User">
+          <ScalarProperty Name="LinkInstagram" ColumnName="LinkInstagram" />
+          <ScalarProperty Name="LinkTikTok" ColumnName="LinkTikTok" />
+          <ScalarProperty Name="LinkFacebook" ColumnName="LinkFacebook" />
+          <ScalarProperty Name="Address" ColumnName="Address" />
+          <ScalarProperty Name="PhoneNumber" ColumnName="PhoneNumber" />
+          <ScalarProperty Name="Password" ColumnName="Password" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="Avatar" ColumnName="Avatar" />
+          <ScalarProperty Name="UserName" ColumnName="UserName" />
+          <ScalarProperty Name="UserID" ColumnName="UserID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
   </EntityContainerMapping>
 </Mapping>

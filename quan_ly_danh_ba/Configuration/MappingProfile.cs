@@ -26,6 +26,8 @@ namespace Configuration
             .ForMember(des=>des.Contacts,opt=>opt.Ignore())
             .ReverseMap();
 
+            CreateMap<UserDto, User>().ReverseMap();
+
 
         }
     }

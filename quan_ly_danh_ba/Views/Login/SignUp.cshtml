@@ -16,15 +16,15 @@
 </head>
 <body>
     <div class=" d-flex align-items-center body-content">
-        <div class="container bg-white body-form shadow-lg rounded h-100">
+        <div class="container bg-white body-form shadow-lg rounded h-100 mh-100">
             <div class="logo text-center my-4">
                 <a href="~/home/index">
                     <img src="~/Content/img/logo.png" />
                 </a>
                 <h1 class="mt-4">Đăng ký</h1>
             </div>
-            <div class=" sign-in">
-                <form id="sign-up-form" action="~/user/contact/create" method="post" class="needs-validation" novalidate>
+            <div class=" sign-up">
+                <form id="sign-up-form" action="~/login/signup" method="post" class="needs-validation" novalidate>
                     <div class=" mb-3">
                         <label for="email" class="ms-1 mb-2">Email</label>
                         <input type="email" class="form-control" id="email" name="Email" placeholder="Vui lòng nhập Email">
@@ -63,6 +63,6 @@
     <script src="~/Content/lib/Scripts/jquery-3.7.1.min.js"></script>
     <script src="~/Content/lib/Scripts/bootstrap.bundle.min.js"></script>
     <script src="~/Content/lib/Scripts/jquery.validate.min.js"></script>
-    <script src="~/Content/Scripts/sign-in.js"></script>
+    <script src="~/Content/Scripts/sign-up.js"></script>
 </body>
 </html>
