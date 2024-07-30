@@ -144,6 +144,7 @@
     <Content Include="Content\lib\Scripts\jquery.validate.min.js" />
     <Content Include="Content\lib\css\PagedList.css" />
     <Content Include="Content\css\site.css" />
+    <Content Include="Content\Scripts\sign-up.js" />
     <Content Include="Content\Scripts\sign-in.js" />
     <Content Include="Global.asax" />
     <Content Include="Web.config" />
@@ -203,6 +204,7 @@
     <Content Include="Views\Shared\_Layout.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\Login\SignIn.cshtml" />
+    <Content Include="Views\Login\SignUp.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
