@@ -1,0 +1,12 @@
+﻿
+@{
+    ViewBag.Title = "Profile";
+    Layout = "~/Areas/User/Views/Shared/_Layout.cshtml";
+}
+
+<div class="detail-user container">
+    <div class="text-center">
+        <img class="rounded-circle p-1 border" src="@((SessionConfig.GetUser().Avatar.Length<=0)?"/Content/img/logo.png":SessionConfig.GetUser().Avatar)" alt="avt" />
+    </div>
+
+</div>

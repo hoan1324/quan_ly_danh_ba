@@ -38,7 +38,7 @@ namespace quan_ly_danh_ba.Areas.User.Controllers
         }
         public ActionResult Detail(Guid id)
         {
-            var user= SessionConfig.GetUser();
+            
             return View(_contactService.FindById(id));
         }
         public ActionResult Create()

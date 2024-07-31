@@ -70,12 +70,13 @@ body {
     .left-navbar-click .click-menu-bar {
         text-align: center;
         margin: 0 !important;
-        padding: 12px 0px;
+        
     }
 
         .left-navbar-click .click-menu-bar .function {
-            margin: 0 !important;
-            position:relative;
+         
+            position: relative;
+            padding: 8px 0;
         }
 
         .left-navbar-click .click-menu-bar h4 {
@@ -90,9 +91,10 @@ body {
                 position: absolute;
                 top: 0px;
                 left: 75px;
-                padding: 13px 55px 13px 10px;
+                width: 230px;
+                padding: 9px 55px 9px 10px;
                 display: none;
-                transition:background-color .3s;
+                transition: background-color .3s;
             }
 
         .left-navbar-click .click-menu-bar .function:hover {
@@ -123,13 +125,13 @@ body {
 .account {
     border-right: 1px solid #80808059;
     border-left: 1px solid #80808059;
-    background-image: linear-gradient(45deg,#c2e59c, #64b3f4);
-    max-width: 60px
+    background-image: linear-gradient(260deg,#c2e59c, #64b3f4);
+    max-width:200px
 }
 
     .account img {
-        height: 35px;
-        width: 35px;
+        height: 40px;
+        width: 40px;
         object-fit: cover;
     }
 

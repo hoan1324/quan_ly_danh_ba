@@ -35,8 +35,10 @@ $(function () {
     $(".visible-pass").on("click", function () {
         var input = $(this).siblings('.password');
         if (input.attr('type') === 'password') {
+            $(this).addClass("fa-eye").removeClass("fa-eye-slash")
             input.attr('type', 'text');
         } else {
+            $(this).removeClass("fa-eye").addClass("fa-eye-slash")
             input.attr('type', 'password');
         }
     });

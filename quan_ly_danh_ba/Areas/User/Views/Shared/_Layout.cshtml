@@ -56,17 +56,18 @@
                 </div>
                 <div class="dropdown-center me-4">
                     <div class="account d-flex py-2 ps-3 px-lg-3  align-items-center dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
-                        <img class="rounded-circle me-md-3" src="@((SessionConfig.GetUser().Avatar.Length<=0)?"/Content/img/logo.png":SessionConfig.GetUser().Avatar)" alt="user-image" />
-                        <h1 class="userName lh-1 d-none d-lg-block text-break fs-5">
+                        <img class="rounded-circle me-md-3 p-1 border "  src="@((SessionConfig.GetUser().Avatar.Length<=0)?"/Content/img/logo.png":SessionConfig.GetUser().Avatar)" alt="user-image" />
+                        <h1 class="userName lh-1 d-none d-lg-block text-wrap fs-5">
                             @(SessionConfig.GetUser().UserName)
                         </h1>
                     </div>
                     <ul class="dropdown-menu">
-                        <li><a class="dropdown-item" href="#">
+                        <li><a class="dropdown-item" href="~/user/user/profile">
                           <i class="fa-regular fa-circle-user"></i>
                             My Account
                            </a></li>
-                        <li><a class="dropdown-item" href="#">
+                        <li>
+                        <a class="dropdown-item logout" href="~/user/user/logout" >
                                 <i class="fa-solid fa-right-from-bracket"></i>
                             Logout
                             </a></li>
