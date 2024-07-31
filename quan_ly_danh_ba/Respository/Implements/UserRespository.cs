@@ -76,7 +76,7 @@ namespace quan_ly_danh_ba.Respository.Implements
                 position.LinkFacebook=user.LinkFacebook;
                 position.LinkTikTok=user.LinkTikTok;
                 position.LinkInstagram = user.LinkInstagram;
-
+                position.Avatar = user.Avatar;
                 Quan_ly_danh_baEntity.db.SaveChanges();
                 return position;
             }

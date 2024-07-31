@@ -3,28 +3,52 @@
   "WorkspaceRootPath": "C:\\Users\\admin\\Downloads\\PersonalProject\\Quan_Ly-Danh_Ba\\quan_ly_danh_ba\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{581F3230-B105-4665-812B-4FDAAEF4B728}|quan_ly_danh_ba.csproj|c:\\users\\admin\\downloads\\personalproject\\quan_ly-danh_ba\\quan_ly_danh_ba\\areas\\user\\views\\user\\profile.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{581F3230-B105-4665-812B-4FDAAEF4B728}|quan_ly_danh_ba.csproj|solutionrelative:areas\\user\\views\\user\\profile.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+      "AbsoluteMoniker": "D:0:0:{581F3230-B105-4665-812B-4FDAAEF4B728}|quan_ly_danh_ba.csproj|c:\\users\\admin\\downloads\\personalproject\\quan_ly-danh_ba\\quan_ly_danh_ba\\services\\implements\\userservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{581F3230-B105-4665-812B-4FDAAEF4B728}|quan_ly_danh_ba.csproj|solutionrelative:services\\implements\\userservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{581F3230-B105-4665-812B-4FDAAEF4B728}|quan_ly_danh_ba.csproj|c:\\users\\admin\\downloads\\personalproject\\quan_ly-danh_ba\\quan_ly_danh_ba\\areas\\user\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
       "RelativeMoniker": "D:0:0:{581F3230-B105-4665-812B-4FDAAEF4B728}|quan_ly_danh_ba.csproj|solutionrelative:areas\\user\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{581F3230-B105-4665-812B-4FDAAEF4B728}|quan_ly_danh_ba.csproj|c:\\users\\admin\\downloads\\personalproject\\quan_ly-danh_ba\\quan_ly_danh_ba\\areas\\user\\controllers\\usercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{581F3230-B105-4665-812B-4FDAAEF4B728}|quan_ly_danh_ba.csproj|solutionrelative:areas\\user\\controllers\\usercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{581F3230-B105-4665-812B-4FDAAEF4B728}|quan_ly_danh_ba.csproj|c:\\users\\admin\\downloads\\personalproject\\quan_ly-danh_ba\\quan_ly_danh_ba\\content\\scripts\\sign-in.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}",
-      "RelativeMoniker": "D:0:0:{581F3230-B105-4665-812B-4FDAAEF4B728}|quan_ly_danh_ba.csproj|solutionrelative:content\\scripts\\sign-in.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{581F3230-B105-4665-812B-4FDAAEF4B728}|quan_ly_danh_ba.csproj|c:\\users\\admin\\downloads\\personalproject\\quan_ly-danh_ba\\quan_ly_danh_ba\\content\\scripts\\sign-up.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}",
-      "RelativeMoniker": "D:0:0:{581F3230-B105-4665-812B-4FDAAEF4B728}|quan_ly_danh_ba.csproj|solutionrelative:content\\scripts\\sign-up.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}"
+      "AbsoluteMoniker": "D:0:0:{581F3230-B105-4665-812B-4FDAAEF4B728}|quan_ly_danh_ba.csproj|c:\\users\\admin\\downloads\\personalproject\\quan_ly-danh_ba\\quan_ly_danh_ba\\areas\\user\\controllers\\authcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{581F3230-B105-4665-812B-4FDAAEF4B728}|quan_ly_danh_ba.csproj|solutionrelative:areas\\user\\controllers\\authcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{581F3230-B105-4665-812B-4FDAAEF4B728}|quan_ly_danh_ba.csproj|c:\\users\\admin\\downloads\\personalproject\\quan_ly-danh_ba\\quan_ly_danh_ba\\controllers\\logincontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{581F3230-B105-4665-812B-4FDAAEF4B728}|quan_ly_danh_ba.csproj|solutionrelative:controllers\\logincontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{581F3230-B105-4665-812B-4FDAAEF4B728}|quan_ly_danh_ba.csproj|c:\\users\\admin\\downloads\\personalproject\\quan_ly-danh_ba\\quan_ly_danh_ba\\respository\\implements\\userrespository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{581F3230-B105-4665-812B-4FDAAEF4B728}|quan_ly_danh_ba.csproj|solutionrelative:respository\\implements\\userrespository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{581F3230-B105-4665-812B-4FDAAEF4B728}|quan_ly_danh_ba.csproj|c:\\users\\admin\\downloads\\personalproject\\quan_ly-danh_ba\\quan_ly_danh_ba\\services\\interfaces\\icontactservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{581F3230-B105-4665-812B-4FDAAEF4B728}|quan_ly_danh_ba.csproj|solutionrelative:services\\interfaces\\icontactservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{581F3230-B105-4665-812B-4FDAAEF4B728}|quan_ly_danh_ba.csproj|c:\\users\\admin\\downloads\\personalproject\\quan_ly-danh_ba\\quan_ly_danh_ba\\services\\interfaces\\iuserservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{581F3230-B105-4665-812B-4FDAAEF4B728}|quan_ly_danh_ba.csproj|solutionrelative:services\\interfaces\\iuserservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{581F3230-B105-4665-812B-4FDAAEF4B728}|quan_ly_danh_ba.csproj|c:\\users\\admin\\downloads\\personalproject\\quan_ly-danh_ba\\quan_ly_danh_ba\\areas\\user\\views\\auth\\profileuser.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{581F3230-B105-4665-812B-4FDAAEF4B728}|quan_ly_danh_ba.csproj|solutionrelative:areas\\user\\views\\auth\\profileuser.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{581F3230-B105-4665-812B-4FDAAEF4B728}|quan_ly_danh_ba.csproj|c:\\users\\admin\\downloads\\personalproject\\quan_ly-danh_ba\\quan_ly_danh_ba\\areas\\user\\views\\auth\\editprofile.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{581F3230-B105-4665-812B-4FDAAEF4B728}|quan_ly_danh_ba.csproj|solutionrelative:areas\\user\\views\\auth\\editprofile.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{581F3230-B105-4665-812B-4FDAAEF4B728}|quan_ly_danh_ba.csproj|c:\\users\\admin\\downloads\\personalproject\\quan_ly-danh_ba\\quan_ly_danh_ba\\services\\implements\\groupcontactservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{581F3230-B105-4665-812B-4FDAAEF4B728}|quan_ly_danh_ba.csproj|solutionrelative:services\\implements\\groupcontactservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{581F3230-B105-4665-812B-4FDAAEF4B728}|quan_ly_danh_ba.csproj|c:\\users\\admin\\downloads\\personalproject\\quan_ly-danh_ba\\quan_ly_danh_ba\\services\\implements\\contactservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{581F3230-B105-4665-812B-4FDAAEF4B728}|quan_ly_danh_ba.csproj|solutionrelative:services\\implements\\contactservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{581F3230-B105-4665-812B-4FDAAEF4B728}|quan_ly_danh_ba.csproj|c:\\users\\admin\\downloads\\personalproject\\quan_ly-danh_ba\\quan_ly_danh_ba\\areas\\user\\content\\css\\edit.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}",
+      "RelativeMoniker": "D:0:0:{581F3230-B105-4665-812B-4FDAAEF4B728}|quan_ly_danh_ba.csproj|solutionrelative:areas\\user\\content\\css\\edit.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}"
     }
   ],
   "DocumentGroupContainers": [
@@ -34,50 +58,11 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 1,
+          "SelectedChildIndex": 6,
           "Children": [
             {
               "$type": "Bookmark",
               "Name": "ST:0:0:{3ae79031-e1bc-11d0-8f78-00a0c9110057}"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "Profile.cshtml",
-              "DocumentMoniker": "C:\\Users\\admin\\Downloads\\PersonalProject\\Quan_Ly-Danh_Ba\\quan_ly_danh_ba\\Areas\\User\\Views\\User\\Profile.cshtml",
-              "RelativeDocumentMoniker": "Areas\\User\\Views\\User\\Profile.cshtml",
-              "ToolTip": "C:\\Users\\admin\\Downloads\\PersonalProject\\Quan_Ly-Danh_Ba\\quan_ly_danh_ba\\Areas\\User\\Views\\User\\Profile.cshtml",
-              "RelativeToolTip": "Areas\\User\\Views\\User\\Profile.cshtml",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAwAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-07-31T03:08:16.814Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "sign-up.js",
-              "DocumentMoniker": "C:\\Users\\admin\\Downloads\\PersonalProject\\Quan_Ly-Danh_Ba\\quan_ly_danh_ba\\Content\\Scripts\\sign-up.js",
-              "RelativeDocumentMoniker": "Content\\Scripts\\sign-up.js",
-              "ToolTip": "C:\\Users\\admin\\Downloads\\PersonalProject\\Quan_Ly-Danh_Ba\\quan_ly_danh_ba\\Content\\Scripts\\sign-up.js",
-              "RelativeToolTip": "Content\\Scripts\\sign-up.js",
-              "ViewState": "AQIAADEAAAAAAAAAAAAQwD4AAAADAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001646|",
-              "WhenOpened": "2024-07-31T02:58:39.087Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "sign-in.js",
-              "DocumentMoniker": "C:\\Users\\admin\\Downloads\\PersonalProject\\Quan_Ly-Danh_Ba\\quan_ly_danh_ba\\Content\\Scripts\\sign-in.js",
-              "RelativeDocumentMoniker": "Content\\Scripts\\sign-in.js",
-              "ToolTip": "C:\\Users\\admin\\Downloads\\PersonalProject\\Quan_Ly-Danh_Ba\\quan_ly_danh_ba\\Content\\Scripts\\sign-in.js",
-              "RelativeToolTip": "Content\\Scripts\\sign-in.js",
-              "ViewState": "AQIAACAAAAAAAAAAAAAAwCwAAAADAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001646|",
-              "WhenOpened": "2024-07-31T02:58:35.281Z",
-              "EditorCaption": ""
             },
             {
               "$type": "Document",
@@ -87,35 +72,152 @@
               "RelativeDocumentMoniker": "Areas\\User\\Views\\Shared\\_Layout.cshtml",
               "ToolTip": "C:\\Users\\admin\\Downloads\\PersonalProject\\Quan_Ly-Danh_Ba\\quan_ly_danh_ba\\Areas\\User\\Views\\Shared\\_Layout.cshtml",
               "RelativeToolTip": "Areas\\User\\Views\\Shared\\_Layout.cshtml",
-              "ViewState": "AQIAADAAAAAAAAAAAAAAADoAAABFAAAA",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-07-31T02:54:31.858Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "UserController.cs",
-              "DocumentMoniker": "C:\\Users\\admin\\Downloads\\PersonalProject\\Quan_Ly-Danh_Ba\\quan_ly_danh_ba\\Areas\\User\\Controllers\\UserController.cs",
-              "RelativeDocumentMoniker": "Areas\\User\\Controllers\\UserController.cs",
-              "ToolTip": "C:\\Users\\admin\\Downloads\\PersonalProject\\Quan_Ly-Danh_Ba\\quan_ly_danh_ba\\Areas\\User\\Controllers\\UserController.cs",
-              "RelativeToolTip": "Areas\\User\\Controllers\\UserController.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAsAAAAfAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-07-31T02:50:48.613Z",
+              "WhenOpened": "2024-07-31T09:27:37.071Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 5,
+              "Title": "IContactService.cs",
+              "DocumentMoniker": "C:\\Users\\admin\\Downloads\\PersonalProject\\Quan_Ly-Danh_Ba\\quan_ly_danh_ba\\Services\\Interfaces\\IContactService.cs",
+              "RelativeDocumentMoniker": "Services\\Interfaces\\IContactService.cs",
+              "ToolTip": "C:\\Users\\admin\\Downloads\\PersonalProject\\Quan_Ly-Danh_Ba\\quan_ly_danh_ba\\Services\\Interfaces\\IContactService.cs",
+              "RelativeToolTip": "Services\\Interfaces\\IContactService.cs",
+              "ViewState": "AQIAAAsAAAAAAAAAAAAAwAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-07-31T08:55:02.438Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
               "Title": "LoginController.cs",
               "DocumentMoniker": "C:\\Users\\admin\\Downloads\\PersonalProject\\Quan_Ly-Danh_Ba\\quan_ly_danh_ba\\Controllers\\LoginController.cs",
               "RelativeDocumentMoniker": "Controllers\\LoginController.cs",
               "ToolTip": "C:\\Users\\admin\\Downloads\\PersonalProject\\Quan_Ly-Danh_Ba\\quan_ly_danh_ba\\Controllers\\LoginController.cs",
               "RelativeToolTip": "Controllers\\LoginController.cs",
-              "ViewState": "AQIAABcAAAAAAAAAAAA3wB0AAAA4AAAA",
+              "ViewState": "AQIAAAkAAAAAAAAAAAAAABgAAAAJAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-07-31T02:49:56.133Z",
+              "WhenOpened": "2024-07-31T08:54:01.678Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "UserRespository.cs",
+              "DocumentMoniker": "C:\\Users\\admin\\Downloads\\PersonalProject\\Quan_Ly-Danh_Ba\\quan_ly_danh_ba\\Respository\\Implements\\UserRespository.cs",
+              "RelativeDocumentMoniker": "Respository\\Implements\\UserRespository.cs",
+              "ToolTip": "C:\\Users\\admin\\Downloads\\PersonalProject\\Quan_Ly-Danh_Ba\\quan_ly_danh_ba\\Respository\\Implements\\UserRespository.cs",
+              "RelativeToolTip": "Respository\\Implements\\UserRespository.cs",
+              "ViewState": "AQIAAEMAAAAAAAAAAAAwwFEAAAANAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-07-31T08:53:11.083Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "IUserService.cs",
+              "DocumentMoniker": "C:\\Users\\admin\\Downloads\\PersonalProject\\Quan_Ly-Danh_Ba\\quan_ly_danh_ba\\Services\\Interfaces\\IUserService.cs",
+              "RelativeDocumentMoniker": "Services\\Interfaces\\IUserService.cs",
+              "ToolTip": "C:\\Users\\admin\\Downloads\\PersonalProject\\Quan_Ly-Danh_Ba\\quan_ly_danh_ba\\Services\\Interfaces\\IUserService.cs",
+              "RelativeToolTip": "Services\\Interfaces\\IUserService.cs",
+              "ViewState": "AQIAAAkAAAAAAAAAAAAqwA8AAAAvAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-07-31T08:50:52.751Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "UserService.cs",
+              "DocumentMoniker": "C:\\Users\\admin\\Downloads\\PersonalProject\\Quan_Ly-Danh_Ba\\quan_ly_danh_ba\\Services\\Implements\\UserService.cs",
+              "RelativeDocumentMoniker": "Services\\Implements\\UserService.cs",
+              "ToolTip": "C:\\Users\\admin\\Downloads\\PersonalProject\\Quan_Ly-Danh_Ba\\quan_ly_danh_ba\\Services\\Implements\\UserService.cs",
+              "RelativeToolTip": "Services\\Implements\\UserService.cs",
+              "ViewState": "AQIAAG8AAAAAAAAAAAAgwHgAAAA/AAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-07-31T08:50:05.119Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "ContactService.cs",
+              "DocumentMoniker": "C:\\Users\\admin\\Downloads\\PersonalProject\\Quan_Ly-Danh_Ba\\quan_ly_danh_ba\\Services\\Implements\\ContactService.cs",
+              "RelativeDocumentMoniker": "Services\\Implements\\ContactService.cs",
+              "ToolTip": "C:\\Users\\admin\\Downloads\\PersonalProject\\Quan_Ly-Danh_Ba\\quan_ly_danh_ba\\Services\\Implements\\ContactService.cs",
+              "RelativeToolTip": "Services\\Implements\\ContactService.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-07-31T08:50:03.55Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "GroupContactService.cs",
+              "DocumentMoniker": "C:\\Users\\admin\\Downloads\\PersonalProject\\Quan_Ly-Danh_Ba\\quan_ly_danh_ba\\Services\\Implements\\GroupContactService.cs",
+              "RelativeDocumentMoniker": "Services\\Implements\\GroupContactService.cs",
+              "ToolTip": "C:\\Users\\admin\\Downloads\\PersonalProject\\Quan_Ly-Danh_Ba\\quan_ly_danh_ba\\Services\\Implements\\GroupContactService.cs",
+              "RelativeToolTip": "Services\\Implements\\GroupContactService.cs",
+              "ViewState": "AQIAABMAAAAAAAAAAAAQwCAAAAARAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-07-31T08:50:02.862Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "edit.css",
+              "DocumentMoniker": "C:\\Users\\admin\\Downloads\\PersonalProject\\Quan_Ly-Danh_Ba\\quan_ly_danh_ba\\Areas\\User\\Content\\css\\edit.css",
+              "RelativeDocumentMoniker": "Areas\\User\\Content\\css\\edit.css",
+              "ToolTip": "C:\\Users\\admin\\Downloads\\PersonalProject\\Quan_Ly-Danh_Ba\\quan_ly_danh_ba\\Areas\\User\\Content\\css\\edit.css",
+              "RelativeToolTip": "Areas\\User\\Content\\css\\edit.css",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABEAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003000|",
+              "WhenOpened": "2024-07-31T08:32:34.685Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "EditProfile.cshtml",
+              "DocumentMoniker": "C:\\Users\\admin\\Downloads\\PersonalProject\\Quan_Ly-Danh_Ba\\quan_ly_danh_ba\\Areas\\User\\Views\\Auth\\EditProfile.cshtml",
+              "RelativeDocumentMoniker": "Areas\\User\\Views\\Auth\\EditProfile.cshtml",
+              "ToolTip": "C:\\Users\\admin\\Downloads\\PersonalProject\\Quan_Ly-Danh_Ba\\quan_ly_danh_ba\\Areas\\User\\Views\\Auth\\EditProfile.cshtml",
+              "RelativeToolTip": "Areas\\User\\Views\\Auth\\EditProfile.cshtml",
+              "ViewState": "AQIAAAkAAAAAAAAAAAAAAAwAAADLAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-07-31T08:30:04.83Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "AuthController.cs",
+              "DocumentMoniker": "C:\\Users\\admin\\Downloads\\PersonalProject\\Quan_Ly-Danh_Ba\\quan_ly_danh_ba\\Areas\\User\\Controllers\\AuthController.cs",
+              "RelativeDocumentMoniker": "Areas\\User\\Controllers\\AuthController.cs",
+              "ToolTip": "C:\\Users\\admin\\Downloads\\PersonalProject\\Quan_Ly-Danh_Ba\\quan_ly_danh_ba\\Areas\\User\\Controllers\\AuthController.cs",
+              "RelativeToolTip": "Areas\\User\\Controllers\\AuthController.cs",
+              "ViewState": "AQIAABkAAAAAAAAAAAAAwB0AAAASAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-07-31T08:27:42.967Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "ProfileUser.cshtml",
+              "DocumentMoniker": "C:\\Users\\admin\\Downloads\\PersonalProject\\Quan_Ly-Danh_Ba\\quan_ly_danh_ba\\Areas\\User\\Views\\Auth\\ProfileUser.cshtml",
+              "RelativeDocumentMoniker": "Areas\\User\\Views\\Auth\\ProfileUser.cshtml",
+              "ToolTip": "C:\\Users\\admin\\Downloads\\PersonalProject\\Quan_Ly-Danh_Ba\\quan_ly_danh_ba\\Areas\\User\\Views\\Auth\\ProfileUser.cshtml",
+              "RelativeToolTip": "Areas\\User\\Views\\Auth\\ProfileUser.cshtml",
+              "ViewState": "AQIAAAcAAAAAAAAAAAAEwBEAAAAUAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-07-31T08:27:35.977Z",
               "EditorCaption": ""
             }
           ]

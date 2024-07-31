@@ -1,0 +1,50 @@
+﻿
+@{
+    ViewBag.Title = "Profile";
+    Layout = "~/Areas/User/Views/Shared/_Layout.cshtml";
+}
+
+<div class="detail-user ">
+    <div></div>
+    <div class="container">
+        <div class="text-center">
+            <img class="rounded-circle p-1 border" src="@((SessionConfig.GetUser().Avatar.Length<=0)?"/Content/img/logo.png":SessionConfig.GetUser().Avatar)" alt="avt" />
+        </div>
+        <div class="infor-user text-center">
+            <h1>@SessionConfig.GetUser().UserName</h1>
+            <p>@(string.IsNullOrEmpty(SessionConfig.GetUser().Address)?"Không có thông tin về địa chỉ": SessionConfig.GetUser().Address)</p>
+            <div class="mt-5 mb-3">
+                <p>@SessionConfig.GetUser().Email</p>
+                <p>@(string.IsNullOrEmpty(SessionConfig.GetUser().Address)?"Không có thông tin về số điện thoại": SessionConfig.GetUser().PhoneNumber)</p>
+                <div class="d-flex align-items-center justify-content-center">
+                    @if (SessionConfig.GetUser().LinkFacebook != null)
+                    {
+                        <span>
+                            <a href="@SessionConfig.GetUser().LinkFacebook" target="_blank">
+                                <i class="fa-brands fa-facebook"></i>
+                            </a>
+                        </span>
+                    }
+                    @if (SessionConfig.GetUser().LinkTikTok != null)
+                    {
+                        <span>
+                            <a href="@SessionConfig.GetUser().LinkFacebook" target="_blank">
+                                <i class="fa-brands fa-tiktok">    </i>
+                            </a>
+                        </span>
+                    }
+                    @if (SessionConfig.GetUser().LinkInstagram != null)
+                    {
+                        <span>
+                            <a href="@SessionConfig.GetUser().LinkFacebook" target="_blank">
+                                <i class="fa-brands fa-instagram"></i>
+                            </a>
+                        </span>
+                    }
+                </div>
+            </div>
+            <span class="btn btn-success"><a class="link-light">Edit Profile</a></span>
+        </div>
+    </div>
+
+</div>

@@ -12,5 +12,7 @@ namespace quan_ly_danh_ba.Services.Interfaces
         UserDto FindByUser(UserDto user);
         UserDto Insert(UserDto user);
         UserDto FindById(UserDto user);
+        UserDto CheckPassword(Guid id, string pass);
+        UserDto Update(UserDto user,string type);
     }
 }

@@ -1,0 +1,39 @@
+﻿@model Dtos.UserDto
+
+@{
+    ViewBag.Title = "EditProfile";
+    Layout = "~/Areas/User/Views/Shared/_Layout.cshtml";
+}
+
+<div class="d-flex justify-content-between align-items-center">
+    <h2>EditProfile</h2>
+</div>
+<div class="edit-data">
+    <form id="form-edit-profile" action="~/user/auth/editprofile" method="post" class="needs-validation" novalidate>
+        <input class="form-control text-box single-line" data-val="true" data-val-required="The UserID field is required." id="UserID" name="UserID" type="hidden" value="@SessionConfig.GetUser().UserID">
+        <div class=" mb-3">
+            <label for="fullname">UserName</label>
+            <input type="text" class="form-control" id="fullname" value="@(string.IsNullOrEmpty(SessionConfig.GetUser().UserName) ? "" : SessionConfig.GetUser().UserName)" placeholder="Vui lòng nhập tên " name="UserName">
+        </div>
+        <div class=" mb-3">
+            <label for="phonenumber">Số điện thoại</label>
+            <input type="text" class="form-control" id="phonenumber" value="@(string.IsNullOrEmpty(SessionConfig.GetUser().PhoneNumber)?"":SessionConfig.GetUser().PhoneNumber)" placeholder="Vui lòng nhập số điện thoại" name="PhoneNumber">
+        </div>
+
+        <div class=" mb-3">
+            <label for="address">Địa chỉ</label>
+            <input type="text" class="form-control" id="address" value="@(string.IsNullOrEmpty(SessionConfig.GetUser().Address)?"":SessionConfig.GetUser().Address)" placeholder="Vui lòng nhập địa chỉ" name="Address">
+        </div>
+        <div class=" mb-3">
+            <label for="email">Email</label>
+            <input type="text" class="form-control" value="@(string.IsNullOrEmpty(SessionConfig.GetUser().Email)?"":SessionConfig.GetUser().Email)" id="email" name="Email" placeholder="Vui lòng nhập Email">
+        </div>
+
+
+        <div class="text-center">
+            <button class="btn btn-success" type="submit">Edit</button>
+        </div>
+    </form>
+
+
+</div>

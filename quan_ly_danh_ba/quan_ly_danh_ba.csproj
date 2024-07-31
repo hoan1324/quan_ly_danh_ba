@@ -160,7 +160,7 @@
     <Compile Include="Areas\User\Controllers\ContactController.cs" />
     <Compile Include="Areas\User\Controllers\GroupContactController.cs" />
     <Compile Include="Areas\User\Controllers\HomeController.cs" />
-    <Compile Include="Areas\User\Controllers\UserController.cs" />
+    <Compile Include="Areas\User\Controllers\AuthController.cs" />
     <Compile Include="Areas\User\UserAreaRegistration.cs" />
     <Compile Include="Configuration\MappingProfile.cs" />
     <Compile Include="Controllers\HomeController.cs" />
@@ -209,7 +209,8 @@
     <Content Include="Areas\User\Views\Home\UserA.cshtml" />
     <Content Include="Areas\User\Views\Contact\Detail.cshtml" />
     <Content Include="Areas\User\Views\GroupContact\Index.cshtml" />
-    <Content Include="Areas\User\Views\User\Profile.cshtml" />
+    <Content Include="Areas\User\Views\Auth\ProfileUser.cshtml" />
+    <Content Include="Areas\User\Views\Auth\EditProfile.cshtml" />
     <None Include="packages.config" />
     <Content Include="Views\Shared\_Layout.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
