@@ -14,10 +14,10 @@ namespace quan_ly_danh_ba.Services.Implements
     {
         private readonly IContactRespository _contactRepo;
         private readonly IGroupContactService _groupContactService;
-        private readonly IConnectContact_GroupContactRespository _connect;
+        private readonly IConnectModelRespository _connect;
         private readonly IMapper _mapper;
         
-      public ContactService(IContactRespository contactRepo, IMapper mapper, IGroupContactService groupContactService,IConnectContact_GroupContactRespository connect)
+      public ContactService(IContactRespository contactRepo, IMapper mapper, IGroupContactService groupContactService,IConnectModelRespository connect)
         {
             _contactRepo = contactRepo;
             _mapper = mapper;
@@ -47,9 +47,11 @@ namespace quan_ly_danh_ba.Services.Implements
 
         public ContactCreateDto Insert(ContactCreateDto contactCreateDto,  string newGroupContactNames)
         {
+            var currentUser = Quan_ly_danh_baEntity.db.Users.FirstOrDefault(item=>item.UserID==SessionConfig.GetUser().UserID);
             contactCreateDto.ContactID = Guid.NewGuid();
+            contactCreateDto.UserID=currentUser.UserID;
             var position =_contactRepo.Insert(_mapper.Map<Contact>(contactCreateDto));
-            
+            currentUser.Contacts.Add(position);
             if (!string.IsNullOrEmpty(newGroupContactNames))
             {
                 var newGroupContactName = newGroupContactNames.Split(',')
@@ -81,12 +83,13 @@ namespace quan_ly_danh_ba.Services.Implements
                 {
                     _groupContactService.Insert(item);
 
+
                 }
 
             }
             foreach (var groupName in contactCreateDto.GroupNames)
             {
-                var groupContact = Quan_ly_danh_baEntity.db.GroupContacts.FirstOrDefault(gc => gc.GroupName.Equals(groupName, StringComparison.OrdinalIgnoreCase));
+                var groupContact = Quan_ly_danh_baEntity.db.GroupContacts.FirstOrDefault(gc =>gc.UserID==currentUser.UserID && gc.GroupName.Equals(groupName, StringComparison.OrdinalIgnoreCase));
                 if (groupContact != null && !position.GroupContacts.Contains(groupContact))
                 {
                     _connect.AddContact(groupContact, position);
@@ -119,7 +122,8 @@ namespace quan_ly_danh_ba.Services.Implements
 
         public ContactCreateDto Update(ContactCreateDto contactCreateDto, string newGroupContactNames)
         {
-             _contactRepo.Update(_mapper.Map<Contact>(contactCreateDto));
+            var currentUser = Quan_ly_danh_baEntity.db.Users.FirstOrDefault(item => item.UserID == SessionConfig.GetUser().UserID);
+            _contactRepo.Update(_mapper.Map<Contact>(contactCreateDto));
             var oldContact = _contactRepo.FindById(contactCreateDto.ContactID);
 
             if (oldContact != null)
@@ -173,7 +177,7 @@ namespace quan_ly_danh_ba.Services.Implements
                 }
                 foreach (var groupName in contactCreateDto.GroupNames)
                 {
-                    var groupContact = Quan_ly_danh_baEntity.db.GroupContacts.FirstOrDefault(gc => gc.GroupName.Equals(groupName, StringComparison.OrdinalIgnoreCase));
+                    var groupContact = Quan_ly_danh_baEntity.db.GroupContacts.FirstOrDefault(gc =>gc.UserID==currentUser.UserID &&gc.GroupName.Equals(groupName, StringComparison.OrdinalIgnoreCase));
                     if (groupContact != null && !oldContact.GroupContacts.Contains(groupContact))
                     {
                         _connect.AddContact(groupContact, oldContact);

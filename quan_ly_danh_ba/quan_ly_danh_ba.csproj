@@ -172,11 +172,11 @@
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Respository\Implements\ConnectContact_GroupContactRespository.cs" />
+    <Compile Include="Respository\Implements\ConnectModelRespository.cs" />
     <Compile Include="Respository\Implements\UserRespository.cs" />
     <Compile Include="Respository\Implements\ContactRespository.cs" />
     <Compile Include="Respository\Implements\GroupContactRespository.cs" />
-    <Compile Include="Respository\Interfaces\IConnectContact_GroupContactRespository.cs" />
+    <Compile Include="Respository\Interfaces\IConnectModelRespository.cs" />
     <Compile Include="Respository\Interfaces\IUserRespository.cs" />
     <Compile Include="Respository\Interfaces\IContactRespository.cs" />
     <Compile Include="Respository\Interfaces\IGroupContactRespository.cs" />

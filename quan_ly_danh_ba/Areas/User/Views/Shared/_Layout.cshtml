@@ -55,10 +55,12 @@
                     </div>
                 </div>
                 <div class="dropdown-center me-4">
-                    <div class="account d-flex py-2 ps-3 px-lg-3  align-items-center dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
-                        <img class="rounded-circle me-md-3 p-1 border "  src="@((SessionConfig.GetUser().Avatar.Length<=0)?"/Content/img/logo.png":SessionConfig.GetUser().Avatar)" alt="user-image" />
-                        <h1 class="userName lh-1 d-none d-lg-block text-wrap fs-5">
-                            @(SessionConfig.GetUser().UserName)
+                    <div class="account d-flex py-2 ps-md-3 px-lg-3  align-items-center dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+                        <img class="rounded-circle me-md-2 p-1 border "  src="@((SessionConfig.GetUser().Avatar.Length<=0)?"/Content/img/logo.png":SessionConfig.GetUser().Avatar)" alt="user-image" />
+                        <h1 class="userName lh-1 d-none d-lg-block text-wrap fs-5 overflow-hidden py-2 my-0">
+                           @(SessionConfig.GetUser().UserName.Length <= 11
+                           ? SessionConfig.GetUser().UserName
+                           : SessionConfig.GetUser().UserName.Substring(0, 11))
                         </h1>
                     </div>
                     <ul class="dropdown-menu">

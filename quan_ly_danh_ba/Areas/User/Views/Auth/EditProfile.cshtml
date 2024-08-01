@@ -11,24 +11,27 @@
 <div class="edit-data">
     <form id="form-edit-profile" action="~/user/auth/editprofile" method="post" class="needs-validation" novalidate>
         <input class="form-control text-box single-line" data-val="true" data-val-required="The UserID field is required." id="UserID" name="UserID" type="hidden" value="@SessionConfig.GetUser().UserID">
+        <input class="form-control text-box single-line" data-val="true" data-val-required="The type field is required." id="Type" name="Type" type="hidden" value="profile">
         <div class=" mb-3">
             <label for="fullname">UserName</label>
             <input type="text" class="form-control" id="fullname" value="@(string.IsNullOrEmpty(SessionConfig.GetUser().UserName) ? "" : SessionConfig.GetUser().UserName)" placeholder="Vui lòng nhập tên " name="UserName">
         </div>
         <div class=" mb-3">
-            <label for="phonenumber">Số điện thoại</label>
-            <input type="text" class="form-control" id="phonenumber" value="@(string.IsNullOrEmpty(SessionConfig.GetUser().PhoneNumber)?"":SessionConfig.GetUser().PhoneNumber)" placeholder="Vui lòng nhập số điện thoại" name="PhoneNumber">
-        </div>
-
-        <div class=" mb-3">
             <label for="address">Địa chỉ</label>
             <input type="text" class="form-control" id="address" value="@(string.IsNullOrEmpty(SessionConfig.GetUser().Address)?"":SessionConfig.GetUser().Address)" placeholder="Vui lòng nhập địa chỉ" name="Address">
         </div>
         <div class=" mb-3">
-            <label for="email">Email</label>
-            <input type="text" class="form-control" value="@(string.IsNullOrEmpty(SessionConfig.GetUser().Email)?"":SessionConfig.GetUser().Email)" id="email" name="Email" placeholder="Vui lòng nhập Email">
+            <label for="address">Link Facebook</label>
+            <input type="text" class="form-control" id="address" value="@(string.IsNullOrEmpty(SessionConfig.GetUser().LinkFacebook)?"":SessionConfig.GetUser().LinkFacebook)" placeholder="Vui lòng nhập địa chỉ" name="LinkFacebook">
         </div>
-
+        <div class=" mb-3">
+            <label for="address">Link Tiktok</label>
+            <input type="text" class="form-control" id="address" value="@(string.IsNullOrEmpty(SessionConfig.GetUser().LinkTikTok)?"":SessionConfig.GetUser().LinkTikTok)" placeholder="Vui lòng nhập địa chỉ" name="LinkTikTok">
+        </div>
+        <div class=" mb-3">
+            <label for="address">Link Instagram</label>
+            <input type="text" class="form-control" id="address" value="@(string.IsNullOrEmpty(SessionConfig.GetUser().LinkInstagram)?"":SessionConfig.GetUser().LinkInstagram)" placeholder="Vui lòng nhập địa chỉ" name="LinkInstagram">
+        </div>
 
         <div class="text-center">
             <button class="btn btn-success" type="submit">Edit</button>

@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="f92b2b69f5164ee8b72baade887fba24" Name="Diagram1">
+        <EntityTypeShape EntityType="quan_ly_danh_baModel.Admin" Width="1.5" PointX="0.75" PointY="5.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="quan_ly_danh_baModel.Contact" Width="1.5" PointX="7.375" PointY="1.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="quan_ly_danh_baModel.GroupContact" Width="1.5" PointX="4.25" PointY="0.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="quan_ly_danh_baModel.sysdiagram" Width="1.5" PointX="2.75" PointY="5.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="quan_ly_danh_baModel.User" Width="1.5" PointX="0.75" PointY="1" IsExpanded="true" />
+        <AssociationConnector Association="quan_ly_danh_baModel.FK_Contact_User" ManuallyRouted="false" />
+        <AssociationConnector Association="quan_ly_danh_baModel.FK_GroupContact_User" ManuallyRouted="false" />
+        <AssociationConnector Association="quan_ly_danh_baModel.Group_Contact" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

@@ -18,7 +18,7 @@ namespace Dtos
         public string Address { get; set; }
         public string Email { get; set; }
         public List<string> GroupNames { get; set; }
-        
+        public Guid UserID { get; set; }
 
     }
 }

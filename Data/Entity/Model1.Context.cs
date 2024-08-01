@@ -13,10 +13,10 @@ namespace Data.Entity
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
     
-    public partial class quan_ly_danh_baEntity : DbContext
+    public partial class quan_ly_danh_baEntities2 : DbContext
     {
-        public quan_ly_danh_baEntity()
-            : base("name=quan_ly_danh_baEntity")
+        public quan_ly_danh_baEntities2()
+            : base("name=quan_ly_danh_baEntities2")
         {
         }
     
@@ -25,10 +25,10 @@ namespace Data.Entity
             throw new UnintentionalCodeFirstException();
         }
     
+        public virtual DbSet<Admin> Admins { get; set; }
         public virtual DbSet<Contact> Contacts { get; set; }
         public virtual DbSet<GroupContact> GroupContacts { get; set; }
         public virtual DbSet<sysdiagram> sysdiagrams { get; set; }
-        public virtual DbSet<Admin> Admins { get; set; }
         public virtual DbSet<User> Users { get; set; }
     }
 }

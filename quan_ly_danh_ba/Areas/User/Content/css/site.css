@@ -134,7 +134,9 @@ body {
         width: 40px;
         object-fit: cover;
     }
-
+.user-name{
+    max-width:100px
+}
 
 
 

@@ -70,7 +70,7 @@ namespace quan_ly_danh_ba
             #region
             container.RegisterType<IContactRespository, ContactRespository>();
             container.RegisterType<IGroupContactRespository, GroupContactRespository>();
-            container.RegisterType<IConnectContact_GroupContactRespository, ConnectContact_GroupContactRespository>();
+            container.RegisterType<IConnectModelRespository, ConnectModelRespository>();
             container.RegisterType<IUserRespository, UserRespository>();
 
             #endregion

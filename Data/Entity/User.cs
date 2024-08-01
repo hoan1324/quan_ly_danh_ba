@@ -14,6 +14,13 @@ namespace Data.Entity
     
     public partial class User
     {
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
+        public User()
+        {
+            this.Contacts = new HashSet<Contact>();
+            this.GroupContacts = new HashSet<GroupContact>();
+        }
+    
         public System.Guid UserID { get; set; }
         public string UserName { get; set; }
         public byte[] Avatar { get; set; }
@@ -24,5 +31,11 @@ namespace Data.Entity
         public string LinkFacebook { get; set; }
         public string LinkTikTok { get; set; }
         public string LinkInstagram { get; set; }
+        public System.DateTime BirthDay { get; set; }
+    
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<Contact> Contacts { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<GroupContact> GroupContacts { get; set; }
     }
 }

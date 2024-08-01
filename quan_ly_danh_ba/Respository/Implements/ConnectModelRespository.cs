@@ -7,7 +7,7 @@ using System.Web;
 
 namespace quan_ly_danh_ba.Respository.Implements
 {
-    public class ConnectContact_GroupContactRespository : IConnectContact_GroupContactRespository
+    public class ConnectModelRespository : IConnectModelRespository
     {
         public GroupContact AddContact(GroupContact groupContact, Contact contact)
         {
@@ -15,10 +15,20 @@ namespace quan_ly_danh_ba.Respository.Implements
             return groupContact;
         }
 
+        public void AddContact(User user, Contact contact)
+        {
+            user.Contacts.Add(contact);
+        }
+
         public Contact AddGroupContact(Contact contact, GroupContact groupContact)
         {
             contact.GroupContacts.Add(groupContact);
             return contact;
+        }
+
+        public void AddGroupContact(User user, GroupContact groupContact)
+        {
+           user.GroupContacts.Add(groupContact);
         }
 
         public void ConnectSave()

@@ -28,10 +28,10 @@ namespace quan_ly_danh_ba.Areas.User.Controllers
             return View();
         }
         [HttpPost]
-        public ActionResult EditProfile(UserDto user)
+        public ActionResult EditProfile(UserDto user,string Type)
         {
             
-            var done = _userService.Update(user,"profile");
+            var done = _userService.Update(user,Type);
             if (done != null)
             {
                 SessionConfig.SaveUser(done);

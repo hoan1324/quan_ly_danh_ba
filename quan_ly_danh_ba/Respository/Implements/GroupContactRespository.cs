@@ -12,7 +12,7 @@ namespace quan_ly_danh_ba.Respository.Implements
         public GroupContact Delete(GroupContact groupContact)
         {
             var position = Quan_ly_danh_baEntity.db.GroupContacts.FirstOrDefault(item => item.GroupContactID == groupContact.GroupContactID);
-if(position != null)
+            if(position != null)
             {
                 Quan_ly_danh_baEntity.db.GroupContacts.Remove(groupContact);
                 Quan_ly_danh_baEntity.db.SaveChanges();
@@ -23,7 +23,8 @@ return null;
 
         public GroupContact FindByName(string name)
         {
-            var groupContact = Quan_ly_danh_baEntity.db.GroupContacts.FirstOrDefault(item => item.GroupName.Equals(name,StringComparison.OrdinalIgnoreCase));
+
+            var groupContact = Quan_ly_danh_baEntity.db.GroupContacts.FirstOrDefault(item =>item.UserID==SessionConfig.GetUser().UserID && item.GroupName.Equals(name,StringComparison.OrdinalIgnoreCase));
             if (groupContact == null)
             {
                 return null;
@@ -31,46 +32,36 @@ return null;
             return groupContact;
         }
 
-        public GroupContact Insert(GroupContact groupContact)
+        public GroupContact Insert(GroupContact groupContact,User user=null)
         {
-            using (var transaction = Quan_ly_danh_baEntity.db.Database.BeginTransaction())
-            {
-                try
-                {
+            var userId = user.UserID != null ? user.UserID : SessionConfig.GetUser().UserID;
+
+            var currentUser = Quan_ly_danh_baEntity.db.Users.FirstOrDefault(item => item.UserID == userId);
                     var position = Quan_ly_danh_baEntity.db.GroupContacts
-                        .FirstOrDefault(item => item.GroupContactID == groupContact.GroupContactID);
+                        .FirstOrDefault(item => item.GroupContactID == groupContact.GroupContactID && item.UserID == currentUser.UserID);
                     if (position == null)
                     {
+                        position.User =currentUser;
                         Quan_ly_danh_baEntity.db.GroupContacts.Add(groupContact);
                         Quan_ly_danh_baEntity.db.SaveChanges();
-                        transaction.Commit();
                         return groupContact;
                     }
-                    else
-                    {
-                        transaction.Rollback();
-                        // Thêm xử lý khi nhóm liên hệ đã tồn tại
-                    }
-                }
-                catch (Exception ex)
-                {
-                    transaction.Rollback();
-                    // Bắt và xử lý ngoại lệ
-                    Console.WriteLine("An error occurred: " + ex.Message);
-                }
-            }
+                    
             return null;
 
         }
 
         public List<GroupContact> ListGroupContact()
         {
-            return Quan_ly_danh_baEntity.db.GroupContacts.ToList();
+            var currentUser = Quan_ly_danh_baEntity.db.Users.FirstOrDefault(item => item.UserID == SessionConfig.GetUser().UserID);
+
+            return Quan_ly_danh_baEntity.db.GroupContacts.Where(item=>item.UserID==currentUser.UserID).ToList();
         }
 
         public GroupContact Update(GroupContact groupContact)
         {
-            var position = Quan_ly_danh_baEntity.db.GroupContacts.FirstOrDefault(item => item.GroupContactID == groupContact.GroupContactID);
+            var currentUser = Quan_ly_danh_baEntity.db.Users.FirstOrDefault(item => item.UserID == SessionConfig.GetUser().UserID);
+            var position = Quan_ly_danh_baEntity.db.GroupContacts.FirstOrDefault(item => item.GroupContactID == groupContact.GroupContactID && item.UserID==currentUser.UserID);
             if (position != null)
             {
                position.GroupName=groupContact.GroupName;

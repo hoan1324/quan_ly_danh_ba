@@ -9,5 +9,7 @@ namespace Dtos
     {
         public Guid GroupContactID { get; set; }
         public string GroupName { get; set; }
+        public Guid UserID { get; set; }
+
     }
 }

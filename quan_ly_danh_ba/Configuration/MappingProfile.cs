@@ -22,11 +22,20 @@ namespace Configuration
              opt => opt.MapFrom(src => src.GroupContacts.Select(gc => gc.GroupName).ToList())
              ).ReverseMap();
 
-             CreateMap<GroupContactDto,GroupContact>()
+            CreateMap<ContactCreateDto, Contact>()
+            .ForMember(des => des.User, opt => opt.Ignore());
+
+            CreateMap<GroupContactDto,GroupContact>()
             .ForMember(des=>des.Contacts,opt=>opt.Ignore())
+            .ForMember(des=>des.User, opt=>opt.Ignore())
             .ReverseMap();
 
-            CreateMap<UserDto, User>().ReverseMap();
+            
+            
+            CreateMap<UserDto, User>()
+            .ForMember(des=>des.Contacts, opt=>opt.Ignore())
+            .ForMember(des=>des.GroupContacts, opt =>opt.Ignore())
+            .ReverseMap();
 
 
         }
