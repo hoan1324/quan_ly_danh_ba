@@ -21,10 +21,13 @@ namespace quan_ly_danh_ba.Respository.Implements
 return null;
         }
 
-        public GroupContact FindByName(string name)
+        public GroupContact FindByName(string name, Guid? userId = null)
         {
-
-            var groupContact = Quan_ly_danh_baEntity.db.GroupContacts.FirstOrDefault(item =>item.UserID==SessionConfig.GetUser().UserID && item.GroupName.Equals(name,StringComparison.OrdinalIgnoreCase));
+            if(userId == null)
+            {
+                userId = SessionConfig.GetUser().UserID;
+            }
+            var groupContact = Quan_ly_danh_baEntity.db.GroupContacts.FirstOrDefault(item =>item.UserID==userId && item.GroupName.Equals(name,StringComparison.OrdinalIgnoreCase));
             if (groupContact == null)
             {
                 return null;
@@ -32,16 +35,18 @@ return null;
             return groupContact;
         }
 
-        public GroupContact Insert(GroupContact groupContact,User user=null)
+        public GroupContact Insert(GroupContact groupContact,Guid ?userId = null)
         {
-            var userId = user.UserID != null ? user.UserID : SessionConfig.GetUser().UserID;
-
+            if (userId == null)
+            {
+                userId = SessionConfig.GetUser().UserID;
+            }
             var currentUser = Quan_ly_danh_baEntity.db.Users.FirstOrDefault(item => item.UserID == userId);
                     var position = Quan_ly_danh_baEntity.db.GroupContacts
-                        .FirstOrDefault(item => item.GroupContactID == groupContact.GroupContactID && item.UserID == currentUser.UserID);
+                        .FirstOrDefault(item => item.GroupContactID == groupContact.GroupContactID && item.UserID == userId);
                     if (position == null)
                     {
-                        position.User =currentUser;
+                        groupContact.User = currentUser;
                         Quan_ly_danh_baEntity.db.GroupContacts.Add(groupContact);
                         Quan_ly_danh_baEntity.db.SaveChanges();
                         return groupContact;
@@ -53,9 +58,9 @@ return null;
 
         public List<GroupContact> ListGroupContact()
         {
-            var currentUser = Quan_ly_danh_baEntity.db.Users.FirstOrDefault(item => item.UserID == SessionConfig.GetUser().UserID);
+            var currentUser = SessionConfig.GetUser().UserID;
 
-            return Quan_ly_danh_baEntity.db.GroupContacts.Where(item=>item.UserID==currentUser.UserID).ToList();
+            return Quan_ly_danh_baEntity.db.GroupContacts.Where(item=>item.UserID==currentUser).ToList();
         }
 
         public GroupContact Update(GroupContact groupContact)

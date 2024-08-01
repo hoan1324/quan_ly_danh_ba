@@ -48,25 +48,27 @@ namespace quan_ly_danh_ba.Services.Implements
             return true;
         }
 
-        public GroupContactDto FindByName(string groupName)
+        public GroupContactDto FindByName(string groupName, Guid? userId = null)
         {
-            return _mapper.Map<GroupContactDto>(_groupContactRepo.FindByName(groupName));
+           var userID=userId ?? SessionConfig.GetUser().UserID;
+            var position =  _groupContactRepo.FindByName(groupName, userID);
+            return _mapper.Map<GroupContactDto>(position);
         }
 
-        public GroupContactDto Insert(string groupName,UserDto user=null)
+        public GroupContactDto Insert(string groupName, Guid? userId = null)
         {
-            var userId = user.UserID != null ? user.UserID : SessionConfig.GetUser().UserID;
-            var currentUser = Quan_ly_danh_baEntity.db.Users.FirstOrDefault(item => item.UserID == userId);
-            var position = _groupContactRepo.FindByName(groupName);
+            var userID = userId ?? SessionConfig.GetUser().UserID;
+
+            var position = _groupContactRepo.FindByName(groupName, userID);
             if (position == null)
             {
                 var newGroupContactDto = new GroupContactDto
                 {
                     GroupContactID = Guid.NewGuid(),
                     GroupName = groupName.Substring(0, 1).ToUpper() + groupName.Substring(1, groupName.Length - 1),
-                    UserID=currentUser.UserID,
+                    UserID= userID,
                 };
-                var done = _groupContactRepo.Insert(_mapper.Map<GroupContact>(newGroupContactDto),currentUser);
+                var done = _groupContactRepo.Insert(_mapper.Map<GroupContact>(newGroupContactDto),userId);
                 return _mapper.Map<GroupContactDto>(done);
             }
             return null;

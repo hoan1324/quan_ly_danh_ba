@@ -9,6 +9,9 @@
             minlength: 4,
             maxlength: 10
         },
+        BirthDay: {
+            required: true,
+        },
         Password: {
             required: true,
             minlength: 8
@@ -27,6 +30,9 @@
             required: "Vui lòng nhập tên tài khoản",
             minlength: "Tên tài khoản tối thiểu 4 ký tự",
             maxlength:"Tên tài khoản tối đa 10 ký tự "
+        },
+        BirthDay: {
+            required: "Vui lòng nhập ngày sinh",
         },
         Password: {
             required: "Vui lòng nhập mật khẩu",

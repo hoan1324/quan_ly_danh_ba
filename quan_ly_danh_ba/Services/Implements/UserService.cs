@@ -15,13 +15,11 @@ namespace quan_ly_danh_ba.Services.Implements
     {
         private readonly IUserRespository _UserRepo;
         private readonly IMapper _mapper;
-        private readonly IConnectModelRespository _connect;
         private readonly IGroupContactService _groupContactService;
-        public UserService(IUserRespository UserRepo, IMapper mapper, IConnectModelRespository connect, IGroupContactService groupContactService)
+        public UserService(IUserRespository UserRepo, IMapper mapper,  IGroupContactService groupContactService)
         {
             _UserRepo = UserRepo;
             _mapper = mapper;
-            _connect = connect;
             _groupContactService = groupContactService;
         }
 
@@ -59,12 +57,12 @@ namespace quan_ly_danh_ba.Services.Implements
             {
                 user.UserID=Guid.NewGuid();
                 var done = _UserRepo.Insert(_mapper.Map<User>(user));
-                var doneReturn = _mapper.Map<UserDto>(done);
+               
                foreach (var item in defaultGroupContacts)
                 {
-                    _groupContactService.Insert(item,doneReturn);
+                    _groupContactService.Insert(item,done.UserID);
                 }
-                return _mapper.Map<UserDto>(done);
+                return _mapper.Map<UserDto>(done); 
             }
             return null;
         }

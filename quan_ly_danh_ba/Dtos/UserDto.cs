@@ -17,5 +17,6 @@ namespace Dtos
         public string LinkFacebook { get; set; }
         public string LinkTikTok { get; set; }
         public string LinkInstagram { get; set; }
+        public DateTime BirthDay { get; set; }
     }
 }

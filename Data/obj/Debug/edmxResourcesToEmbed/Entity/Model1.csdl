@@ -1,5 +1,13 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Schema Namespace="quan_ly_danh_baModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="Admin">
+    <Key>
+      <PropertyRef Name="AdminID" />
+    </Key>
+    <Property Name="AdminID" Type="Guid" Nullable="false" />
+    <Property Name="UserName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Password" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+  </EntityType>
   <EntityType Name="Contact">
     <Key>
       <PropertyRef Name="ContactID" />
@@ -9,6 +17,8 @@
     <Property Name="PhoneNumber" Type="String" MaxLength="30" FixedLength="false" Unicode="false" Nullable="false" />
     <Property Name="Email" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
     <Property Name="Address" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="UserID" Type="Guid" Nullable="false" />
+    <NavigationProperty Name="User" Relationship="Self.FK_Contact_User" FromRole="Contact" ToRole="User" />
     <NavigationProperty Name="GroupContacts" Relationship="Self.Group_Contact" FromRole="Contact" ToRole="GroupContact" />
   </EntityType>
   <EntityType Name="GroupContact">
@@ -17,6 +27,8 @@
     </Key>
     <Property Name="GroupContactID" Type="Guid" Nullable="false" />
     <Property Name="GroupName" Type="String" MaxLength="500" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="UserID" Type="Guid" Nullable="false" />
+    <NavigationProperty Name="User" Relationship="Self.FK_GroupContact_User" FromRole="GroupContact" ToRole="User" />
     <NavigationProperty Name="Contacts" Relationship="Self.Group_Contact" FromRole="GroupContact" ToRole="Contact" />
   </EntityType>
   <EntityType Name="sysdiagram">
@@ -29,14 +41,70 @@
     <Property Name="version" Type="Int32" />
     <Property Name="definition" Type="Binary" MaxLength="Max" FixedLength="false" />
   </EntityType>
+  <EntityType Name="User">
+    <Key>
+      <PropertyRef Name="UserID" />
+    </Key>
+    <Property Name="UserID" Type="Guid" Nullable="false" />
+    <Property Name="UserName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Avatar" Type="Binary" MaxLength="Max" FixedLength="false" />
+    <Property Name="Email" Type="String" MaxLength="500" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Password" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="PhoneNumber" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Address" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="LinkFacebook" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+    <Property Name="LinkTikTok" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+    <Property Name="LinkInstagram" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+    <Property Name="BirthDay" Type="DateTime" Nullable="false" Precision="0" />
+    <NavigationProperty Name="Contacts" Relationship="Self.FK_Contact_User" FromRole="User" ToRole="Contact" />
+    <NavigationProperty Name="GroupContacts" Relationship="Self.FK_GroupContact_User" FromRole="User" ToRole="GroupContact" />
+  </EntityType>
+  <Association Name="FK_Contact_User">
+    <End Role="User" Type="Self.User" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="Contact" Type="Self.Contact" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="User">
+        <PropertyRef Name="UserID" />
+      </Principal>
+      <Dependent Role="Contact">
+        <PropertyRef Name="UserID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_GroupContact_User">
+    <End Role="User" Type="Self.User" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="GroupContact" Type="Self.GroupContact" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="User">
+        <PropertyRef Name="UserID" />
+      </Principal>
+      <Dependent Role="GroupContact">
+        <PropertyRef Name="UserID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
   <Association Name="Group_Contact">
     <End Role="Contact" Type="Self.Contact" Multiplicity="*" />
     <End Role="GroupContact" Type="Self.GroupContact" Multiplicity="*" />
   </Association>
-  <EntityContainer Name="quan_ly_danh_baEntities1" annotation:LazyLoadingEnabled="true">
+  <EntityContainer Name="quan_ly_danh_baEntities2" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="Admins" EntityType="Self.Admin" />
     <EntitySet Name="Contacts" EntityType="Self.Contact" />
     <EntitySet Name="GroupContacts" EntityType="Self.GroupContact" />
     <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagram" />
+    <EntitySet Name="Users" EntityType="Self.User" />
+    <AssociationSet Name="FK_Contact_User" Association="Self.FK_Contact_User">
+      <End Role="User" EntitySet="Users" />
+      <End Role="Contact" EntitySet="Contacts" />
+    </AssociationSet>
+    <AssociationSet Name="FK_GroupContact_User" Association="Self.FK_GroupContact_User">
+      <End Role="User" EntitySet="Users" />
+      <End Role="GroupContact" EntitySet="GroupContacts" />
+    </AssociationSet>
     <AssociationSet Name="Group_Contact" Association="Self.Group_Contact">
       <End Role="Contact" EntitySet="Contacts" />
       <End Role="GroupContact" EntitySet="GroupContacts" />

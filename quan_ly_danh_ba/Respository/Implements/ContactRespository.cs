@@ -33,9 +33,12 @@ namespace quan_ly_danh_ba.Respository.Implements
 
         public Contact Insert(Contact contact)
         {
-            var position = Quan_ly_danh_baEntity.db.Contacts.FirstOrDefault(item => item.UserID == SessionConfig.GetUser().UserID && item.ContactID == contact.ContactID);
+            var currentUser = Quan_ly_danh_baEntity.db.Users.FirstOrDefault(item => item.UserID == SessionConfig.GetUser().UserID);
+
+            var position = Quan_ly_danh_baEntity.db.Contacts.FirstOrDefault(item => item.UserID == currentUser.UserID && item.ContactID == contact.ContactID);
             if (position == null)
             {
+                contact.User = currentUser;
                 Quan_ly_danh_baEntity.db.Contacts.Add(contact);
                 Quan_ly_danh_baEntity.db.SaveChanges();
                 return contact;
@@ -45,7 +48,8 @@ namespace quan_ly_danh_ba.Respository.Implements
 
         public List<Contact> ListContact()
         {
-            return Quan_ly_danh_baEntity.db.Contacts.Where(item=> item.UserID == SessionConfig.GetUser().UserID ).ToList();
+            var currentUser=SessionConfig.GetUser().UserID;
+            return Quan_ly_danh_baEntity.db.Contacts.Where(item=> item.UserID == currentUser).ToList();
         }
 
         public List<Contact> ListContactSearch(List<Contact> search )

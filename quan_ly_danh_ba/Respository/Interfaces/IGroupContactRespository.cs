@@ -10,8 +10,8 @@ namespace quan_ly_danh_ba.Respository.Interfaces
     public interface IGroupContactRespository
     {
         List<GroupContact> ListGroupContact();
-        GroupContact FindByName(string name);
-        GroupContact Insert(GroupContact groupContact,User user=null);
+        GroupContact FindByName(string name, Guid? userId =null);
+        GroupContact Insert(GroupContact groupContact,Guid ?userId=null);
         GroupContact  Delete(GroupContact groupContact);
         GroupContact Update(GroupContact groupContact);
         
