@@ -7,8 +7,13 @@
 <div class="detail-user ">
     <div></div>
     <div class="container">
-        <div class="text-center">
-            <img class="rounded-circle p-1 border" src="@((SessionConfig.GetUser().Avatar.Length<=0)?"/Content/img/logo.png":SessionConfig.GetUser().Avatar)" alt="avt" />
+        <div class="text-center ">
+            <div class="position-relative">
+                <img class="rounded-circle p-1 border" src="@((SessionConfig.GetUser().Avatar.Length<=0)?"/Content/img/logo.png":SessionConfig.GetUser().Avatar)" alt="avt" />
+                <div class="position-absolute bottom-0 end-0"><i class="fa-solid fa-camera"></i>
+            </div>
+            </div>
+            
         </div>
         <div class="infor-user text-center">
             <h1>@SessionConfig.GetUser().UserName</h1>

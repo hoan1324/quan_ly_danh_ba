@@ -11,7 +11,8 @@ namespace quan_ly_danh_ba.Respository.Implements
     {
         public Contact Delete(Contact contact)
         {
-            var position = Quan_ly_danh_baEntity.db.Contacts.FirstOrDefault(item => item.ContactID == contact.ContactID && item.UserID == SessionConfig.GetUser().UserID);
+            var userId = SessionConfig.GetUser().UserID;
+            var position = Quan_ly_danh_baEntity.db.Contacts.FirstOrDefault(item => item.ContactID == contact.ContactID && item.UserID == userId);
             if (position != null)
             {
                 Quan_ly_danh_baEntity.db.Contacts.Remove(position);
@@ -23,7 +24,8 @@ namespace quan_ly_danh_ba.Respository.Implements
 
        public Contact FindById(Guid id)
         {
-            var contact = Quan_ly_danh_baEntity.db.Contacts.FirstOrDefault(item =>item.UserID==SessionConfig.GetUser().UserID && item.ContactID == id);
+            var userId = SessionConfig.GetUser().UserID;
+            var contact = Quan_ly_danh_baEntity.db.Contacts.FirstOrDefault(item =>item.UserID==userId && item.ContactID == id);
             if (contact == null)
             {
                 return null;
@@ -33,7 +35,8 @@ namespace quan_ly_danh_ba.Respository.Implements
 
         public Contact Insert(Contact contact)
         {
-            var currentUser = Quan_ly_danh_baEntity.db.Users.FirstOrDefault(item => item.UserID == SessionConfig.GetUser().UserID);
+            var userId = SessionConfig.GetUser().UserID;
+            var currentUser = Quan_ly_danh_baEntity.db.Users.FirstOrDefault(item => item.UserID == userId);
 
             var position = Quan_ly_danh_baEntity.db.Contacts.FirstOrDefault(item => item.UserID == currentUser.UserID && item.ContactID == contact.ContactID);
             if (position == null)
@@ -59,7 +62,8 @@ namespace quan_ly_danh_ba.Respository.Implements
 
         public Contact Update(Contact contact)
         {
-            var position = Quan_ly_danh_baEntity.db.Contacts.FirstOrDefault(item => item.ContactID == contact.ContactID);
+            var userId = SessionConfig.GetUser().UserID;
+            var position = Quan_ly_danh_baEntity.db.Contacts.FirstOrDefault(item =>item.UserID == userId && item.ContactID == contact.ContactID);
            if(position != null)
             {
 
@@ -67,7 +71,6 @@ namespace quan_ly_danh_ba.Respository.Implements
                 position.PhoneNumber = contact.PhoneNumber;
                 position.Address = contact.Address;
                 position.Email = contact.Email;
-
                 Quan_ly_danh_baEntity.db.SaveChanges();
                 return position;
             }

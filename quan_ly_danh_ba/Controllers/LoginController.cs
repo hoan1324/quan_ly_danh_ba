@@ -28,8 +28,8 @@ namespace quan_ly_danh_ba.Controllers
             {
                 SessionConfig.SaveUser(done);
                 return RedirectToAction("Index", "Home", new { area = "User" });
-
             }
+            
             return View();
         }
         public ActionResult SignUp()

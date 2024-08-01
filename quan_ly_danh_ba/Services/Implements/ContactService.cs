@@ -47,7 +47,8 @@ namespace quan_ly_danh_ba.Services.Implements
 
         public ContactCreateDto Insert(ContactCreateDto contactCreateDto,  string newGroupContactNames)
         {
-            var currentUser = Quan_ly_danh_baEntity.db.Users.FirstOrDefault(item=>item.UserID==SessionConfig.GetUser().UserID);
+            var userId = SessionConfig.GetUser().UserID;
+            var currentUser = Quan_ly_danh_baEntity.db.Users.FirstOrDefault(item=>item.UserID==userId);
             contactCreateDto.ContactID = Guid.NewGuid();
             contactCreateDto.UserID=currentUser.UserID;
             var position =_contactRepo.Insert(_mapper.Map<Contact>(contactCreateDto));
@@ -122,7 +123,8 @@ namespace quan_ly_danh_ba.Services.Implements
 
         public ContactCreateDto Update(ContactCreateDto contactCreateDto, string newGroupContactNames)
         {
-            var currentUser = Quan_ly_danh_baEntity.db.Users.FirstOrDefault(item => item.UserID == SessionConfig.GetUser().UserID);
+            var userId = SessionConfig.GetUser().UserID;
+            var currentUser = Quan_ly_danh_baEntity.db.Users.FirstOrDefault(item => item.UserID == userId);
             _contactRepo.Update(_mapper.Map<Contact>(contactCreateDto));
             var oldContact = _contactRepo.FindById(contactCreateDto.ContactID);
 

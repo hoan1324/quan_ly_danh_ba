@@ -11,7 +11,8 @@ namespace quan_ly_danh_ba.Respository.Implements
     {
         public GroupContact Delete(GroupContact groupContact)
         {
-            var position = Quan_ly_danh_baEntity.db.GroupContacts.FirstOrDefault(item => item.GroupContactID == groupContact.GroupContactID);
+            var userId = SessionConfig.GetUser().UserID;
+            var position = Quan_ly_danh_baEntity.db.GroupContacts.FirstOrDefault(item =>item.UserID==userId && item.GroupContactID == groupContact.GroupContactID);
             if(position != null)
             {
                 Quan_ly_danh_baEntity.db.GroupContacts.Remove(groupContact);
@@ -65,7 +66,8 @@ return null;
 
         public GroupContact Update(GroupContact groupContact)
         {
-            var currentUser = Quan_ly_danh_baEntity.db.Users.FirstOrDefault(item => item.UserID == SessionConfig.GetUser().UserID);
+            var userId = SessionConfig.GetUser().UserID;
+            var currentUser = Quan_ly_danh_baEntity.db.Users.FirstOrDefault(item => item.UserID == userId);
             var position = Quan_ly_danh_baEntity.db.GroupContacts.FirstOrDefault(item => item.GroupContactID == groupContact.GroupContactID && item.UserID==currentUser.UserID);
             if (position != null)
             {
