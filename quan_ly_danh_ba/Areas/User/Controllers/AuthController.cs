@@ -1,7 +1,9 @@
 ﻿using Dtos;
+using quan_ly_danh_ba.Areas.User.Constant;
 using quan_ly_danh_ba.Services.Interfaces;
 using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
@@ -20,6 +22,38 @@ namespace quan_ly_danh_ba.Areas.User.Controllers
         // GET: User/User
         public ActionResult ProfileUser()
         {
+            return View();
+        }
+        [HttpPost]
+        public ActionResult ProfileUser(HttpPostedFileBase Avatar, string Type)
+        {
+            byte[] avatarData = null;
+            if (Avatar != null && Avatar.ContentLength > 0)
+            { 
+                if(!ImageConst.permittedExtensions.Contains(Avatar.ContentType) )
+                {
+                    if(! ImageConst.permittedMimeTypes.Contains(Avatar.ContentType)) {
+                        ModelState.AddModelError("file", "Chỉ chấp nhận các định dạng ảnh: .jpg, .jpeg, .png, .gif");
+                        return View();
+                    }
+                }
+                using (var binaryReader = new BinaryReader(Avatar.InputStream))
+                {
+                    avatarData = binaryReader.ReadBytes(Avatar.ContentLength);
+                }
+                
+            }
+            UserDto user = new UserDto
+            {
+                Avatar = avatarData,
+            };
+
+            var done = _userService.Update(user, Type);
+            if (done != null)
+            {
+                SessionConfig.SaveUser(done);
+               return View();
+            }
             return View();
         }
         public ActionResult EditProfile()

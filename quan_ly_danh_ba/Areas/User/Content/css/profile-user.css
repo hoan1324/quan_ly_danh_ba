@@ -1,0 +1,9 @@
+﻿.avata img{
+    width:100px;
+    height:100px;
+    object-fit:cover;
+}
+.avata i{
+    right:10%;
+    cursor:pointer;
+}

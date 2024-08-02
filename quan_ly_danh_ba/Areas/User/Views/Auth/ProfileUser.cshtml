@@ -3,53 +3,89 @@
     ViewBag.Title = "Profile";
     Layout = "~/Areas/User/Views/Shared/_Layout.cshtml";
 }
+@section linkCss{
+    <link href="~/Areas/User/Content/css/profile-user.css" rel="stylesheet" type="text/css" />
+}
+@Html.ValidationMessage("file", "", new { @class = "text-danger" })
 
 <div class="detail-user ">
     <div></div>
     <div class="container">
         <div class="text-center ">
-            <div class="position-relative">
-                <img class="rounded-circle p-1 border" src="@((SessionConfig.GetUser().Avatar.Length<=0)?"/Content/img/logo.png":SessionConfig.GetUser().Avatar)" alt="avt" />
-                <div class="position-absolute bottom-0 end-0"><i class="fa-solid fa-camera"></i>
+            <div class="position-relative d-inline-block avatar">
+                @{
+                    var avatarUrl = SessionConfig.GetUser().Avatar != null && SessionConfig.GetUser().Avatar.Length > 0
+                        ? "data:image/png;base64," + Convert.ToBase64String(SessionConfig.GetUser().Avatar)
+                        : Url.Content("~/Content/img/logo.png");
+                }
+                <img class="rounded-circle p-1 border" src="@avatarUrl" alt="avt" />
+                <i data-bs-toggle="modal" data-bs-target="#exampleModal" class="fa-solid fa-camera position-absolute bottom-0"></i>
             </div>
-            </div>
-            
         </div>
-        <div class="infor-user text-center">
-            <h1>@SessionConfig.GetUser().UserName</h1>
-            <p>@(string.IsNullOrEmpty(SessionConfig.GetUser().Address)?"Không có thông tin về địa chỉ": SessionConfig.GetUser().Address)</p>
-            <div class="mt-5 mb-3">
-                <p>@SessionConfig.GetUser().Email</p>
-                <p>@(string.IsNullOrEmpty(SessionConfig.GetUser().Address)?"Không có thông tin về số điện thoại": SessionConfig.GetUser().PhoneNumber)</p>
-                <div class="d-flex align-items-center justify-content-center">
-                    @if (SessionConfig.GetUser().LinkFacebook != null)
-                    {
-                        <span>
-                            <a href="@SessionConfig.GetUser().LinkFacebook" target="_blank">
-                                <i class="fa-brands fa-facebook"></i>
-                            </a>
-                        </span>
-                    }
-                    @if (SessionConfig.GetUser().LinkTikTok != null)
-                    {
-                        <span>
-                            <a href="@SessionConfig.GetUser().LinkFacebook" target="_blank">
-                                <i class="fa-brands fa-tiktok">    </i>
-                            </a>
-                        </span>
-                    }
-                    @if (SessionConfig.GetUser().LinkInstagram != null)
-                    {
-                        <span>
-                            <a href="@SessionConfig.GetUser().LinkFacebook" target="_blank">
-                                <i class="fa-brands fa-instagram"></i>
-                            </a>
-                        </span>
-                    }
-                </div>
+
+    </div>
+    <div class="infor-user text-center">
+        <h1>@SessionConfig.GetUser().UserName</h1>
+        <p>@(string.IsNullOrEmpty(SessionConfig.GetUser().Address)?"Không có thông tin về địa chỉ": SessionConfig.GetUser().Address)</p>
+        <div class="mt-5 mb-3">
+            <p>@SessionConfig.GetUser().Email</p>
+            <p>@(string.IsNullOrEmpty(SessionConfig.GetUser().Address)?"Không có thông tin về số điện thoại": SessionConfig.GetUser().PhoneNumber)</p>
+            <div class="d-flex align-items-center justify-content-center">
+                @if (SessionConfig.GetUser().LinkFacebook != null)
+                {
+                    <span>
+                        <a href="@SessionConfig.GetUser().LinkFacebook" target="_blank">
+                            <i class="fa-brands fa-facebook"></i>
+                        </a>
+                    </span>
+                }
+                @if (SessionConfig.GetUser().LinkTikTok != null)
+                {
+                    <span>
+                        <a href="@SessionConfig.GetUser().LinkFacebook" target="_blank">
+                            <i class="fa-brands fa-tiktok">    </i>
+                        </a>
+                    </span>
+                }
+                @if (SessionConfig.GetUser().LinkInstagram != null)
+                {
+                    <span>
+                        <a href="@SessionConfig.GetUser().LinkFacebook" target="_blank">
+                            <i class="fa-brands fa-instagram"></i>
+                        </a>
+                    </span>
+                }
             </div>
-            <span class="btn btn-success"><a class="link-light" href="~/user/auth/editprofile">Edit Profile</a></span>
+        </div>
+        <span class="btn btn-success"><a class="link-light" href="~/user/auth/editprofile">Edit Profile</a></span>
+    </div>
+</div>
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h1 class="modal-title fs-5" id="exampleModalLabel">Thay đổi Avatar</h1>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <form id="form-edit-profile" action="~/user/auth/profileuser" method="post" class="needs-validation" novalidate enctype="multipart/form-data">
+
+                <div class="modal-body">
+
+                    <input class="form-control text-box single-line" data-val="true" data-val-required="The type field is required." id="Type" name="Type" type="hidden" value="avatar">
+                    <div>
+                        <label for="avatar">Chọn ảnh để tải lên:</label>
+                        <input type="file" id="avatar" name="Avatar" />
+                    </div>
+
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                    <button type="submit" class="btn btn-primary">Save changes</button>
+                </div>
+            </form>
         </div>
     </div>
-
 </div>
+@*@section Scripts{
+        <script src="~/Areas/User/Content/script/create.js"></script>
+    }*@

@@ -127,6 +127,7 @@
     <Content Include="Areas\User\Content\css\edit.css" />
     <Content Include="Areas\User\Content\css\create.css" />
     <Content Include="Areas\User\Content\css\data-table.css" />
+    <Content Include="Areas\User\Content\css\profile-user.css" />
     <Content Include="Areas\User\Content\script\data-group-contact.js" />
     <Content Include="Areas\User\Content\script\edit.js" />
     <Content Include="Areas\User\Content\script\create.js" />

@@ -5,10 +5,10 @@ using System.Web;
 
 namespace quan_ly_danh_ba.Areas.User.Constant
 {
-    public class ImageConst
+    public static class ImageConst
     {
-        public readonly string[] permittedExtensions = { ".jpg", ".jpeg", ".png", ".gif" };
-        public readonly string[] permittedMimeTypes = { "image/jpeg", "image/png", "image/gif" };
+        public static readonly string[] permittedExtensions = { ".jpg", ".jpeg", ".png", ".gif" };
+        public static readonly string[] permittedMimeTypes = { "image/jpeg", "image/png", "image/gif" };
 
     }
 }
