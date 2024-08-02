@@ -56,6 +56,8 @@
 });
 
 $(function () {
+    $('.temp-alert').fadeOut(3000);
+
     $(".visible-pass").on("click", function () {
         var input = $(this).siblings('.password');
         if (input.attr('type') === 'password') {

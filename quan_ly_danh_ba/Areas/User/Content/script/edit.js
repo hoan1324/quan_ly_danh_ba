@@ -51,10 +51,8 @@ jQuery('#form-edit').validate({
     }
 });
 $(function () {
-    $(".temp-alert").fadeIn();
-    var clearTime = setTimeout(function () {
-        $('.temp-alert').fadeOut();
-    }, 3000);
+    $(".temp-alert").fadeOut(3000);
+
     clearTimeout(clearTime);
     $(".hide-default").hide();
     $("#diffirent-checkbox").on("click", function () {

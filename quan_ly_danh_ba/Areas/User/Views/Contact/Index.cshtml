@@ -5,9 +5,15 @@
     ViewBag.Title = "Index";
     Layout = "~/Areas/User/Views/Shared/_Layout.cshtml";
 }
-@if (TempData["Message"] != null)
+@if (TempData["SuccessMessage"] != null)
 {
-    <div class="temp-alert alert alert-success">@TempData["Message"]</div>
+    <div class="temp-alert alert alert-success position-absolute w-50 text-center" style="left:25%;">@TempData["SuccessMessage"]</div>
+
+}
+@if (TempData["ErrorMessage"] != null)
+{
+    <div class="temp-alert alert alert-danger position-absolute w-50 text-center" style="left:25%;">@TempData["ErrorMessage"]</div>
+
 }
 @section linkCss{
     <link href="~/Areas/User/Content/css/data-table.css" rel="stylesheet" type="text/css" />
@@ -29,61 +35,61 @@
     </div>
     <div class="overflow-auto data-table-parent">
         <table class="w-100  data-table">
-        <tr class="title-table">
-            <th class="text-center  fs-5 p-md-3 px-3 py-0" scope="col">STT</th>
-            <th class="text-center  fs-5 p-md-3 px-3 py-0" scope="col">Họ và tên</th>
-            <th class="text-center  fs-5 p-md-3 px-3 py-0" scope="col">Số điện thoại</th>
-            <th class="text-center  fs-5 p-md-3 px-3 py-0" scope="col">Email</th>
-            <th class="text-center  fs-5 p-md-3 px-3 py-0" scope="col">Địa chỉ</th>
-            <th class="text-center  fs-5 p-md-3 px-3 py-0" scope="col">Quan hệ</th>
-            <th class="text-center  fs-5 p-md-3 px-3 py-0" scope="col">Chức năng </th>
-        </tr>
-        @if (@Model != null)
-        {
-            int j = 0;
-            foreach (var item in Model)
+            <tr class="title-table">
+                <th class="text-center  fs-5 p-md-3 px-3 py-0" scope="col">STT</th>
+                <th class="text-center  fs-5 p-md-3 px-3 py-0" scope="col">Họ và tên</th>
+                <th class="text-center  fs-5 p-md-3 px-3 py-0" scope="col">Số điện thoại</th>
+                <th class="text-center  fs-5 p-md-3 px-3 py-0" scope="col">Email</th>
+                <th class="text-center  fs-5 p-md-3 px-3 py-0" scope="col">Địa chỉ</th>
+                <th class="text-center  fs-5 p-md-3 px-3 py-0" scope="col">Quan hệ</th>
+                <th class="text-center  fs-5 p-md-3 px-3 py-0" scope="col">Chức năng </th>
+            </tr>
+            @if (@Model != null)
             {
-                int maxGroupsToShow = 3; // Giới hạn số nhóm liên lạc hiển thị
-                int i = 0;
-                var groupsToShow = item.GroupNames.Take(maxGroupsToShow).ToList();
-                <tr>
-                    <td class="text-start fs-6 p-md-2 px-2 py-0 border text-center">@(++j)</td>
-                    <td class="text-start fs-6 p-md-2 px-2 py-0 border full-name">@item.FullName</td>
-                    <td class="text-start fs-6 p-md-2 px-2 py-0 border phone-number">@item.PhoneNumber</td>
-                    <td class="text-start fs-6 p-md-2 px-2 py-0 border">@((string.IsNullOrEmpty(item.Address)?"Không có dữ liệu":item.Address))</td>
-                    <td class="text-start fs-6 p-md-2 px-2 py-0 border">@((string.IsNullOrEmpty(item.Email)?"Không có dữ liệu":item.Email))</td>
-                    <td class="text-start fs-6 p-md-2 px-2 py-0 border group-contact">
+                int j = 0;
+                foreach (var item in Model)
+                {
+                    int maxGroupsToShow = 3; // Giới hạn số nhóm liên lạc hiển thị
+                    int i = 0;
+                    var groupsToShow = item.GroupNames.Take(maxGroupsToShow).ToList();
+                    <tr>
+                        <td class="text-start fs-6 p-md-2 px-2 py-0 border text-center">@(++j)</td>
+                        <td class="text-start fs-6 p-md-2 px-2 py-0 border full-name">@item.FullName</td>
+                        <td class="text-start fs-6 p-md-2 px-2 py-0 border phone-number">@item.PhoneNumber</td>
+                        <td class="text-start fs-6 p-md-2 px-2 py-0 border">@((string.IsNullOrEmpty(item.Address)?"Không có dữ liệu":item.Address))</td>
+                        <td class="text-start fs-6 p-md-2 px-2 py-0 border">@((string.IsNullOrEmpty(item.Email)?"Không có dữ liệu":item.Email))</td>
+                        <td class="text-start fs-6 p-md-2 px-2 py-0 border group-contact">
 
-                        @foreach (var groupName in item.GroupNames)
-                        {
-                            if (i >= maxGroupsToShow)
+                            @foreach (var groupName in item.GroupNames)
                             {
-                                <span>...</span>
-                                break;
-                            }
-                            if (i > 0)
-                            {
-                                <span>, </span>
-                            }
-                            @groupName
-                            i++;
+                                if (i >= maxGroupsToShow)
+                                {
+                                    <span>...</span>
+                                    break;
+                                }
+                                if (i > 0)
+                                {
+                                    <span>, </span>
+                                }
+                                @groupName
+                                i++;
 
-                        }
-                    </td>
-                    <td class=" border function-data">
-                        <div class="d-flex justify-content-center align-items-center flex-wrap">
-                            <span class=" mx-1 rounded-circle" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Chi tiết"><a class="link-info" href="~/User/Contact/Detail?id=@item.ContactID"><i class="fa-solid fa-circle-info"></i></a></span>
-                            <span class=" mx-1 rounded-circle" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Sửa "><a class="link-warning" href="~/User/Contact/Edit?id=@item.ContactID"><i class="fa-solid fa-wrench"></i></a></span>
-                            <span class=" mx-1 rounded-circle" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Xóa"><a data-bs-toggle="modal" data-bs-target="#exampleModal" class="link-danger delete-item" data-id="@item.ContactID"><i class="fa-solid fa-circle-xmark"></i></a></span>
-                        </div>
-                    </td>
-                </tr>
+                            }
+                        </td>
+                        <td class=" border function-data">
+                            <div class="d-flex justify-content-center align-items-center flex-wrap">
+                                <span class=" mx-1 rounded-circle" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Chi tiết"><a class="link-info" href="~/User/Contact/Detail?id=@item.ContactID"><i class="fa-solid fa-circle-info"></i></a></span>
+                                <span class=" mx-1 rounded-circle" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Sửa "><a class="link-warning" href="~/User/Contact/Edit?id=@item.ContactID"><i class="fa-solid fa-wrench"></i></a></span>
+                                <span class=" mx-1 rounded-circle" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Xóa"><a data-bs-toggle="modal" data-bs-target="#exampleModal" class="link-danger delete-item" data-id="@item.ContactID"><i class="fa-solid fa-circle-xmark"></i></a></span>
+                            </div>
+                        </td>
+                    </tr>
+
+                }
 
             }
-
-        }
-    </table>
-        </div>
+        </table>
+    </div>
     <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
         <div class="modal-dialog">
             <div class="modal-content">
@@ -115,5 +121,5 @@
 
 @section Scripts{
     <script src="~/Areas/User/Content/script/data-table.js"></script>
-    
+
 }

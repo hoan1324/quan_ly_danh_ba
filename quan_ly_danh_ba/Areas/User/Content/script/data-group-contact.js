@@ -1,10 +1,9 @@
 ﻿
 $(function () {
-    $(".temp-alert").fadeIn();
+   
 
-    setTimeout(function () {
-        $('.temp-alert').fadeOut();
-    }, 3000);
+        $('.temp-alert').fadeOut(3000);
+   
     $("input[type=checkbox]").on("change", function () {
         if ($("input[type=checkbox]:checked").length > 0) {
             $(".delete-group").removeClass("disabled");

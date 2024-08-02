@@ -20,6 +20,7 @@
     <Property Name="UserID" Type="Guid" Nullable="false" />
     <NavigationProperty Name="User" Relationship="Self.FK_Contact_User" FromRole="Contact" ToRole="User" />
     <NavigationProperty Name="GroupContacts" Relationship="Self.Group_Contact" FromRole="Contact" ToRole="GroupContact" />
+    <Property Name="Avatar" Type="Binary" MaxLength="Max" FixedLength="false" />
   </EntityType>
   <EntityType Name="GroupContact">
     <Key>

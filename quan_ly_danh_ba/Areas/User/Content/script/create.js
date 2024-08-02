@@ -51,11 +51,28 @@ jQuery('#form-create').validate({
     }
 });
 $(function () {
-    $(".temp-alert").fadeIn();
-    var clearTime = setTimeout(function () {
-        $('.temp-alert').fadeOut();
-    }, 3000);
-    clearTimeout(clearTime);
+    $('.temp-alert').fadeOut(3000);
+    $(".btn").on("click", function (e) {
+        e.preventDefault(); // Ngăn chặn hành vi submit form mặc định
+
+        var fileInput = $("input[type=file]")[0];
+        var file = fileInput.files[0];
+
+        if (file) {
+            var reader = new FileReader();
+            reader.onload = function (e) {
+                var base64String = e.target.result.split(',')[1]; // Lấy chuỗi Base64 từ kết quả đọc file
+                console.log(base64String); // In ra chuỗi Base64 để kiểm tra
+
+                // Bạn có thể gửi chuỗi Base64 này đến server hoặc xử lý tiếp
+                // $.post('your-server-url', { avatarBase64: base64String }, function(response) {
+                //     // Xử lý phản hồi từ server
+                // });
+            };
+            reader.readAsDataURL(file); // Đọc file dưới dạng Data URL
+        }
+    });
+    
     $(".hide-default").hide();
     $("#diffirent-checkbox").on("click", function () {
         if ($(this).prop("checked")) {

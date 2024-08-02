@@ -2,9 +2,13 @@
 @{
     Layout = null;
 }
+@if (TempData["ErrorMessage"] != null)
+{
+    <div class="temp-alert alert alert-danger position-absolute w-50 text-center" style="left:25%;">@TempData["ErrorMessage"]</div>
+
+}
 
 <!DOCTYPE html>
-
 <html>
 <head>
     <meta name="viewport" content="width=device-width" />
@@ -35,7 +39,7 @@
                     </div>
                     <div class=" mb-3">
                         <label for="username" class="ms-1 mb-2">Username</label>
-                        <input type="date" class="form-control" id="birthday" name="BirthDay" >
+                        <input type="date" class="form-control" id="birthday" name="BirthDay">
                     </div>
                     <div class=" mb-3">
                         <label for="password" class="ms-1 mb-2">Mật khẩu</label>
@@ -68,5 +72,6 @@
     <script src="~/Content/lib/Scripts/bootstrap.bundle.min.js"></script>
     <script src="~/Content/lib/Scripts/jquery.validate.min.js"></script>
     <script src="~/Content/Scripts/sign-up.js"></script>
+
 </body>
 </html>

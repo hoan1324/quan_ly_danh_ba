@@ -3,9 +3,11 @@
 using Dtos;
 using Newtonsoft.Json;
 using PagedList;
+using quan_ly_danh_ba.Areas.User.Constant;
 using quan_ly_danh_ba.Services.Interfaces;
 using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
@@ -47,8 +49,26 @@ namespace quan_ly_danh_ba.Areas.User.Controllers
             return View(danhsach);
         }
         [HttpPost]
-        public ActionResult Create(ContactCreateDto contactDto, string newGroupName) {
+        public ActionResult Create(ContactCreateDto contactDto, string newGroupName,HttpPostedFileBase avatar) {
 
+            byte[] avatarData = null;
+            if (avatar != null && avatar.ContentLength > 0)
+            {
+                if (!ImageConst.permittedExtensions.Contains(avatar.ContentType))
+                {
+                    if (!ImageConst.permittedMimeTypes.Contains(avatar.ContentType))
+                    {
+                        TempData["SuccessError"] = "Chỉ chấp nhận các định dạng ảnh: .jpg, .jpeg, .png, .gif";
+                        return View();
+                    }
+                }
+                using (var binaryReader = new BinaryReader(avatar.InputStream))
+                {
+                    avatarData = binaryReader.ReadBytes(avatar.ContentLength);
+                }
+
+            }
+            contactDto.Avatar = avatarData;
             var position =_contactService.Insert(contactDto,  newGroupName);
             if (position != null)
             {
@@ -70,13 +90,30 @@ namespace quan_ly_danh_ba.Areas.User.Controllers
 			return View(model);
 		}
 		[HttpPost]
-		public ActionResult Edit(ContactCreateDto contactDto,  string newGroupName)
+		public ActionResult Edit(ContactCreateDto contactDto,  string newGroupName, HttpPostedFileBase avatar)
 		{
+            byte[] avatarData = null;
+            if (avatar != null && avatar.ContentLength > 0)
+            {
+                if (!ImageConst.permittedExtensions.Contains(avatar.ContentType))
+                {
+                    if (!ImageConst.permittedMimeTypes.Contains(avatar.ContentType))
+                    {
+                        TempData["SuccessError"] = "Chỉ chấp nhận các định dạng ảnh: .jpg, .jpeg, .png, .gif";
+                        return View();
+                    }
+                }
+                using (var binaryReader = new BinaryReader(avatar.InputStream))
+                {
+                    avatarData = binaryReader.ReadBytes(avatar.ContentLength);
+                }
 
-			var position = _contactService.Update(contactDto, newGroupName);
+            }
+            contactDto.Avatar = avatarData;
+            var position = _contactService.Update(contactDto, newGroupName);
 			if (position != null)
 			{
-                TempData["Message"] = "Sửa thành công!";
+                TempData["SuccessMessage"] = "Sửa thành công!";
 				return RedirectToAction("Index");
 			}
 			TempData["SuccessError"] = "Sửa thất bại!";
@@ -85,10 +122,10 @@ namespace quan_ly_danh_ba.Areas.User.Controllers
 		public ActionResult Delete(Guid id) {
         var position=_contactService.Delete(id);
             if (position != null) {
-                TempData["Message"] = "Xóa thành công!";
+                TempData["SuccessMessage"] = "Xóa thành công!";
 				return RedirectToAction("Index");
             }
-			TempData["Message"] = "Xóa thất bại!";
+			TempData["ErrorMessage"] = "Xóa thất bại!";
 			return RedirectToAction("Index");
         }
 

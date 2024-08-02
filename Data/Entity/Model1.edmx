@@ -4,7 +4,7 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-      <Schema Namespace="quan_ly_danh_baModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+    <Schema Namespace="quan_ly_danh_baModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
         <EntityType Name="Admin">
           <Key>
             <PropertyRef Name="AdminID" />
@@ -23,6 +23,7 @@
           <Property Name="Email" Type="varchar" MaxLength="200" />
           <Property Name="Address" Type="nvarchar" MaxLength="500" />
           <Property Name="UserID" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="Avatar" Type="image" />
         </EntityType>
         <EntityType Name="Group_Contact">
           <Key>
@@ -144,8 +145,7 @@
             <End Role="GroupContact" EntitySet="GroupContact" />
           </AssociationSet>
         </EntityContainer>
-      </Schema>
-    </edmx:StorageModels>
+      </Schema></edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="quan_ly_danh_baModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
@@ -169,6 +169,7 @@
           <Property Name="UserID" Type="Guid" Nullable="false" />
           <NavigationProperty Name="User" Relationship="Self.FK_Contact_User" FromRole="Contact" ToRole="User" />
           <NavigationProperty Name="GroupContacts" Relationship="Self.Group_Contact" FromRole="Contact" ToRole="GroupContact" />
+          <Property Name="Avatar" Type="Binary" MaxLength="Max" FixedLength="false" />
         </EntityType>
         <EntityType Name="GroupContact">
           <Key>
@@ -277,6 +278,7 @@
           <EntitySetMapping Name="Contacts">
             <EntityTypeMapping TypeName="quan_ly_danh_baModel.Contact">
               <MappingFragment StoreEntitySet="Contact">
+                <ScalarProperty Name="Avatar" ColumnName="Avatar" />
                 <ScalarProperty Name="ContactID" ColumnName="ContactID" />
                 <ScalarProperty Name="FullName" ColumnName="FullName" />
                 <ScalarProperty Name="PhoneNumber" ColumnName="PhoneNumber" />

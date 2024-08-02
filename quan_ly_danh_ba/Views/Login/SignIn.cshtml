@@ -2,7 +2,16 @@
 @{
     Layout = null;
 }
+@if (TempData["SuccessMessage"] != null)
+{
+    <div class="temp-alert alert alert-success position-absolute w-50 text-center" style="left:25%;">@TempData["SuccessMessage"]</div>
 
+}
+@if (TempData["ErrorMessage"] != null)
+{
+    <div class="temp-alert alert alert-danger position-absolute w-50 text-center" style="left:25%;">@TempData["ErrorMessage"]</div>
+
+}
 <!DOCTYPE html>
 
 <html>

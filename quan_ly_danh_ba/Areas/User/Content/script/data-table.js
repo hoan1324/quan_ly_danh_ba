@@ -14,11 +14,11 @@
 }
 
 $(function () {
-    $(".temp-alert").fadeIn();
+   
 
-    setTimeout(function () {
-        $('.temp-alert').fadeOut();
-    }, 3000);
+   
+        $('.temp-alert').fadeOut(3000);
+  
     $(document).on('click', '.delete-item', function () {
         const itemid = $(this).data('id');
         $('#confirmdeletebtn').attr('href', `/user/contact/delete?id=${itemid}`); // cập nhật link với id

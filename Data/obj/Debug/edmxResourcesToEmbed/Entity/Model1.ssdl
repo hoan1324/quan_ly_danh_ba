@@ -18,6 +18,7 @@
     <Property Name="Email" Type="varchar" MaxLength="200" />
     <Property Name="Address" Type="nvarchar" MaxLength="500" />
     <Property Name="UserID" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="Avatar" Type="image" />
   </EntityType>
   <EntityType Name="Group_Contact">
     <Key>

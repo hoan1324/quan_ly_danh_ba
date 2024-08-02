@@ -9,7 +9,7 @@
 }
 @if (TempData["ErrorMessage"] != null)
 {
-    <div class="temp-alert alert alert-danger">@TempData["ErrorMessage"]</div>
+    <div class="temp-alert alert alert-danger position-absolute w-50 text-center" style="left:25%;">@TempData["ErrorMessage"]</div>
 
 }
 @section linkCss{
@@ -19,12 +19,16 @@
     <h2>Edit</h2>
 </div>
 <div class="edit-data">
-    <form id="form-edit" action="~/user/contact/edit" method="post" class="needs-validation" novalidate>
+    <form id="form-edit" action="~/user/contact/edit" method="post" class="needs-validation" novalidate enctype="multipart/form-data">
         <input data-val="true" data-val-required="The ContactID field is required." id="Item1_ContactID" name="ContactID" type="hidden" value="@contact.ContactID">
-        
+
         <div class=" mb-3">
             <label for="fullname">Họ và tên</label>
             <input type="text" class="form-control" id="fullname" value="@(string.IsNullOrEmpty(contact.FullName) ? "" : contact.FullName)" placeholder="Vui lòng nhập họ và tên" name="FullName">
+        </div>
+        <div class=" mb-3">
+            <label for="fullname">Avatar</label>
+            <input type="file" class="form-control" id="avatar" name="avatar">
         </div>
         <div class=" mb-3">
             <label for="phonenumber">Số điện thoại</label>
@@ -43,8 +47,8 @@
 
 
                             <div class="form-check mx-4">
-                               
-                                    <input class="form-check-input check-input" type="checkbox" value="@groupContacts[i].GroupName" name="GroupNames" id="@groupContacts[i].GroupName" @(contact.GroupNames.Any(item => item == groupContacts[i].GroupName) ? "checked" : "")>
+
+                                <input class="form-check-input check-input" type="checkbox" value="@groupContacts[i].GroupName" name="GroupNames" id="@groupContacts[i].GroupName" @(contact.GroupNames.Any(item => item == groupContacts[i].GroupName) ? "checked" : "")>
                                 <label class="form-check-label" for="@groupContacts[i].GroupName">
                                     @groupContacts[i].GroupName
                                 </label>

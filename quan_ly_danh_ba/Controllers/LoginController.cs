@@ -29,7 +29,7 @@ namespace quan_ly_danh_ba.Controllers
                 SessionConfig.SaveUser(done);
                 return RedirectToAction("Index", "Home", new { area = "User" });
             }
-            
+            TempData["ErrorMessage"] = "Đăng nhập thất bại!";
             return View();
         }
         public ActionResult SignUp()
@@ -42,10 +42,12 @@ namespace quan_ly_danh_ba.Controllers
             var done = _userService.FindByUser(user);
             if (done != null)
             {
+                TempData["ErrorMessage"] = "Đăng ký thất bại!";
                 return View();
 
             }
             _userService.Insert(user);
+            TempData["SuccessMessage"] = "Đăng ký thành công!";
             return RedirectToAction("SignIn");
         }
     }

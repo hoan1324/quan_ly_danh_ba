@@ -26,6 +26,7 @@ namespace Data.Entity
         public string Email { get; set; }
         public string Address { get; set; }
         public System.Guid UserID { get; set; }
+        public byte[] Avatar { get; set; }
     
         public virtual User User { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]

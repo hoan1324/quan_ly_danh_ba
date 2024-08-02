@@ -13,6 +13,7 @@
     <EntitySetMapping Name="Contacts">
       <EntityTypeMapping TypeName="quan_ly_danh_baModel.Contact">
         <MappingFragment StoreEntitySet="Contact">
+          <ScalarProperty Name="Avatar" ColumnName="Avatar" />
           <ScalarProperty Name="ContactID" ColumnName="ContactID" />
           <ScalarProperty Name="FullName" ColumnName="FullName" />
           <ScalarProperty Name="PhoneNumber" ColumnName="PhoneNumber" />

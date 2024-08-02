@@ -66,7 +66,7 @@ namespace quan_ly_danh_ba.Respository.Implements
             var position = Quan_ly_danh_baEntity.db.Contacts.FirstOrDefault(item =>item.UserID == userId && item.ContactID == contact.ContactID);
            if(position != null)
             {
-
+                position.Avatar = contact.Avatar;
                 position.FullName = contact.FullName;
                 position.PhoneNumber = contact.PhoneNumber;
                 position.Address = contact.Address;
