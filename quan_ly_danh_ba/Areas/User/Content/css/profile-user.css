@@ -1,9 +1,21 @@
-﻿.avata img{
-    width:100px;
-    height:100px;
-    object-fit:cover;
+﻿.detail-profile i {
+   cursor:pointer;
 }
-.avata i{
-    right:10%;
-    cursor:pointer;
+.detail-profile h1 {
+    font-size: 38px!important;
+    line-height: 16px!important;
+}
+.detail-profile h1 span{
+    font-size:16px;
+}
+.profile-page .avatar img {
+    width: 150px;
+    height: 150px;
+    object-fit: cover;
+}
+.social span{
+    width:40px;
+ }
+.judge h1{
+    font-size:20px
 }

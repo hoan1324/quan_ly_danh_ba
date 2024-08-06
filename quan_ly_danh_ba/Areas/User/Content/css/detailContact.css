@@ -1,0 +1,26 @@
+﻿.detail .avatar img {
+    width: 150px;
+    height: 150px;
+    object-fit: cover;
+}
+
+.infor p {
+    line-height: 0px;
+}
+
+@media only screen and (max-width: 768px) {
+    .contact {
+        width: 100%;
+        text-align: center;
+    }
+
+    .infor p {
+        font-size: 22px;
+        font-weight: 600;
+    }
+
+    .infor h3 {
+        font-size: 18px;
+        font-weight: 400;
+    }
+}

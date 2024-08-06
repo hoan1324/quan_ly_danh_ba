@@ -7,7 +7,7 @@
         UserName: {
             required: true,
             minlength: 4,
-            maxlength: 50
+            maxlength: 26
         },
         BirthDay: {
             required: true,
@@ -29,7 +29,7 @@
         UserName: {
             required: "Vui lòng nhập tên tài khoản",
             minlength: "Tên tài khoản tối thiểu 4 ký tự",
-            maxlength:"Tên tài khoản tối đa 50 ký tự "
+            maxlength:"Tên tài khoản tối đa 26 ký tự "
         },
         BirthDay: {
             required: "Vui lòng nhập ngày sinh",

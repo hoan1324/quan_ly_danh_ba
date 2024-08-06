@@ -6,7 +6,10 @@
 }, "Vui lòng chọn ít nhất 1 lựa chọn ở mục quan hệ hoặc thêm mới nó");
 jQuery('#form-edit').validate({
     rules: {
-        FullName: "required",
+        FullName: {
+            required: true,
+            maxlength:26
+        },
         PhoneNumber: {
             required: true,
             digits: true,
@@ -29,7 +32,10 @@ jQuery('#form-edit').validate({
         }
     },
     messages: {
-        FullName: "Vui lòng nhập tên",
+        FullName: {
+            required:"Vui lòng nhập tên",
+            maxlength:"Tên tối đa 26 ký tự"
+        },
         PhoneNumber: {
             required: "Vui lòng nhập số điện thoại",
             digits: "Vui lòng nhập định dạng là số",

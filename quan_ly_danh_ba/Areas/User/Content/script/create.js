@@ -51,6 +51,10 @@ jQuery('#form-create').validate({
     }
 });
 $(function () {
+    $('#avatar').on('change', function (event) {
+        var oldValue = $(this).val();
+        $(this).val(oldValue.trim())
+    });
     $('.temp-alert').fadeOut(3000);
    
     

@@ -61,7 +61,7 @@
                                 ? "data:image/png;base64," + Convert.ToBase64String(SessionConfig.GetUser().Avatar)
                                 : Url.Content("~/Content/img/logo.png");
                         }
-                        <img class="rounded-circle me-md-2 p-1 border " src="@avatarUrl" alt="user-image" />
+                        <img class="rounded-circle me-md-2 " src="@avatarUrl" alt="user-image" />
                         <h1 class="userName lh-1 d-none d-lg-block text-wrap fs-5 overflow-hidden py-2 my-0">
                             @(SessionConfig.GetUser().UserName.Length <= 11
                            ? SessionConfig.GetUser().UserName

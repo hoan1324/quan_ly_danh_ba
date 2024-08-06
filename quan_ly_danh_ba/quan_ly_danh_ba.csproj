@@ -124,6 +124,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Areas\User\Content\css\detailContact.css" />
     <Content Include="Areas\User\Content\css\edit.css" />
     <Content Include="Areas\User\Content\css\create.css" />
     <Content Include="Areas\User\Content\css\data-table.css" />
@@ -157,7 +158,8 @@
     <Compile Include="App_Start\SessionConfig.cs" />
     <Compile Include="App_Start\UnityConfig.cs" />
     <Compile Include="App_Start\UnityMvcActivator.cs" />
-    <Compile Include="Areas\User\Constant\ImageConst.cs" />
+    <Compile Include="CommonHelper\Base64\ValidateBase64.cs" />
+    <Compile Include="CommonHelper\Constant\ImageConst.cs" />
     <Compile Include="Areas\User\Controllers\ContactController.cs" />
     <Compile Include="Areas\User\Controllers\GroupContactController.cs" />
     <Compile Include="Areas\User\Controllers\HomeController.cs" />

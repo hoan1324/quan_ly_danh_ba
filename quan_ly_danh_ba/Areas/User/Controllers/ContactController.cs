@@ -3,7 +3,7 @@
 using Dtos;
 using Newtonsoft.Json;
 using PagedList;
-using quan_ly_danh_ba.Areas.User.Constant;
+using CommonHelper;
 using quan_ly_danh_ba.Services.Interfaces;
 using System;
 using System.Collections.Generic;
@@ -54,6 +54,7 @@ namespace quan_ly_danh_ba.Areas.User.Controllers
             byte[] avatarData = null;
             if (avatar != null && avatar.ContentLength > 0)
             {
+               
                 if (!ImageConst.permittedExtensions.Contains(avatar.ContentType))
                 {
                     if (!ImageConst.permittedMimeTypes.Contains(avatar.ContentType))

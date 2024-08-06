@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 
-namespace quan_ly_danh_ba.Areas.User.Constant
+namespace CommonHelper
 {
     public static class ImageConst
     {

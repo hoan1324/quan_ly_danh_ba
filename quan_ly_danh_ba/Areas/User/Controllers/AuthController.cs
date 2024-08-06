@@ -1,5 +1,5 @@
 ﻿using Dtos;
-using quan_ly_danh_ba.Areas.User.Constant;
+using CommonHelper;
 using quan_ly_danh_ba.Services.Interfaces;
 using System;
 using System.Collections.Generic;
@@ -15,18 +15,25 @@ namespace quan_ly_danh_ba.Areas.User.Controllers
     {
 
         private readonly IUserService _userService;
-        public AuthController(IUserService userService)
+        private readonly IContactService _contactService;
+        private readonly IGroupContactService _groupContactService;
+        public AuthController(IUserService userService, IContactService contactService, IGroupContactService groupContactService)
         {
             _userService = userService;
+            _contactService = contactService;
+            _groupContactService = groupContactService;
         }
         // GET: User/User
         public ActionResult ProfileUser()
         {
-            return View();
+            var model = Tuple.Create(_contactService.ListContact().Count(), _groupContactService.ListGroupContact().Count()-3);
+
+            return View(model);
         }
         [HttpPost]
         public ActionResult ProfileUser(HttpPostedFileBase Avatar, string Type)
         {
+            var model = Tuple.Create(_contactService.ListContact().Count(), _groupContactService.ListGroupContact().Count() - 3);
             byte[] avatarData = null;
             if (Avatar != null && Avatar.ContentLength > 0)
             { 
@@ -34,7 +41,7 @@ namespace quan_ly_danh_ba.Areas.User.Controllers
                 {
                     if(! ImageConst.permittedMimeTypes.Contains(Avatar.ContentType)) {
                         ModelState.AddModelError("file", "Chỉ chấp nhận các định dạng ảnh: .jpg, .jpeg, .png, .gif");
-                        return View();
+                        return View(model);
                     }
                 }
                 using (var binaryReader = new BinaryReader(Avatar.InputStream))
@@ -52,9 +59,9 @@ namespace quan_ly_danh_ba.Areas.User.Controllers
             if (done != null)
             {
                 SessionConfig.SaveUser(done);
-               return View();
+               return View(model);
             }
-            return View();
+            return View(model);
         }
         public ActionResult EditProfile()
         {
@@ -75,7 +82,7 @@ namespace quan_ly_danh_ba.Areas.User.Controllers
         }
         public ActionResult Logout() {
         SessionConfig.SaveUser(null);
-        return RedirectToAction("SignUp", "Login", new { area = "" });
+        return RedirectToAction("SignIn", "Login", new { area = "" });
         }
 
     }
