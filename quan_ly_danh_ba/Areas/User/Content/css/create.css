@@ -16,3 +16,14 @@ button[type="submit"] {
     display: block;
 }
 
+.image-file {
+    max-width: 150px;
+}
+
+    .image-file img {
+        object-fit: cover;
+    }
+
+    .image-file .closeButton {
+        cursor: pointer;
+    }

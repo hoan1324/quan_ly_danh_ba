@@ -7,11 +7,7 @@
     ViewBag.Title = "edit";
     Layout = "~/Areas/User/Views/Shared/_Layout.cshtml";
 }
-@if (TempData["ErrorMessage"] != null)
-{
-    <div class="temp-alert alert alert-danger position-absolute w-50 text-center" style="left:25%;">@TempData["ErrorMessage"]</div>
 
-}
 @section linkCss{
     <link href="~/Areas/User/Content/css/edit.css" rel="stylesheet" type="text/css" />
 }
@@ -21,7 +17,16 @@
 <div class="edit-data">
     <form id="form-edit" action="~/user/contact/edit" method="post" class="needs-validation" novalidate enctype="multipart/form-data">
         <input data-val="true" data-val-required="The ContactID field is required." id="Item1_ContactID" name="ContactID" type="hidden" value="@contact.ContactID">
-
+        <div class="mb-3">
+            <label for="avatar">Chọn ảnh để tải lên:</label>
+            <input type="file" id="avatar" class="form-control" name="fileInput" />
+            <div class="form-control visible-img d-none">
+                <div class="image-file position-relative ">
+                    <img class="w-100" id="image" alt="new-avatar" />
+                    <i class="fa-solid fa-x closeButton link-danger position-absolute d-none top-0 end-0"></i>
+                </div>
+            </div>
+        </div>
         <div class=" mb-3">
             <label for="fullname">Họ và tên</label>
             <input type="text" class="form-control" id="fullname" value="@(string.IsNullOrEmpty(contact.FullName) ? "" : contact.FullName)" placeholder="Vui lòng nhập họ và tên" name="FullName">

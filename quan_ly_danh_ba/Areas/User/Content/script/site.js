@@ -1,4 +1,5 @@
 ﻿$(function () {
+    $('.temp-alert').fadeOut(3000);
     $(".left-navbar a.link-light").on("click", function (e) {
         e.preventDefault();
         $(".left-navbar a.link-light").removeClass("active-title");
@@ -48,5 +49,26 @@
     $(".PagedList-skipToPrevious").text("Prev").on("click", function () {
         var numberActive = parseInt($(".pagination-container ul.pagination li.active a").text());
         window.location.href = `/User/Contact?page=${numberActive - 1}`;
+    });
+    $('.closeButton').on('click', function () {
+        $(".visible-img").addClass('d-none');
+        $('#avatar').val("").show();
+    })
+    $('#avatar').on('change', function (event) {
+        const file = event.target.files[0];
+        if (file) {
+
+            const reader = new FileReader();
+            reader.onload = function (e) {
+                const base64String = e.target.result;
+                console.log(base64String);
+
+                $('#image').attr('src', base64String);
+                $(".visible-img").removeClass('d-none');
+                $('.closeButton').removeClass('d-none');
+                $('#avatar').hide();
+            }
+            reader.readAsDataURL(file);
+        }
     });
 });

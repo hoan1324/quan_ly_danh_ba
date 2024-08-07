@@ -10,16 +10,7 @@
 @section linkCss{
     <link href="~/Areas/User/Content/css/profile-user.css" rel="stylesheet" type="text/css" />
 }
-@if (TempData["SuccessMessage"] != null)
-{
-    <div class="temp-alert alert alert-success position-absolute w-50 text-center" style="left:25%;">@TempData["SuccessMessage"]</div>
 
-}
-@if (TempData["ErrorMessage"] != null)
-{
-    <div class="temp-alert alert alert-danger position-absolute w-50 text-center" style="left:25%;">@TempData["ErrorMessage"]</div>
-
-}
 
 @Html.ValidationMessage("file", "", new { @class = "text-danger" })
 
@@ -93,9 +84,10 @@
                 <div class="modal-body">
 
                     <input class="form-control text-box single-line" data-val="true" data-val-required="The type field is required." id="Type" name="Type" type="hidden" value="avatar">
+                   
                     <div>
                         <label for="avatar">Chọn ảnh để tải lên:</label>
-                        <input type="file" id="avatar" name="Avatar" />
+                        <input type="file" id="avatar" class="form-control" name="Avatar" />
                         <div class="form-control visible-img d-none">
                             <div class="image-file position-relative ">
                                 <img class="w-100" id="image" alt="new-avatar" />

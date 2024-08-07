@@ -179,7 +179,17 @@ body {
 .dropdown-toggle::after {
     display: none!important;
 }
+.image-file {
+    max-width: 150px;
+}
 
+    .image-file img {
+        object-fit: cover;
+    }
+
+    .image-file .closeButton {
+        cursor: pointer;
+    }
     @media only screen and (max-width: 992px) {
         .left-navbar{
         position:absolute;

@@ -29,13 +29,13 @@
                     <div class="flex-wrap  mt-4 detail-contact d-flex justify-content-start align-items-center flex-column flex-md-row">
                         <div class="phone-number mt-md-2 mt-0  ms-0 ms-md-3 contact">
                             <p>PhoneNumber</p>
-                            <h3>@Model.PhoneNumber</h3>
+                            <h3><a href="tel:@Model.PhoneNumber">@Model.PhoneNumber</a></h3>
                         </div>
                         @if (!string.IsNullOrEmpty(Model.Email))
                         {
                             <div class="email mt-md-2 mt-3 ms-0 ms-md-3 contact">
                                 <p>Email</p>
-                                <h3>hoan3397@gmail.com</h3>
+                                <h3><a href="mailto:@Model.Email">@Model.Email</a></h3>
                             </div>
                         }
                         @if (!string.IsNullOrEmpty(Model.Address))

@@ -27,6 +27,7 @@ namespace quan_ly_danh_ba.Controllers
             if (done != null)
             {
                 SessionConfig.SaveUser(done);
+                TempData["SuccessMessage"] = "Đăng nhập thành công";
                 return RedirectToAction("Index", "Home", new { area = "User" });
             }
             TempData["ErrorMessage"] = "Đăng nhập thất bại!";

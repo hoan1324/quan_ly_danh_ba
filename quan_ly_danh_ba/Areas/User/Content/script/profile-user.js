@@ -1,5 +1,4 @@
 ﻿$(function () {
-    $(".temp-alert").fadeOut(3000);
     $('#form-edit-profile').on('submit', function (e) {
         var fileInput = $('#avatar').files[0];
         var maxSize = 10 * 1024 * 1024; // 10 MB

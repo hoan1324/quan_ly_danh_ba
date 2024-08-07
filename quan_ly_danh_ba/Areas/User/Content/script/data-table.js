@@ -17,7 +17,6 @@ $(function () {
    
 
    
-        $('.temp-alert').fadeOut(3000);
   
     $(document).on('click', '.delete-item', function () {
         const itemid = $(this).data('id');

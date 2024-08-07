@@ -5,11 +5,7 @@
     Layout = "~/Areas/User/Views/Shared/_Layout.cshtml";
 }
 
-@if (TempData["ErrorMessage"] != null)
-{
-    <div class="temp-alert alert alert-danger position-absolute w-50 text-center" style="left:25%;">@TempData["ErrorMessage"]</div>
 
-}
 @section linkCss{
     <link href="~/Areas/User/Content/css/create.css" rel="stylesheet" type="text/css" />
 }
@@ -18,94 +14,98 @@
 </div>
 
 <div class="create-data">
-    <form id="form-create" action="~/user/contact/create" method="post" class="needs-validation" novalidate enctype="multipart/form-data">
-        <div>
-            <label for="avatar">Chọn ảnh để tải lên:</label>
-            <input type="file" id="avatar" name="avatar" />
-            <p id="output"></p>
-
-        </div>
-        <div class=" mb-3">
-            <label for="fullname">Họ và tên</label>
-            <input type="text" class="form-control" id="fullname" placeholder="Vui lòng nhập họ và tên" name="FullName">
-        </div>
-        
-        <div class=" mb-3">
-            <label for="phonenumber">Số điện thoại</label>
-            <input type="text" class="form-control" id="phonenumber" placeholder="Vui lòng nhập số điện thoại" name="PhoneNumber">
-
-        </div>
-
+    <form id="form-create"  method="post" class="needs-validation" novalidate enctype="multipart/form-data">
         <div class="mb-3">
-            <label class="visible-error">Quan hệ</label>
-            @if (Model != null)
-            {
-                <div class="show-default">
-                    <div class="d-flex flex-wrap">
-                        @for (int i = 0; i < Model.Count() && i < 35; i++)
-                        {
-
-
-                            <div class="form-check mx-4">
-                                @if (i == 0)
-                                {
-                                    <input class="form-check-input check-input" type="checkbox" value="@Model[i].GroupName" name="GroupNames" id="@Model[i].GroupName" checked>
-
-                                }
-                                else
-                                {
-                                    <input class="form-check-input check-input" type="checkbox" value="@Model[i].GroupName" name="GroupNames" id="@Model[i].GroupName">
-
-                                }
-                                <label class="form-check-label" for="@Model[i].GroupName">
-                                    @Model[i].GroupName
-                                </label>
-                            </div>
-                        }
-                    </div>
+            <label for="avatar">Chọn ảnh để tải lên:</label>
+            <input type="file" id="avatar" class="form-control" name="fileInput" />
+            <div class="form-control visible-img d-none">
+                <div class="image-file position-relative ">
+                    <img class="w-100" id="image" alt="new-avatar" />
+                    <i class="fa-solid fa-x closeButton link-danger position-absolute d-none top-0 end-0"></i>
                 </div>
-                <div class="form-check checkbox-diffirent mx-4">
-                    <input class="form-check-input" type="checkbox" value="Khác" id="diffirent-checkbox">
-                    <label class="form-check-label" for="diffirent-checkbox">
-                        Khác
-                    </label>
-                </div>
-                <div class="hide-default">
-                    @if (Model.Count() > 34)
-                    {
+            </div>
+            </div>
+            <div class=" mb-3">
+                <label for="fullname">Họ và tên</label>
+                <input type="text" class="form-control" id="fullname" placeholder="Vui lòng nhập họ và tên" name="FullName">
+            </div>
+
+            <div class=" mb-3">
+                <label for="phonenumber">Số điện thoại</label>
+                <input type="text" class="form-control" id="phonenumber" placeholder="Vui lòng nhập số điện thoại" name="PhoneNumber">
+
+            </div>
+
+            <div class="mb-3">
+                <label class="visible-error">Quan hệ</label>
+                @if (Model != null)
+                {
+                    <div class="show-default">
                         <div class="d-flex flex-wrap">
-                            @for (int j = 35; j < Model.Count(); j++)
+                            @for (int i = 0; i < Model.Count() && i < 35; i++)
                             {
+
+
                                 <div class="form-check mx-4">
-                                    <input class="form-check-input check-input" type="checkbox" value="@Model[j].GroupName" name="GroupNames" id="@Model[j].GroupName">
-                                    <label class="form-check-label check-input" for="@Model[j].GroupName">
-                                        @Model[j].GroupName
+                                    @if (i == 0)
+                                    {
+                                        <input class="form-check-input check-input" type="checkbox" value="@Model[i].GroupName" name="GroupNames" id="@Model[i].GroupName" checked>
+
+                                    }
+                                    else
+                                    {
+                                        <input class="form-check-input check-input" type="checkbox" value="@Model[i].GroupName" name="GroupNames" id="@Model[i].GroupName">
+
+                                    }
+                                    <label class="form-check-label" for="@Model[i].GroupName">
+                                        @Model[i].GroupName
                                     </label>
                                 </div>
                             }
                         </div>
-                    }
-                    <div class="mb-3">
-                        <label for="difirent-relationship">Tạo quan hệ mới</label>
-                        <input type="text" class="form-control" id="difirent-relationship" placeholder="Nhập các quan hệ, cách nhau bằng dấu phẩy" name="newGroupName">
                     </div>
-                </div>
-            }
-        </div>
-        <div class=" mb-3">
-            <label for="address">Địa chỉ</label>
-            <input type="text" class="form-control" id="address" placeholder="Vui lòng nhập địa chỉ" name="Address">
-        </div>
-        <div class=" mb-3">
-            <label for="email">Email</label>
-            <input type="text" class="form-control" id="email" name="Email" placeholder="Vui lòng nhập Email">
-        </div>
+                    <div class="form-check checkbox-diffirent mx-4">
+                        <input class="form-check-input" type="checkbox" value="Khác" id="diffirent-checkbox">
+                        <label class="form-check-label" for="diffirent-checkbox">
+                            Khác
+                        </label>
+                    </div>
+                    <div class="hide-default">
+                        @if (Model.Count() > 34)
+                        {
+                            <div class="d-flex flex-wrap">
+                                @for (int j = 35; j < Model.Count(); j++)
+                                {
+                                    <div class="form-check mx-4">
+                                        <input class="form-check-input check-input" type="checkbox" value="@Model[j].GroupName" name="GroupNames" id="@Model[j].GroupName">
+                                        <label class="form-check-label check-input" for="@Model[j].GroupName">
+                                            @Model[j].GroupName
+                                        </label>
+                                    </div>
+                                }
+                            </div>
+                        }
+                        <div class="mb-3">
+                            <label for="difirent-relationship">Tạo quan hệ mới</label>
+                            <input type="text" class="form-control" id="difirent-relationship" placeholder="Nhập các quan hệ, cách nhau bằng dấu phẩy" name="newGroupName">
+                        </div>
+                    </div>
+                }
+            </div>
+            <div class=" mb-3">
+                <label for="address">Địa chỉ</label>
+                <input type="text" class="form-control" id="address" placeholder="Vui lòng nhập địa chỉ" name="Address">
+            </div>
+            <div class=" mb-3">
+                <label for="email">Email</label>
+                <input type="text" class="form-control" id="email" name="Email" placeholder="Vui lòng nhập Email">
+            </div>
 
 
-        <div class="text-center">
-            <button class="btn" type="submit">Create</button>
-        </div>
-    </form>
+            <div class="text-center">
+                <button class="btn" type="submit">Create</button>
+            </div>
+</form>
 
 
 </div>

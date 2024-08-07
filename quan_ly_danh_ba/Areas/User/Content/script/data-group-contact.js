@@ -2,7 +2,6 @@
 $(function () {
    
 
-        $('.temp-alert').fadeOut(3000);
    
     $("input[type=checkbox]").on("change", function () {
         if ($("input[type=checkbox]:checked").length > 0) {

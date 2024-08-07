@@ -5,16 +5,7 @@
     ViewBag.Title = "Index";
     Layout = "~/Areas/User/Views/Shared/_Layout.cshtml";
 }
-@if (TempData["SuccessMessage"] != null)
-{
-    <div class="temp-alert alert alert-success position-absolute w-50 text-center" style="left:25%;">@TempData["SuccessMessage"]</div>
 
-}
-@if (TempData["ErrorMessage"] != null)
-{
-    <div class="temp-alert alert alert-danger position-absolute w-50 text-center" style="left:25%;">@TempData["ErrorMessage"]</div>
-
-}
 @section linkCss{
     <link href="~/Areas/User/Content/css/data-table.css" rel="stylesheet" type="text/css" />
 }

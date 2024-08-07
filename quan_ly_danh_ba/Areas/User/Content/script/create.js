@@ -64,7 +64,6 @@ $(function () {
             reader.readAsDataURL(file); // Đọc file dưới dạng DataURL
         }
     });
-    $('.temp-alert').fadeOut(3000);
     $(".hide-default").hide();
     $("#diffirent-checkbox").on("click", function () {
         if ($(this).prop("checked")) {
@@ -75,5 +74,14 @@ $(function () {
             $(".show-default").show(200);
         }
     });
-    
+    $('#form-create').on('submit', function (e) {
+        var fileInput = $('#avatar').files[0];
+        var maxSize = 10 * 1024 * 1024; // 10 MB
+
+        if (fileInput && fileInput.size > maxSize) {
+            alert('Tệp quá lớn. Kích thước tối đa là 10MB.');
+            e.preventDefault(); // Ngăn chặn việc gửi form
+        }
+    });
+  
 });

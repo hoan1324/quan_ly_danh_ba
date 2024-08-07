@@ -57,9 +57,16 @@ jQuery('#form-edit').validate({
     }
 });
 $(function () {
-    $(".temp-alert").fadeOut(3000);
+    $('#form-edit').on('submit', function (e) {
+        var fileInput = $('#avatar').files[0];
+        var maxSize = 10 * 1024 * 1024; // 10 MB
 
-    clearTimeout(clearTime);
+        if (fileInput && fileInput.size > maxSize) {
+            alert('Tệp quá lớn. Kích thước tối đa là 10MB.');
+            e.preventDefault(); // Ngăn chặn việc gửi form
+        }
+    });
+
     $(".hide-default").hide();
     $("#diffirent-checkbox").on("click", function () {
         if ($(this).prop("checked")) {
