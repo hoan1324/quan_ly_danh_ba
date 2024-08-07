@@ -77,18 +77,3 @@ $(function () {
     });
     
 });
-function isBase64(str) {
-    try {
-        // Biểu thức chính quy để kiểm tra chuỗi Base64
-        var base64regex = /^(?:[A-Za-z0-9+\/]{4})*(?:[A-Za-z0-9+\/]{2}==|[A-Za-z0-9+\/]{3}=)?$/;
-
-        // Kiểm tra chuỗi
-        if (base64regex.test(str)) {
-            return true;
-        } else {
-            return false;
-        }
-    } catch (err) {
-        return false;
-    }
-}

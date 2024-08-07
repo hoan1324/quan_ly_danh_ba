@@ -1,4 +1,14 @@
 ﻿$(function () {
+    $(".temp-alert").fadeOut(3000);
+    $('#form-edit-profile').on('submit', function (e) {
+        var fileInput = $('#avatar').files[0];
+        var maxSize = 10 * 1024 * 1024; // 10 MB
+
+        if (fileInput && fileInput.size > maxSize) {
+            alert('Tệp quá lớn. Kích thước tối đa là 10MB.');
+            e.preventDefault(); // Ngăn chặn việc gửi form
+        }
+    });
     $('.closeButton').on('click', function () {
         $(".visible-img").addClass('d-none');
         $('#avatar').val("").show();

@@ -1,8 +1,8 @@
 ﻿@model Tuple<int, int>
-    @{ 
-        var contact = Model.Item1;
-        var groupContact = Model.Item2;
-    }
+@{
+    var contact = Model.Item1;
+    var groupContact = Model.Item2;
+}
 @{
     ViewBag.Title = "Profile";
     Layout = "~/Areas/User/Views/Shared/_Layout.cshtml";
@@ -10,6 +10,17 @@
 @section linkCss{
     <link href="~/Areas/User/Content/css/profile-user.css" rel="stylesheet" type="text/css" />
 }
+@if (TempData["SuccessMessage"] != null)
+{
+    <div class="temp-alert alert alert-success position-absolute w-50 text-center" style="left:25%;">@TempData["SuccessMessage"]</div>
+
+}
+@if (TempData["ErrorMessage"] != null)
+{
+    <div class="temp-alert alert alert-danger position-absolute w-50 text-center" style="left:25%;">@TempData["ErrorMessage"]</div>
+
+}
+
 @Html.ValidationMessage("file", "", new { @class = "text-danger" })
 
 <div class="profile-page">
@@ -26,7 +37,7 @@
             <i data-bs-toggle="modal" data-bs-target="#exampleModal" class="fa-solid fa-camera position-absolute bottom-0"></i>
         </div>
         <div class="mt-3">
-            <h1 class="text-center">@SessionConfig.GetUser().UserName <br /> <span >@SessionConfig.GetUser().BirthDay.ToString("dd/MM/yyyy")</span></h1>
+            <h1 class="text-center">@SessionConfig.GetUser().UserName <br /> <span>@SessionConfig.GetUser().BirthDay.ToString("dd/MM/yyyy")</span></h1>
             <div class="detail-contact">
                 <div class="contact email text-center">
                     <p><span>Email : </span>@SessionConfig.GetUser().Email</p>
@@ -68,7 +79,7 @@
             <span class="btn btn-success "><a class="link-light" href="~/user/auth/editprofile">Edit</a></span>
         </div>
     </div>
-   
+
 </div>
 <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog">
@@ -103,5 +114,5 @@
     </div>
 </div>
 @section Scripts{
-        <script src="~/Areas/User/Content/script/profile-user.js"></script>
-    }
+    <script src="~/Areas/User/Content/script/profile-user.js"></script>
+}

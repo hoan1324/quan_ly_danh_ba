@@ -59,8 +59,10 @@ namespace quan_ly_danh_ba.Areas.User.Controllers
             if (done != null)
             {
                 SessionConfig.SaveUser(done);
+                TempData["SuccessMessage"] = "Thay đổi Avatar thành công";
                return View(model);
             }
+            TempData["ErrorMessage"] = "Thay đổi Avatar thất bại";
             return View(model);
         }
         public ActionResult EditProfile()
