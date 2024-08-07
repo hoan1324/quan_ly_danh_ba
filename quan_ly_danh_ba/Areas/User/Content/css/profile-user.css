@@ -5,9 +5,11 @@
     font-size: 38px!important;
     line-height: 16px!important;
 }
-.detail-profile h1 span{
-    font-size:16px;
-}
+    .detail-profile h1 span {
+        font-size: 14px;
+        color: #80808085;
+        font-weight:500;
+    }
 .profile-page .avatar img {
     width: 150px;
     height: 150px;
@@ -17,5 +19,16 @@
     width:40px;
  }
 .judge h1{
-    font-size:20px
+    font-size:20px!important;
+}
+.image-file {
+    max-width: 150px;
+}
+
+    .image-file img {
+        object-fit: cover;
+    }
+
+.image-file .closeButton {
+    cursor: pointer;
 }

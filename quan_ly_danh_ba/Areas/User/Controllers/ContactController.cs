@@ -50,7 +50,7 @@ namespace quan_ly_danh_ba.Areas.User.Controllers
         }
         [HttpPost]
         public ActionResult Create(ContactCreateDto contactDto, string newGroupName,HttpPostedFileBase avatar) {
-
+            var danhsach = _groupContactService.ListGroupContact();
             byte[] avatarData = null;
             if (avatar != null && avatar.ContentLength > 0)
             {
@@ -60,7 +60,7 @@ namespace quan_ly_danh_ba.Areas.User.Controllers
                     if (!ImageConst.permittedMimeTypes.Contains(avatar.ContentType))
                     {
                         TempData["SuccessError"] = "Chỉ chấp nhận các định dạng ảnh: .jpg, .jpeg, .png, .gif";
-                        return View();
+                        return View(danhsach);
                     }
                 }
                 using (var binaryReader = new BinaryReader(avatar.InputStream))
@@ -77,7 +77,7 @@ namespace quan_ly_danh_ba.Areas.User.Controllers
 				return RedirectToAction("Index");
             }
 			TempData["SuccessError"] = "Tạo mới thất bại!";
-			return View(_groupContactService.ListGroupContact());
+			return View(danhsach);
         }
        
         public ActionResult Edit(Guid id) {

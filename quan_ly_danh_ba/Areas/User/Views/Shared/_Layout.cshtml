@@ -55,7 +55,7 @@
                     </div>
                 </div>
                 <div class="dropdown-center me-4">
-                    <div class="account d-flex py-2 ps-md-3 px-lg-3  align-items-center dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+                    <div class="account d-flex py-0 py-md-2 ps-md-3 px-lg-3  align-items-center dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
                         @{
                             var avatarUrl = SessionConfig.GetUser().Avatar != null && SessionConfig.GetUser().Avatar.Length > 0
                                 ? "data:image/png;base64," + Convert.ToBase64String(SessionConfig.GetUser().Avatar)

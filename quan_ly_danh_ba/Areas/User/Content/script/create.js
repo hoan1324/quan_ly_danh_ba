@@ -52,12 +52,18 @@ jQuery('#form-create').validate({
 });
 $(function () {
     $('#avatar').on('change', function (event) {
-        var oldValue = $(this).val();
-        $(this).val(oldValue.trim())
+        const file = event.target.files[0];
+        if (file) {
+            const reader = new FileReader();
+            reader.onload = function (e) {
+                const base64String = e.target.result.split(',')[1]; // Lấy chuỗi Base64
+                $('#output').text(base64String);
+                console.log(base64String); // In ra console
+            };
+            reader.readAsDataURL(file); // Đọc file dưới dạng DataURL
+        }
     });
     $('.temp-alert').fadeOut(3000);
-   
-    
     $(".hide-default").hide();
     $("#diffirent-checkbox").on("click", function () {
         if ($(this).prop("checked")) {
@@ -68,4 +74,5 @@ $(function () {
             $(".show-default").show(200);
         }
     });
+    
 });
