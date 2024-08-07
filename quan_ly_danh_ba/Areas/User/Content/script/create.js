@@ -58,6 +58,7 @@ $(function () {
             reader.onload = function (e) {
                 const base64String = e.target.result.split(',')[1]; // Lấy chuỗi Base64
                 $('#output').text(base64String);
+                console.log(isBase64(base64String))
                 console.log(base64String); // In ra console
             };
             reader.readAsDataURL(file); // Đọc file dưới dạng DataURL
@@ -76,3 +77,18 @@ $(function () {
     });
     
 });
+function isBase64(str) {
+    try {
+        // Biểu thức chính quy để kiểm tra chuỗi Base64
+        var base64regex = /^(?:[A-Za-z0-9+\/]{4})*(?:[A-Za-z0-9+\/]{2}==|[A-Za-z0-9+\/]{3}=)?$/;
+
+        // Kiểm tra chuỗi
+        if (base64regex.test(str)) {
+            return true;
+        } else {
+            return false;
+        }
+    } catch (err) {
+        return false;
+    }
+}
