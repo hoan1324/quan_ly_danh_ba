@@ -22,6 +22,7 @@
     <link href="~/Content/lib/fontAwesome/all.min.css" rel="stylesheet" type="text/css" />
     <link href="~/Content/lib/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
     <link href="~/Content/css/sign-form.css" rel="stylesheet" type="text/css" />
+    <link href="~/Content/css/sign-in.css" rel="stylesheet" type="text/css" />
 </head>
 <body>
     <div class=" d-flex align-items-center body-content">
@@ -34,7 +35,7 @@
             </div>
             <div class=" sign-in">
                 <form id="sign-in-form" action="~/login/signin" method="post" class="needs-validation" novalidate>
-                    <input  data-val="true" data-val-required="The type field is required."  name="Type" type="hidden" value="signIn">
+                    <input data-val="true" data-val-required="The type field is required." name="Type" type="hidden" value="signIn">
                     <div class=" mb-3">
                         <label for="email" class="ms-1 mb-2">Email</label>
                         <input type="email" class="form-control" id="email" name="Email" placeholder="Vui lòng nhập Email">
@@ -55,8 +56,34 @@
                             <span>Bạn chưa có tài khoản ?<a href="~/login/signup" class="link-success text-decoration-none">Đăng ký</a></span>
                         </div>
                         <div class="different-solution">
-                            <p class="link-primary ">Quên mật khẩu?</p>
+                            <p class="link-primary " data-bs-toggle="modal" data-bs-target="#exampleModal">Quên mật khẩu?</p>
                         </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered ">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h1 class="modal-title fs-5" id="exampleModalLabel">Quên mật khẩu </h1>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <form id="form-edit-profile" action="~/login/signin" method="post" class="needs-validation" novalidate >
+                    <div class="modal-body">
+
+                        <input class="form-control text-box single-line" data-val="true" data-val-required="The type field is required." id="Type" name="Type" type="hidden" value="avatar">
+
+                        <div>
+                            <label for="avatar">Chọn email bạn cần tìm kiếm</label>
+                            <input type="text" id="email" class="form-control" name="Email" />
+                        </div>
+
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                        <button type="submit" class="btn btn-primary">Save changes</button>
                     </div>
                 </form>
             </div>

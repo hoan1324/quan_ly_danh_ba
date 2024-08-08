@@ -1,0 +1,12 @@
+﻿.modal-header {
+    background-color: #c8d9b9
+}
+
+.modal-footer a {
+    background-color: #99b97c;
+    transition: background-color .4s
+}
+
+    .modal-footer a:hover {
+        background-color: #c8d9b9;
+    }
