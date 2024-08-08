@@ -3,18 +3,7 @@
     ViewBag.Title = "Index";
     Layout = "~/Areas/User/Views/Shared/_Layout.cshtml";
 }
-@if (TempData["SuccessMessage"] != null)
-{
-    <div class="temp-alert alert alert-success position-absolute w-50 text-center" style="left:25%;">@TempData["SuccessMessage"]</div>
 
-}
-<h1> Chào mừng bạn đến Quản lý danh bạ</h1>
+<h1> Chào mừng @SessionConfig.GetUser().UserName đến Quản lý danh bạ</h1>
 
-@section Scripts{
-   <script>
-       $(function () {
-           $(".temp-alert").fadeOut(3000);
-       })
-    </script>
-}
 

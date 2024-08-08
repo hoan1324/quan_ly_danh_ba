@@ -159,13 +159,13 @@
     <Compile Include="App_Start\SessionConfig.cs" />
     <Compile Include="App_Start\UnityConfig.cs" />
     <Compile Include="App_Start\UnityMvcActivator.cs" />
-    <Compile Include="CommonHelper\Base64\ValidateBase64.cs" />
     <Compile Include="CommonHelper\Constant\ImageConst.cs" />
     <Compile Include="Areas\User\Controllers\ContactController.cs" />
     <Compile Include="Areas\User\Controllers\GroupContactController.cs" />
     <Compile Include="Areas\User\Controllers\HomeController.cs" />
     <Compile Include="Areas\User\Controllers\AuthController.cs" />
     <Compile Include="Areas\User\UserAreaRegistration.cs" />
+    <Compile Include="CommonHelper\EmailHelper\EmailHelper.cs" />
     <Compile Include="Configuration\MappingProfile.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\LoginController.cs" />
@@ -210,7 +210,6 @@
     <Content Include="Content\lib\webfonts\fa-v4compatibility.woff2" />
     <Content Include="Areas\User\Views\Contact\Create.cshtml" />
     <Content Include="Areas\User\Views\Contact\Edit.cshtml" />
-    <Content Include="Areas\User\Views\Home\UserA.cshtml" />
     <Content Include="Areas\User\Views\Contact\Detail.cshtml" />
     <Content Include="Areas\User\Views\GroupContact\Index.cshtml" />
     <Content Include="Areas\User\Views\Auth\ProfileUser.cshtml" />

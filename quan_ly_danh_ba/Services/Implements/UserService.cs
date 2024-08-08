@@ -28,7 +28,7 @@ namespace quan_ly_danh_ba.Services.Implements
             var position=_UserRepo.FindById(id);
             if(position != null)
             {
-                var check=_UserRepo.FindByUser(position.UserName, pass);
+                var check=_UserRepo.FindByUser(position.Email, pass,"signIn");
                 if (position != null)
                 {
                     return _mapper.Map<UserDto>(check);
@@ -44,9 +44,9 @@ namespace quan_ly_danh_ba.Services.Implements
 
         }
 
-        public UserDto FindByUser(UserDto user)
+        public UserDto FindByUser(UserDto user,string Type)
         {
-            return _mapper.Map<UserDto>(_UserRepo.FindByUser(user.Email,user.Password));
+            return _mapper.Map<UserDto>(_UserRepo.FindByUser(user.Email,user.Password,user.PhoneNumber,Type));
         }
 
         public UserDto Insert(UserDto user)

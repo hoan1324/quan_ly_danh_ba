@@ -21,16 +21,16 @@ namespace quan_ly_danh_ba.Controllers
             return View();
         }
         [HttpPost]
-        public ActionResult SignIn(UserDto user)
+        public ActionResult SignIn(UserDto user,string Type)
         {
-            var done = _userService.FindByUser(user);
+            var done = _userService.FindByUser(user,Type);
             if (done != null)
             {
                 SessionConfig.SaveUser(done);
                 TempData["SuccessMessage"] = "Đăng nhập thành công";
                 return RedirectToAction("Index", "Home", new { area = "User" });
             }
-            TempData["ErrorMessage"] = "Đăng nhập thất bại!";
+            TempData["ErrorMessage"] = "Tài khoản hoặc mật khẩu không chính xác";
             return View();
         }
         public ActionResult SignUp()
@@ -40,10 +40,10 @@ namespace quan_ly_danh_ba.Controllers
         [HttpPost]
         public ActionResult SignUp(UserDto user)
         {
-            var done = _userService.FindByUser(user);
+            var done = _userService.FindByUser(user,"email");
             if (done != null)
             {
-                TempData["ErrorMessage"] = "Đăng ký thất bại!";
+                TempData["ErrorMessage"] = "Tài khoản đã tồn tại!";
                 return View();
 
             }

@@ -14,7 +14,7 @@ $(function () {
     $(".delete-group").on('click', function () {
         var array = $("input[type=checkbox]:checked").map(function () {
             return this.value;
-        }).get();
+        }).get().split(",");
         $('#confirmdeletebtn').attr('href', `/user/groupcontact/delete?GroupNames=${array}`);
     });
 

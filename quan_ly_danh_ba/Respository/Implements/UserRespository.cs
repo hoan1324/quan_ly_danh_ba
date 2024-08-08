@@ -31,14 +31,35 @@ namespace quan_ly_danh_ba.Respository.Implements
             return User;
         }
 
-        public User FindByUser(string Email, string password)
+        public User FindByUser(string Type, string email = null, string password = null, string phone = null)
         {
-            var User = Quan_ly_danh_baEntity.db.Users.FirstOrDefault(item => item.Email==Email && item.Password==password);
-            if (User == null)
+            IQueryable<User> query = Quan_ly_danh_baEntity.db.Users;
+
+            switch (Type)
             {
-                return null;
+                case "signIn":
+                    if (email != null && password != null)
+                    {
+                        query = query.Where(item => item.Email == email && item.Password == password);
+                    }
+                    break;
+
+                case "email":
+                    if (email != null)
+                    {
+                        query = query.Where(item => item.Email == email);
+                    }
+                    break;
+
+                case "phone":
+                    if (phone != null)
+                    {
+                        query = query.Where(item => item.PhoneNumber == phone);
+                    }
+                    break;
             }
-            return User;
+
+            return query.FirstOrDefault();
         }
 
         public User Insert(User user)

@@ -9,7 +9,7 @@ namespace quan_ly_danh_ba.Services.Interfaces
     public interface IUserService
     {
         List<UserDto> ListUser();
-        UserDto FindByUser(UserDto user);
+        UserDto FindByUser(UserDto user,string Type);
         UserDto Insert(UserDto user);
         UserDto FindById(UserDto user);
         UserDto CheckPassword(Guid id, string pass);

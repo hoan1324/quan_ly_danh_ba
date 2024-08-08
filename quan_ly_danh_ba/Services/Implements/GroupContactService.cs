@@ -32,8 +32,6 @@ namespace quan_ly_danh_ba.Services.Implements
                  }
                 
                 if (position != null ) {
-                    
-
                     if(_connect.GetAllContacts(position).Count > 0) {
                         return false;
                     }

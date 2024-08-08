@@ -11,7 +11,7 @@ namespace quan_ly_danh_ba.Respository.Interfaces
     {
         List<User> ListUser();
         List<User> ListUserSearch(List<User> search);
-        User FindByUser(string username ,string password);
+        User FindByUser(string Type,string email=null ,string password = null,string phone = null );
         User FindById(Guid id);
         User Insert(User user);
         User  Delete(User user);

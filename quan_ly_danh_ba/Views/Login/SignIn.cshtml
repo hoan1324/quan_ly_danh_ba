@@ -34,6 +34,7 @@
             </div>
             <div class=" sign-in">
                 <form id="sign-in-form" action="~/login/signin" method="post" class="needs-validation" novalidate>
+                    <input  data-val="true" data-val-required="The type field is required."  name="Type" type="hidden" value="signIn">
                     <div class=" mb-3">
                         <label for="email" class="ms-1 mb-2">Email</label>
                         <input type="email" class="form-control" id="email" name="Email" placeholder="Vui lòng nhập Email">

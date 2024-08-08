@@ -6,6 +6,7 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 
+
 namespace quan_ly_danh_ba.Areas.User.Controllers
 {
     [RoleUser]
@@ -23,13 +24,19 @@ namespace quan_ly_danh_ba.Areas.User.Controllers
         {
             return View(_groupContactService.ListGroupContact());
         }
-        public ActionResult Delete(string[] GroupNames) { 
-          var check= _groupContactService.DeleteList(GroupNames.ToList());
-            if (check == true) {
-                TempData["Message"] = "Xóa Thành công";
+        public ActionResult Delete(string[] GroupNames) {
+            if (GroupNames.ToList().Any(item => item.Equals("Công việc") || item.Equals("Bạn bè") || item.Equals("Gia đình")))
+            {
+                TempData["ErrorMessage"] = "Không thể xóa các groupContact Công việc,bạn bè,gia đình vì nó là mặc định ";
+
                 return View();
             }
-            TempData["Message"] = "Lỗi hệ thống vui lòng thử lại";
+          var check= _groupContactService.DeleteList(GroupNames.ToList());
+            if (check == true) {
+                TempData["SuccessMessage"] = "Xóa Thành công";
+                return View();
+            }
+            TempData["ErrorMessage"] = "Không thể xóa các groupContact đã có 1 hoặc nhiều liên hệ";
 
             return View();
         }
