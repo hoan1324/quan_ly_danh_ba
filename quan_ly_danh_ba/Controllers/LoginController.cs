@@ -21,9 +21,9 @@ namespace quan_ly_danh_ba.Controllers
             return View();
         }
         [HttpPost]
-        public ActionResult SignIn(UserDto user,string Type)
+        public ActionResult SignIn(UserDto user, string Type)
         {
-            var done = _userService.FindByUser(user,Type);
+            var done = _userService.FindByUser(user, Type);
             if (done != null)
             {
                 SessionConfig.SaveUser(done);
@@ -33,6 +33,15 @@ namespace quan_ly_danh_ba.Controllers
             TempData["ErrorMessage"] = "Tài khoản hoặc mật khẩu không chính xác";
             return View();
         }
+        //public ActionResult Search(UserDto user,string Type)
+        //{
+        //    var done = _userService.FindByUser(user, Type);
+
+        //}
+        //public ActionResult Verification()
+        //{
+        //    return View();
+        //}
         public ActionResult SignUp()
         {
             return View();

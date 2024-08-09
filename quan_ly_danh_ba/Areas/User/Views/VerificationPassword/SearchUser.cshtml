@@ -1,0 +1,65 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>SearchUser</title>
+    <link href="~/Conten/lib/fontAwesome/fontawesome.min.css" rel="stylesheet" type="text/css" />
+    <link href="~/Content/lib/fontAwesome/all.min.css" rel="stylesheet" type="text/css" />
+    <link href="~/Content/lib/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
+    <link href="~/Areas/User/Content/css/site-verification-pass.css" rel="stylesheet" type="text/css" />
+
+</head>
+<body>
+    <div>
+        <div class="modal" tabindex="-1">
+            <div class="modal-dialog modal-dialog-centered">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title">Tìm kiếm tài khoản</h5>
+                    </div>
+                    <div class="modal-body">
+                        <div class="list-group">
+                            <a href="#" class="list-group-item list-group-item-action" data-bs-target="#exampleModalToggle2" data-bs-toggle="modal" data-bs-whatever="phone">Tìm kiếm bằng số điện thoại</a>
+                            <a href="#" class="list-group-item list-group-item-action" data-bs-target="#exampleModalToggle2" data-bs-toggle="modal" data-bs-whatever="email">Tìm kiếm bằng email</a>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+        <div class="modal fade" id="exampleModalToggle2" aria-hidden="true" aria-labelledby="exampleModalToggleLabel2" tabindex="-1">
+            <div class="modal-dialog modal-dialog-centered">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h1 class="modal-title fs-5" id="exampleModalToggleLabel2">Tìm kiếm </h1>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <form>
+                        <div class="modal-body">
+                            <input class="form-control text-box single-line" data-val="true" data-val-required="The type field is required." id="Type" name="Type" type="hidden">
+                            <div>
+                                <label for="inputUser"></label>
+                                <input type="text" id="inputUser" class="form-control"  />
+                            </div>
+                            </div>
+                        <div class="modal-footer">
+                            <button class="btn btn-primary" type="submit">Tìm kiếm</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+
+    </div>
+    <script src="~/Content/lib/Scripts/jquery-3.7.1.min.js"></script>
+    <script src="~/Content/lib/Scripts/bootstrap.bundle.min.js"></script>
+    <script src="~/Content/lib/Scripts/jquery.validate.min.js"></script>
+    <script src="~/Areas/User/Content/script/search-user-verification.js"></script>
+</body>
+</html>

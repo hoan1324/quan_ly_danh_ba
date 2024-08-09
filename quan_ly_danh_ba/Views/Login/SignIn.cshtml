@@ -56,39 +56,17 @@
                             <span>Bạn chưa có tài khoản ?<a href="~/login/signup" class="link-success text-decoration-none">Đăng ký</a></span>
                         </div>
                         <div class="different-solution">
-                            <p class="link-primary " data-bs-toggle="modal" data-bs-target="#exampleModal">Quên mật khẩu?</p>
+                            <a class="link-primary" href="~/user/VerificationPassword/SearchUser"></a>
                         </div>
                     </div>
                 </form>
             </div>
         </div>
     </div>
-    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-        <div class="modal-dialog modal-dialog-centered ">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h1 class="modal-title fs-5" id="exampleModalLabel">Quên mật khẩu </h1>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                </div>
-                <form id="form-edit-profile" action="~/login/signin" method="post" class="needs-validation" novalidate >
-                    <div class="modal-body">
-
-                        <input class="form-control text-box single-line" data-val="true" data-val-required="The type field is required." id="Type" name="Type" type="hidden" value="avatar">
-
-                        <div>
-                            <label for="avatar">Chọn email bạn cần tìm kiếm</label>
-                            <input type="text" id="email" class="form-control" name="Email" />
-                        </div>
-
-                    </div>
-                    <div class="modal-footer">
-                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                        <button type="submit" class="btn btn-primary">Save changes</button>
-                    </div>
-                </form>
-            </div>
-        </div>
-    </div>
+    
+   
+    
+    
     <script src="~/Content/lib/Scripts/jquery-3.7.1.min.js"></script>
     <script src="~/Content/lib/Scripts/bootstrap.bundle.min.js"></script>
     <script src="~/Content/lib/Scripts/jquery.validate.min.js"></script>

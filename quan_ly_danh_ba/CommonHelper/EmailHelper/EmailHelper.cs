@@ -9,7 +9,7 @@ namespace CommonHelper
 {
     public static class EmailHelper
     {
-        private static string GenerateRandom()
+        public static string GenerateRandom()
         {
             var random = new Random();
             return random.Next(100000, 1000000).ToString();

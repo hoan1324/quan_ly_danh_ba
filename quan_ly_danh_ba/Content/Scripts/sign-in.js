@@ -34,6 +34,24 @@
 $(function () {
     $('.temp-alert').fadeOut(3000);
 
+    const exampleModal = document.getElementById('exampleModal')
+    if ($("#exampleModal")) {
+        $("#exampleModal").addEventListener('show.bs.modal', event => {
+            const button = event.relatedTarget
+            const recipient = button.getAttribute('data-bs-whatever');
+
+            const modalTitle = exampleModal.querySelector('#type')
+            const modalBodyInput = exampleModal.querySelector('#recipient-name')
+            modalBodyInput.setAttribute('name', recipient)
+            if (recipient == "Email") {
+                modalTitle.value = "email";
+            }
+            else {
+                modalTitle.value = "phone";
+            }
+        })
+    }
+
     $(".visible-pass").on("click", function () {
         var input = $(this).siblings('.password');
         if (input.attr('type') === 'password') {

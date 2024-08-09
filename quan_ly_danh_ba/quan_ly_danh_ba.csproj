@@ -129,11 +129,13 @@
     <Content Include="Areas\User\Content\css\create.css" />
     <Content Include="Areas\User\Content\css\data-table.css" />
     <Content Include="Areas\User\Content\css\profile-user.css" />
+    <Content Include="Areas\User\Content\css\site-verification-pass.css" />
     <Content Include="Areas\User\Content\script\data-group-contact.js" />
     <Content Include="Areas\User\Content\script\edit.js" />
     <Content Include="Areas\User\Content\script\create.js" />
     <Content Include="Areas\User\Content\script\data-table.js" />
     <Content Include="Areas\User\Content\script\profile-user.js" />
+    <Content Include="Areas\User\Content\script\search-user-verification.js" />
     <Content Include="Areas\User\Content\script\site.js" />
     <Content Include="Content\css\sign-in.css" />
     <Content Include="Content\css\sign-form.css" />
@@ -160,6 +162,7 @@
     <Compile Include="App_Start\SessionConfig.cs" />
     <Compile Include="App_Start\UnityConfig.cs" />
     <Compile Include="App_Start\UnityMvcActivator.cs" />
+    <Compile Include="Areas\User\Controllers\VerificationPasswordController.cs" />
     <Compile Include="CommonHelper\Constant\ImageConst.cs" />
     <Compile Include="Areas\User\Controllers\ContactController.cs" />
     <Compile Include="Areas\User\Controllers\GroupContactController.cs" />
@@ -215,6 +218,7 @@
     <Content Include="Areas\User\Views\GroupContact\Index.cshtml" />
     <Content Include="Areas\User\Views\Auth\ProfileUser.cshtml" />
     <Content Include="Areas\User\Views\Auth\EditProfile.cshtml" />
+    <Content Include="Areas\User\Views\VerificationPassword\SearchUser.cshtml" />
     <None Include="packages.config" />
     <Content Include="Views\Shared\_Layout.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
