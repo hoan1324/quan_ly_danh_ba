@@ -1,0 +1,56 @@
+﻿@model Tuple<Dtos.UserDto,string>
+@{ 
+    var user = Model.Item1;
+    var confirmationCode = Model.Item2;
+}
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>SearchUser</title>
+    <link href="~/Conten/lib/fontAwesome/fontawesome.min.css" rel="stylesheet" type="text/css" />
+    <link href="~/Content/lib/fontAwesome/all.min.css" rel="stylesheet" type="text/css" />
+    <link href="~/Content/lib/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
+    <link href="~/Areas/User/Content/css/site-verification-pass.css" rel="stylesheet" type="text/css" />
+    <link href="~/Areas/User/Content/css/verification.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+    <div class=" content-verification d-flex align-items-center">
+        <div class="body-content border container rounded pb-4 ">
+            <div class="title-verification  mt-3">
+                <h4>Tìm kiếm tài khoản</h4>
+            </div>
+            <hr />
+            <div class="body-verification">
+                <form id="form-verification">
+                    <input class="opacity-0 mh-0" type="text" id="verification-input" data-userID="@user.UserID" maxlength="6">
+                </form>
+
+                <div class="verification d-flex align-items-center mt-4 ms-3" data-verification="@confirmationCode">
+                    <p class="d-flex align-items-center justify-content-center fs-4 mx-2 border"></p>
+                    <p class="d-flex align-items-center justify-content-center fs-4 mx-2 border"></p>
+                    <p class="d-flex align-items-center justify-content-center fs-4 mx-2 border"></p>
+                    <p class="d-flex align-items-center justify-content-center fs-4 mx-2 border"></p>
+                    <p class="d-flex align-items-center justify-content-center fs-4 mx-2 border"></p>
+                    <p class="d-flex align-items-center justify-content-center fs-4 mx-2 border"></p>
+                </div>
+
+                <div class="text-center">
+                    <p>Nếu bạn chưa nhận được mã xác minh hãy bấm nút và thử lại</p>
+                    <button class="btn-verification btn btn-outline-secondary">Nhận mã </button>
+                </div>
+            </div>
+        </div>
+
+    </div>
+    <script src="~/Content/lib/Scripts/jquery-3.7.1.min.js"></script>
+    <script src="~/Content/lib/Scripts/bootstrap.bundle.min.js"></script>
+    <script src="~/Content/lib/Scripts/jquery.validate.min.js"></script>
+    <script src="~/Areas/User/Content/script/verification.js"></script>
+</body>
+</html>

@@ -11,7 +11,7 @@ namespace quan_ly_danh_ba.Services.Interfaces
         List<UserDto> ListUser();
         UserDto FindByUser(UserDto user,string Type);
         UserDto Insert(UserDto user);
-        UserDto FindById(UserDto user);
+        UserDto FindById(Guid id);
         UserDto CheckPassword(Guid id, string pass);
         UserDto Update(UserDto user,string type);
     }

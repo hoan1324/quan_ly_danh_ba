@@ -38,9 +38,9 @@ namespace quan_ly_danh_ba.Services.Implements
             return null;
         }
 
-        public UserDto FindById(UserDto user)
+        public UserDto FindById(Guid id)
         {
-            return _mapper.Map<UserDto>(_UserRepo.FindById(user.UserID));
+            return _mapper.Map<UserDto>(_UserRepo.FindById(id));
 
         }
 
