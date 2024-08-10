@@ -1,5 +1,6 @@
 ﻿using CommonHelper;
 using Dtos;
+using quan_ly_danh_ba.Services.Implements;
 using quan_ly_danh_ba.Services.Interfaces;
 using System;
 using System.Collections.Generic;
@@ -44,10 +45,23 @@ namespace quan_ly_danh_ba.Areas.User.Controllers
         {
             var user = _userService.FindById(id);
             var confirmationCode = EmailHelper.SendEmail(user.Email);
-            var model=Tuple.Create(user, confirmationCode);
+            var model = Tuple.Create(user, confirmationCode);
             return View(model);
         }
+        [HttpPost]
+        public JsonResult DataVerificationJson(Guid id)
+        {
+            var user = _userService.FindById(id);
+            var confirmationCode = EmailHelper.SendEmail(user.Email);
+           
+            
+            return Json(confirmationCode);
+        }
         public ActionResult ChangePass(Guid id) {
+            var user= _userService.FindById(id);
+            if (user != null) { 
+            return View(user);
+            }
             return View();
          }
 

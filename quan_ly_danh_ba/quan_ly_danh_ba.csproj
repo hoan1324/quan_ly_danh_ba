@@ -223,6 +223,7 @@
     <Content Include="Areas\User\Views\Auth\EditProfile.cshtml" />
     <Content Include="Areas\User\Views\VerificationPassword\SearchUser.cshtml" />
     <Content Include="Areas\User\Views\VerificationPassword\Verification.cshtml" />
+    <Content Include="Areas\User\Views\VerificationPassword\ChangePass.cshtml" />
     <None Include="packages.config" />
     <Content Include="Views\Shared\_Layout.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />

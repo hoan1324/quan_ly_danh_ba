@@ -35,7 +35,7 @@ namespace quan_ly_danh_ba.Areas.User.Controllers
         public JsonResult DataJson(string FullName, string PhoneNumber, string groupContact)
         {
             var data = _contactService.Search(FullName, PhoneNumber, groupContact);
-
+            
             return Json(data, JsonRequestBehavior.AllowGet);
         }
         public ActionResult Detail(Guid id)

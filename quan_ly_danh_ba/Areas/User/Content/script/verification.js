@@ -1,6 +1,6 @@
 ﻿function getVerificationCode(dataElement) {
     $.ajax({
-        url: "/User/Contact/DataJson",
+        url: "/User/VerificationPassword/DataVerificationJson",
         type: "Post",
         dataType: 'json',
         data: { id: $("#verification-input").data("userID") },
