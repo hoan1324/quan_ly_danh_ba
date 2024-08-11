@@ -13,7 +13,7 @@
     <link href="~/Content/lib/fontAwesome/all.min.css" rel="stylesheet" type="text/css" />
     <link href="~/Content/lib/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
     <link href="~/Areas/User/Content/css/site-verification-pass.css" rel="stylesheet" type="text/css" />
-    <link href="~/Areas/User/Content/css/search-user-verification.css"/>
+    <link href="~/Areas/User/Content/css/search-user-verification.css" rel="stylesheet" type="text/css"/>
 </head>
 <body>
     @if (TempData["ErrorMessage"] != null)
@@ -22,7 +22,7 @@
 
     }
     <div class=" content-search d-flex align-items-center">
-        <div class="body-content border container rounded pb-4 ">
+        <div class="body-content bg-white border container rounded pb-4 ">
             <div class="title-search mt-3">
                 <h4>Tìm kiếm tài khoản</h4>
             </div>
@@ -30,9 +30,9 @@
             <div class="body-search">
                 <div class="list-group">
                     <a href="#" class="list-group-item list-group-item-action" data-bs-target="#exampleModal" data-bs-toggle="modal"
-                       data-bs-whatever="phone">Tìm kiếm bằng số điện thoại</a>
+                       data-bs-whatever="PhoneNumber">Tìm kiếm bằng số điện thoại</a>
                     <a href="#" class="list-group-item list-group-item-action" data-bs-target="#exampleModal" data-bs-toggle="modal"
-                       data-bs-whatever="email">Tìm kiếm bằng email</a>
+                       data-bs-whatever="Email">Tìm kiếm bằng email</a>
                 </div>
             </div>
             
@@ -47,7 +47,7 @@
                     <form id="search-form" action="SearchUser" method="post">
                         <div class="modal-body">
                             <input class="form-control text-box single-line" data-val="true"
-                                   data-val-required="The type field is required." id="Type" name="Type" type="hidden">
+                                   data-val-required="The type field is required." id="Type" name="Type" type="hidden" value="email">
                             <div>
                                 <label for="inputUser"></label>
                                 <input type="text" id="inputUser" class="form-control" />

@@ -46,7 +46,7 @@ namespace quan_ly_danh_ba.Services.Implements
 
         public UserDto FindByUser(UserDto user,string Type)
         {
-            return _mapper.Map<UserDto>(_UserRepo.FindByUser(user.Email,user.Password,user.PhoneNumber,Type));
+            return _mapper.Map<UserDto>(_UserRepo.FindByUser(Type,user.Email,user.Password,user.PhoneNumber));
         }
 
         public UserDto Insert(UserDto user)

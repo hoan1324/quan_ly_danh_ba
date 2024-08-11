@@ -13,16 +13,20 @@
 
 }
 function setTimeBtn(timeElementVisible,time,timeOut) {
-    let index = time;
-    timeElementVisible.attr("disabled",true)
-    let timeInterval = setTimeout(() => {
-        index--;
-        timeElementVisible.text(index);
-    }, 1000);
-    if (index == timeOut) {
-        clearTimeout(timeInterval);
-        timeElementVisible.text("Nhận mã");
-        timeElementVisible.attr("disabled", false)
+    function setTimeBtn(timeElementVisible, time, timeOut) {
+        let index = time;
+        timeElementVisible.attr("disabled", true);
+
+        let timeInterval = setInterval(() => {
+            index--;
+            timeElementVisible.text(index);
+
+            if (index === timeOut) {
+                clearInterval(timeInterval);
+                timeElementVisible.text("Nhận mã");
+                timeElementVisible.attr("disabled", false);
+            }
+        }, 1000);
     }
 }
 $(function () {

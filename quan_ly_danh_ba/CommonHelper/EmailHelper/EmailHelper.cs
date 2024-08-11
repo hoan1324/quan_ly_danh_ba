@@ -1,9 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Net.Mail;
+
 using System.Net;
 using System.Web;
+using MailKit.Net.Smtp;
+using MimeKit;
 
 namespace CommonHelper
 {
@@ -14,39 +16,42 @@ namespace CommonHelper
             var random = new Random();
             return random.Next(100000, 1000000).ToString();
         }
-        public static string SendEmail(string email,string subject=null,string body=null)
+        public static string SendEmail(string toEmail, string subject = null, string body = null)
         {
-            string randomNumber=GenerateRandom();
+            string randomNumber = GenerateRandom();
+
             if (subject == null)
             {
-                subject = "Hỗ trợ quên mật khẩu ";
+                subject = "Hỗ trợ quên mật khẩu";
             }
             if (body == null)
             {
-                body = randomNumber + "là mã xác minh của bạn";
+                body = randomNumber + " là mã xác minh của bạn";
             }
             var fromEmail = "nvhoffice235@gmail.com";
-            var password = "hoan0348966964";
+            var password = "hoan0348966964"; // Mật khẩu ứng dụng hoặc mật khẩu email
 
-            var smtpClient = new SmtpClient("smtp.gmail.com")
+            var message = new MimeMessage();
+            message.From.Add(new MailboxAddress("Sender Name", fromEmail));
+            message.To.Add(new MailboxAddress("Recipient Name", toEmail));
+            message.Subject = subject;
+
+            message.Body = new TextPart("plain")
             {
-                Port = 587, // Cổng cho TLS/STARTTLS
-                Credentials = new NetworkCredential(fromEmail, password),
-                EnableSsl = true, // Bật SSL/TLS,
+                Text = body
             };
 
-            var mailMessage = new MailMessage
+            using (var client = new SmtpClient())
             {
-                From = new MailAddress(email),
-                Subject = subject,
-                Body = body,
-                IsBodyHtml = false, // Nếu bạn muốn gửi email HTML
-            };
+                client.Connect("smtp.gmail.com", 587, MailKit.Security.SecureSocketOptions.StartTls);
+                client.Authenticate(fromEmail, password);
+                client.Send(message);
+                client.Disconnect(true);
+            }
 
-            mailMessage.To.Add(email);
-
-            smtpClient.Send(mailMessage);
+            Console.WriteLine("Email đã được gửi thành công.");
             return randomNumber;
         }
+        
     }
 }

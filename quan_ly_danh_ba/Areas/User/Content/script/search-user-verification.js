@@ -1,6 +1,5 @@
 ﻿jQuery('#search-form').validate({
     rules: {
-      
         PhoneNumber: {
             required: true,
             digits: true,
@@ -12,7 +11,6 @@
         }
     },
     messages: {
-       
         PhoneNumber: {
             required: "Vui lòng nhập số điện thoại",
             digits: "Vui lòng nhập định dạng là số",

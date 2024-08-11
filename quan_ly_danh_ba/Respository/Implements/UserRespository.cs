@@ -60,6 +60,32 @@ namespace quan_ly_danh_ba.Respository.Implements
             }
 
             return query.FirstOrDefault();
+            //User user = null;
+            //switch (Type)
+            //{
+            //    case "signIn":
+            //        if (email != null && password != null)
+            //        {
+            //            user=Quan_ly_danh_baEntity.db.Users.FirstOrDefault((item) => item.Email == email && item.Password == password);
+            //        }
+            //        break;
+
+            //    case "email":
+            //        if (email != null)
+            //        {
+            //            user = Quan_ly_danh_baEntity.db.Users.FirstOrDefault(item => item.Email == email);
+            //        }
+            //        break;
+
+            //    case "phone":
+            //        if (phone != null)
+            //        {
+            //            user = Quan_ly_danh_baEntity.db.Users.FirstOrDefault(item => item.PhoneNumber == phone);
+            //        }
+            //        break;
+            //}
+            //return user;
+
         }
 
         public User Insert(User user)
