@@ -13,6 +13,9 @@ namespace quan_ly_danh_ba
         {
             routes.IgnoreRoute("{resource}.axd/{*pathInfo}");
 
+            routes.IgnoreRoute("{*botdetect}",
+      new { botdetect = @"(.*)BotDetectCaptcha\.ashx" });
+
             routes.MapRoute(
                 name: "Default",
                 url: "{controller}/{action}/{id}",

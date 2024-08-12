@@ -75,7 +75,12 @@ namespace quan_ly_danh_ba.Services.Implements
         public UserDto Update(UserDto user,string type)
         {
             var currentUser = SessionConfig.GetUser();
-           
+            if (user.UserID != null)
+            {
+                currentUser = _mapper.Map<UserDto>(_UserRepo.FindById(user.UserID));
+            }
+
+
             switch (type)
             {
                 case "profile":
@@ -86,7 +91,6 @@ namespace quan_ly_danh_ba.Services.Implements
                     break;
 
                 case "password":
-                    user.UserID = currentUser.UserID;
                     user.Email = currentUser.Email;
                     user.Avatar= currentUser.Avatar;
                     user.PhoneNumber = currentUser.PhoneNumber;

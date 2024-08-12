@@ -8,6 +8,7 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 
+
 namespace quan_ly_danh_ba.Areas.User.Controllers
 {
     public class VerificationPasswordController : Controller
@@ -28,14 +29,16 @@ namespace quan_ly_danh_ba.Areas.User.Controllers
         {
             var done=_userService.FindByUser(user,Type);
             if (done != null) {
-                if (Type == "phone")
-                {
-                    return RedirectToAction("ChangePass", new { id = done.UserID });
-                }
-                else if(Type =="email")
-                {
-                    return RedirectToAction("Verification", new { id = done.UserID });
-                }
+                //if (Type == "phone")
+                //{
+                //    return RedirectToAction("ChangePass", new { id = done.UserID });
+                //}
+                //else if(Type =="email")
+                //{
+                //    return RedirectToAction("Verification", new { id = done.UserID });
+                //}\
+                   return RedirectToAction("ChangePass", new { id = done.UserID });
+
             }
             TempData["ErrorMessage"] = "Không tìm thấy tài khoản chứa thông tin trên"; 
  
@@ -57,6 +60,7 @@ namespace quan_ly_danh_ba.Areas.User.Controllers
             
             return Json(confirmationCode);
         }
+        [RoleUser]
         public ActionResult ChangePass(Guid id) {
             var user= _userService.FindById(id);
             if (user != null) { 
