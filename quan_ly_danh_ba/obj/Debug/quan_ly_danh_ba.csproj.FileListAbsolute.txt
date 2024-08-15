@@ -178,3 +178,7 @@ C:\Users\admin\Downloads\PersonalProject\Quan_Ly-Danh_Ba\quan_ly_danh_ba\bin\Sys
 C:\Users\admin\Downloads\PersonalProject\Quan_Ly-Danh_Ba\quan_ly_danh_ba\bin\System.Memory.xml
 C:\Users\admin\Downloads\PersonalProject\Quan_Ly-Danh_Ba\quan_ly_danh_ba\bin\System.Numerics.Vectors.xml
 C:\Users\admin\Downloads\PersonalProject\Quan_Ly-Danh_Ba\quan_ly_danh_ba\bin\System.ValueTuple.xml
+C:\Users\admin\Downloads\PersonalProject\Quan_Ly-Danh_Ba\quan_ly_danh_ba\bin\BotDetect.dll
+C:\Users\admin\Downloads\PersonalProject\Quan_Ly-Danh_Ba\quan_ly_danh_ba\bin\BotDetect.Web.Mvc.dll
+C:\Users\admin\Downloads\PersonalProject\Quan_Ly-Danh_Ba\quan_ly_danh_ba\bin\System.Data.SQLite.dll
+C:\Users\admin\Downloads\PersonalProject\Quan_Ly-Danh_Ba\quan_ly_danh_ba\bin\System.Data.SQLite.xml

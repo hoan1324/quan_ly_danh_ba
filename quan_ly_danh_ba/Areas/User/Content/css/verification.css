@@ -11,3 +11,7 @@
     width: 28px;
     height: 36px;
 }
+.error {
+    color: red;
+    margin-left: 3px;
+}

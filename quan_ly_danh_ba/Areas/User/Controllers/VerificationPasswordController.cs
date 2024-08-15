@@ -1,4 +1,5 @@
-﻿using CommonHelper;
+﻿using BotDetect.Web.Mvc;
+using CommonHelper;
 using Dtos;
 using quan_ly_danh_ba.Services.Implements;
 using quan_ly_danh_ba.Services.Interfaces;
@@ -60,7 +61,7 @@ namespace quan_ly_danh_ba.Areas.User.Controllers
             
             return Json(confirmationCode);
         }
-        [RoleUser]
+        
         public ActionResult ChangePass(Guid id) {
             var user= _userService.FindById(id);
             if (user != null) { 
@@ -69,5 +70,40 @@ namespace quan_ly_danh_ba.Areas.User.Controllers
             return View();
          }
 
+        [HttpPost]
+        public ActionResult ChangePass(UserDto user,string Type)
+        {
+            string userInput = HttpContext.Request.Form["CaptchaCode"];
+
+            MvcCaptcha mvcCaptcha = new MvcCaptcha("ExampleCaptcha");
+
+            if (!mvcCaptcha.Validate(userInput))
+            {
+                ModelState.AddModelError("CaptchaCode", "CaptchaCode sai");
+                return View(user);
+            }
+
+            var update = _userService.Update(user, Type);
+
+            if (update == null)
+            {
+                TempData["ErrorMessage"] = "Không đổi được mật khẩu";
+                return View(user);
+            }
+
+            // Reset Captcha
+            MvcCaptcha.ResetCaptcha("ExampleCaptcha");
+
+            // Save user to session if not null
+            if (SessionConfig.GetUser() != null)
+            {
+                SessionConfig.SaveUser(update);
+                return RedirectToAction("index", "home", new { area = "user" });
+            }
+
+            return RedirectToAction("signin", "login");
+
+
+        }
     }
 }

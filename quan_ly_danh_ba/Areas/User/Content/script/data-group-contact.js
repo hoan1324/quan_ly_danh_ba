@@ -14,13 +14,10 @@ $(function () {
     $(".delete-group").on('click', function () {
         var array = $("input[type=checkbox]:checked").map(function () {
             return this.value;
-        }).get().split(",");
-        $('#confirmdeletebtn').attr('href', `/user/groupcontact/delete?GroupNames=${array}`);
+        }).get();
+
+        // Chuyển đổi mảng thành chuỗi
+        var arrayString = array.join(",");
+        $('#confirmdeletebtn').attr('href', `/user/groupcontact/delete?GroupNames=${arrayString}`);
     });
-
-
-    
-
-
-
 })

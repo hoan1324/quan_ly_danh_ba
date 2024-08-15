@@ -33,58 +33,32 @@ namespace quan_ly_danh_ba.Respository.Implements
 
         public User FindByUser(string Type, string email = null, string password = null, string phone = null)
         {
-            IQueryable<User> query = Quan_ly_danh_baEntity.db.Users;
-
+           
+            User user = null;
             switch (Type)
             {
                 case "signIn":
                     if (email != null && password != null)
                     {
-                        query = query.Where(item => item.Email == email && item.Password == password);
+                        user = Quan_ly_danh_baEntity.db.Users.FirstOrDefault((item) => item.Email == email && item.Password == password);
                     }
                     break;
 
                 case "email":
                     if (email != null)
                     {
-                        query = query.Where(item => item.Email == email);
+                        user = Quan_ly_danh_baEntity.db.Users.FirstOrDefault(item => item.Email == email);
                     }
                     break;
 
                 case "phone":
                     if (phone != null)
                     {
-                        query = query.Where(item => item.PhoneNumber == phone);
+                        user = Quan_ly_danh_baEntity.db.Users.FirstOrDefault(item => item.PhoneNumber == phone);
                     }
                     break;
             }
-
-            return query.FirstOrDefault();
-            //User user = null;
-            //switch (Type)
-            //{
-            //    case "signIn":
-            //        if (email != null && password != null)
-            //        {
-            //            user=Quan_ly_danh_baEntity.db.Users.FirstOrDefault((item) => item.Email == email && item.Password == password);
-            //        }
-            //        break;
-
-            //    case "email":
-            //        if (email != null)
-            //        {
-            //            user = Quan_ly_danh_baEntity.db.Users.FirstOrDefault(item => item.Email == email);
-            //        }
-            //        break;
-
-            //    case "phone":
-            //        if (phone != null)
-            //        {
-            //            user = Quan_ly_danh_baEntity.db.Users.FirstOrDefault(item => item.PhoneNumber == phone);
-            //        }
-            //        break;
-            //}
-            //return user;
+            return user;
 
         }
 

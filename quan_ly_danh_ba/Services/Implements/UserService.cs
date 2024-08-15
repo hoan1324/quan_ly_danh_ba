@@ -75,7 +75,7 @@ namespace quan_ly_danh_ba.Services.Implements
         public UserDto Update(UserDto user,string type)
         {
             var currentUser = SessionConfig.GetUser();
-            if (user.UserID != null)
+            if (user.UserID !=Guid.Empty)
             {
                 currentUser = _mapper.Map<UserDto>(_UserRepo.FindById(user.UserID));
             }

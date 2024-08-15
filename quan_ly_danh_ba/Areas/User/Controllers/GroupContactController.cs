@@ -24,14 +24,15 @@ namespace quan_ly_danh_ba.Areas.User.Controllers
         {
             return View(_groupContactService.ListGroupContact());
         }
-        public ActionResult Delete(string[] GroupNames) {
-            if (GroupNames.ToList().Any(item => item.Equals("Công việc") || item.Equals("Bạn bè") || item.Equals("Gia đình")))
+        public ActionResult Delete(string GroupNames) {
+            var listGroupNames = GroupNames.Split(',').ToList();
+            if (listGroupNames.Any(item => item.Equals("Công việc") || item.Equals("Bạn bè") || item.Equals("Gia đình")))
             {
                 TempData["ErrorMessage"] = "Không thể xóa các groupContact Công việc,bạn bè,gia đình vì nó là mặc định ";
 
                 return View();
             }
-          var check= _groupContactService.DeleteList(GroupNames.ToList());
+          var check= _groupContactService.DeleteList(listGroupNames);
             if (check == true) {
                 TempData["SuccessMessage"] = "Xóa Thành công";
                 return View();
