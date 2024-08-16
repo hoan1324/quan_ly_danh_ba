@@ -29,7 +29,7 @@ namespace CommonHelper
                 body = randomNumber + " là mã xác minh của bạn";
             }
             var fromEmail = "nvhoffice235@gmail.com";
-            var password = "hoan0348966964"; // Mật khẩu ứng dụng hoặc mật khẩu email
+            var password = "xjwl sjhi ksmk xqhl"; // Mật khẩu ứng dụng hoặc mật khẩu email
 
             var message = new MimeMessage();
             message.From.Add(new MailboxAddress("Sender Name", fromEmail));
@@ -49,7 +49,6 @@ namespace CommonHelper
                 client.Disconnect(true);
             }
 
-            Console.WriteLine("Email đã được gửi thành công.");
             return randomNumber;
         }
         

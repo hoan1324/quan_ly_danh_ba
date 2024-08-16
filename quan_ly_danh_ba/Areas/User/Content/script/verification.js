@@ -3,16 +3,13 @@
         url: "/User/VerificationPassword/DataVerificationJson",
         type: "Post",
         dataType: 'json',
-        data: { id: $("#verification-input").data("userID") },
+        data: { id: $("#user-id").val() },
         success: function (response) {
-            dataElement.attr('data-verification', response);
-
-
         },
     });
 
 }
-function setTimeBtn(timeElementVisible,time,timeOut) {
+
     function setTimeBtn(timeElementVisible, time, timeOut) {
         let index = time;
         timeElementVisible.attr("disabled", true);
@@ -28,9 +25,9 @@ function setTimeBtn(timeElementVisible,time,timeOut) {
             }
         }, 1000);
     }
-}
-$(function () {
 
+$(function () {
+    $(".temp-alert").fadeOut(3000);
     setTimeBtn($(".btn-verification"), 60, 0);
     $("#verification-input").focus();
     $(".verification").on("click", function () {
@@ -42,16 +39,7 @@ $(function () {
         })
     })
 
-    $("#form-verification").on(submit, function (e) {
-        var dataVerification = $(".verification").data("verification");
-        if ($("#verification-input").val() == dataVerification) {
-            var id = $("#verification-input").data("userID");
-            window.location = `user/VerificationPassword/ChangePass?id=${id}`;
-        }
-        alert("Mã xác minh không chính xác");
-        return;
-
-    });
+    
     $(".btn-verification").on("click", function () {
         setTimeBtn($(this), 60, 0);
         getVerificationCode($(".verification"))

@@ -1,9 +1,5 @@
-﻿@model Tuple<Dtos.UserDto,string>
-@{ 
-    var user = Model.Item1;
-    var confirmationCode = Model.Item2;
-}
-@{
+﻿@model Dtos.UserDto
+
     Layout = null;
 }
 
@@ -20,24 +16,30 @@
     <link href="~/Areas/User/Content/css/verification.css" rel="stylesheet" type="text/css" />
 </head>
 <body>
+    @if (TempData["ErrorMessage"] != null)
+    {
+        <div class="temp-alert alert alert-danger position-absolute w-50 text-center" style="left:25%;">@TempData["ErrorMessage"]</div>
+
+    }
     <div class=" content-verification d-flex align-items-center">
-        <div class="body-content border container rounded pb-4 ">
+        <div class="body-content border container rounded pb-4 bg-white ">
             <div class="title-verification  mt-3">
                 <h4>Tìm kiếm tài khoản</h4>
             </div>
             <hr />
             <div class="body-verification">
                 <form id="form-verification">
-                    <input class="opacity-0 mh-0" type="text" id="verification-input" data-userID="@user.UserID" maxlength="6">
+                    <input type="hidden" value="@Model" name="ID" id="user-id"/>
+                    <input class="opacity-0 mh-0 position-absolute z-0" type="text" id="verification-input" name="VerificationCode"  maxlength="6">
                 </form>
 
-                <div class="verification d-flex align-items-center mt-4 ms-3" data-verification="@confirmationCode">
-                    <p class="d-flex align-items-center justify-content-center fs-4 mx-2 border"></p>
-                    <p class="d-flex align-items-center justify-content-center fs-4 mx-2 border"></p>
-                    <p class="d-flex align-items-center justify-content-center fs-4 mx-2 border"></p>
-                    <p class="d-flex align-items-center justify-content-center fs-4 mx-2 border"></p>
-                    <p class="d-flex align-items-center justify-content-center fs-4 mx-2 border"></p>
-                    <p class="d-flex align-items-center justify-content-center fs-4 mx-2 border"></p>
+                <div class="verification d-flex align-items-center mt-4  justify-content-center" >
+                    <p class="d-flex align-items-center justify-content-center fs-4 mx-2 border rounded"></p>
+                    <p class="d-flex align-items-center justify-content-center fs-4 mx-2 border rounded"></p>
+                    <p class="d-flex align-items-center justify-content-center fs-4 mx-2 border rounded"></p>
+                    <p class="d-flex align-items-center justify-content-center fs-4 mx-2 border rounded"></p>
+                    <p class="d-flex align-items-center justify-content-center fs-4 mx-2 border rounded"></p>
+                    <p class="d-flex align-items-center justify-content-center fs-4 mx-2 border rounded"></p>
                 </div>
 
                 <div class="text-center">

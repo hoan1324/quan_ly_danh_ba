@@ -29,16 +29,17 @@ namespace quan_ly_danh_ba.Areas.User.Controllers
         public ActionResult SearchUser(UserDto user,string Type)
         {
             var done=_userService.FindByUser(user,Type);
-            if (done != null) {
-                //if (Type == "phone")
-                //{
-                //    return RedirectToAction("ChangePass", new { id = done.UserID });
-                //}
-                //else if(Type =="email")
-                //{
-                //    return RedirectToAction("Verification", new { id = done.UserID });
-                //}\
-                   return RedirectToAction("ChangePass", new { id = done.UserID });
+            if (done != null)
+            {
+                if (Type == "phone")
+                {
+                    return RedirectToAction("ChangePass", new { id = done.UserID });
+                }
+                else if (Type == "email")
+                {
+                    return RedirectToAction("Verification", new { id = done.UserID });
+                }
+                   //return RedirectToAction("ChangePass", new { id = done.UserID });
 
             }
             TempData["ErrorMessage"] = "Không tìm thấy tài khoản chứa thông tin trên"; 
@@ -49,16 +50,27 @@ namespace quan_ly_danh_ba.Areas.User.Controllers
         {
             var user = _userService.FindById(id);
             var confirmationCode = EmailHelper.SendEmail(user.Email);
-            var model = Tuple.Create(user, confirmationCode);
-            return View(model);
+            TempData["confirmationCode"] = confirmationCode;
+            return View(user);
+        }
+        [HttpPost]
+        public ActionResult Verification(Guid ID,string VerificationCode)
+        {
+           var user = _userService.FindById(ID);
+            var getCode = TempData["confirmationCode"];
+            if (VerificationCode == getCode.ToString())
+            {
+                return RedirectToAction("ChangePass");
+            }
+            TempData["ErrorMessage"] = "Mã xác nhận không chính xác";
+            return View(user);
         }
         [HttpPost]
         public JsonResult DataVerificationJson(Guid id)
         {
             var user = _userService.FindById(id);
             var confirmationCode = EmailHelper.SendEmail(user.Email);
-           
-            
+            TempData["confirmationCode"] = confirmationCode;
             return Json(confirmationCode);
         }
         
