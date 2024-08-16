@@ -176,6 +176,7 @@
     <Content Include="Areas\User\Content\script\data-table.js" />
     <Content Include="Areas\User\Content\script\profile-user.js" />
     <Content Include="Areas\User\Content\script\search-user-verification.js" />
+    <Content Include="Areas\User\Content\script\setting-account.js" />
     <Content Include="Areas\User\Content\script\site.js" />
     <Content Include="Areas\User\Content\script\verification.js" />
     <Content Include="Content\css\sign-in.css" />
