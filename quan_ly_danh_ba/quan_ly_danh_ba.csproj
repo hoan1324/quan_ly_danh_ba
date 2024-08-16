@@ -212,6 +212,7 @@
     <Compile Include="Areas\User\Controllers\AuthController.cs" />
     <Compile Include="Areas\User\UserAreaRegistration.cs" />
     <Compile Include="CommonHelper\EmailHelper\EmailHelper.cs" />
+    <Compile Include="CommonHelper\SmsHelper\SmsHelper.cs" />
     <Compile Include="Configuration\MappingProfile.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\LoginController.cs" />

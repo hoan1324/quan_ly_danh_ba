@@ -1,6 +1,7 @@
 ﻿using BotDetect.Web.Mvc;
 using CommonHelper;
 using Dtos;
+using quan_ly_danh_ba.CommonHelper.SmsHelper;
 using quan_ly_danh_ba.Services.Implements;
 using quan_ly_danh_ba.Services.Interfaces;
 using System;
@@ -31,14 +32,11 @@ namespace quan_ly_danh_ba.Areas.User.Controllers
             var done=_userService.FindByUser(user,Type);
             if (done != null)
             {
-                if (Type == "phone")
-                {
-                    return RedirectToAction("ChangePass", new { id = done.UserID });
-                }
-                else if (Type == "email")
-                {
-                    return RedirectToAction("Verification", new { id = done.UserID });
-                }
+               
+                
+                
+                    return RedirectToAction("Verification", new { id = done.UserID,type=Type });
+                
                    //return RedirectToAction("ChangePass", new { id = done.UserID });
 
             }
@@ -46,13 +44,22 @@ namespace quan_ly_danh_ba.Areas.User.Controllers
  
             return View();
         }
-        public ActionResult Verification(Guid id)
+        public ActionResult Verification(Guid id,string type,string a)
         {
             var user = _userService.FindById(id);
-            var confirmationCode = EmailHelper.SendEmail(user.Email);
+            string confirmationCode = "";
+            if (type == "email")
+            {
+                confirmationCode = EmailHelper.SendEmail(user.Email);
+            }
+            else if (type == "phone")
+            {
+                confirmationCode = SmsHelper.SendSms(user.PhoneNumber);
+            }
             TempData["confirmationCode"] = confirmationCode;
             return View(user);
         }
+
         [HttpPost]
         public ActionResult Verification(Guid ID,string VerificationCode)
         {
@@ -60,7 +67,7 @@ namespace quan_ly_danh_ba.Areas.User.Controllers
             var getCode = TempData["confirmationCode"];
             if (VerificationCode == getCode.ToString())
             {
-                return RedirectToAction("ChangePass");
+                return RedirectToAction("ChangePass", new {id=user.UserID});
             }
             TempData["ErrorMessage"] = "Mã xác nhận không chính xác";
             return View(user);

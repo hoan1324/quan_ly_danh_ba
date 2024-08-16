@@ -11,14 +11,10 @@ namespace CommonHelper
 {
     public static class EmailHelper
     {
-        public static string GenerateRandom()
-        {
-            var random = new Random();
-            return random.Next(100000, 1000000).ToString();
-        }
+        
         public static string SendEmail(string toEmail, string subject = null, string body = null)
         {
-            string randomNumber = GenerateRandom();
+            string randomNumber = new Random().Next(100000, 1000000).ToString();
 
             if (subject == null)
             {
