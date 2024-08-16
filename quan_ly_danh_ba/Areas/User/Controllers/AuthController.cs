@@ -7,6 +7,8 @@ using System.IO;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using BotDetect.Web.Mvc;
+using System.Data.Entity.Core.Mapping;
 
 namespace quan_ly_danh_ba.Areas.User.Controllers
 {
@@ -65,6 +67,47 @@ namespace quan_ly_danh_ba.Areas.User.Controllers
             TempData["ErrorMessage"] = "Thay đổi Avatar thất bại";
             return View(model);
         }
+        
+        public ActionResult SettingAccount()
+        {
+            return View();
+        }
+        [HttpPost]
+        public ActionResult SettingAccount(UserDto user,string Type)
+        {
+            var typeArray = Type.Split(',');
+            if(user.UserID == Guid.Empty)
+            {
+                user.UserID = SessionConfig.GetUser().UserID;
+            }
+            var checkPass = _userService.CheckPassword(user.UserID,user.Password);
+            if (checkPass != null)
+            {
+                if (typeArray.Length < 2)
+                {
+                    return RedirectToAction("ChangePass", "VerificationPasswordController", new { id = checkPass.UserID });
+                }
+                return RedirectToAction("ChangeAccount", new { Type = typeArray[1] });
+            }
+            TempData["ErrorMessage"] = "Mật khẩu sai";
+            return View();
+        } 
+        public ActionResult ChangeAccount(string Type)
+        {
+        return View(Type); 
+        }
+        public ActionResult ChangeAccount(UserDto user,string Type)
+        {
+            var updateUser = _userService.Update(user, Type);
+            if(updateUser != null)
+            {
+                TempData["SuccessMessage"] = "Thay đổi" + Type + "thành công";
+                return RedirectToAction("ProfileUser");
+            }
+            TempData["ErrorMessage"] = "Thay đổi" + Type + "thất bại";
+            return RedirectToAction("SettingAccount");
+        }
+
         public ActionResult EditProfile()
         {
            

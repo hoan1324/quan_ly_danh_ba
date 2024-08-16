@@ -1,0 +1,63 @@
+﻿@using BotDetect.Web.Mvc;
+
+@{
+    ViewBag.Title = "SettingAccount";
+    Layout = "~/Areas/User/Views/Shared/_Layout.cshtml";
+}
+@section linkCss{
+    <link href="@BotDetect.Web.CaptchaUrls.Absolute.LayoutStyleSheetUrl"
+          rel="stylesheet" type="text/css" />
+}
+<div class="container">
+    <div class="list-group">
+        <a href="#" class="list-group-item list-group-item-action" data-bs-target="#exampleModal" data-bs-toggle="modal" data-bs-whatever="">Thay đổi mật khẩu</a>
+        <a href="#" class="list-group-item list-group-item-action" data-bs-target="#exampleModal" data-bs-toggle="modal" data-bs-whatever="Email">Thay đổi Email</a>
+        <a href="#" class="list-group-item list-group-item-action" data-bs-target="#exampleModal" data-bs-toggle="modal" data-bs-whatever="PhoneNumber">Thay đổi Số điện thoại</a>
+    </div>
+</div>
+<div class="modal fade" id="exampleModal" aria-hidden="true" aria-labelledby="exampleModalLabel" tabindex="-1">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h1 class="modal-title fs-5" id="exampleModalLabel">Xác nhận mật khẩu </h1>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <form id="confirm-pass-form" action="SettingAccount" method="post">
+                <div class="modal-body">
+                    <input class="form-control text-box single-line" data-val="true" data-val-required="The UserID field is required." id="UserID" name="UserID" type="hidden" value="@SessionConfig.GetUser().UserID">
+
+                    <input class="form-control text-box single-line" data-val="true" data-val-required="The type field is required." id="Type" name="Type" type="hidden" value="password">
+                    <div class=" mb-3">
+                        <label for="password" class="ms-1 mb-2">Mật khẩu</label>
+                        <div class="position-relative">
+                            <input type="password" class="form-control password" id="password" name="Password" placeholder="Vui lòng nhập mật khẩu">
+                            <i class="fa-solid fa-eye-slash position-absolute visible-pass"></i>
+                        </div>
+                    </div>
+                    <div class=" mb-3">
+                        <label for="password" class="ms-1 mb-2">Xác nhận mật khẩu </label>
+                        <div class="position-relative">
+                            <input type="password" class="form-control password" id="confirm-password" name="ConfirmPassword" placeholder="Vui lòng nhập lại mật khẩu">
+                            <i class="fa-solid fa-eye-slash position-absolute visible-pass"></i>
+                        </div>
+                    </div>
+
+                    <div class="captcha-input">
+                        @{ MvcCaptcha exampleCaptcha = new MvcCaptcha("ExampleCaptcha");
+                            exampleCaptcha.UserInputID = "CaptchaCode";}
+                        @Html.Captcha(exampleCaptcha)
+                        @Html.TextBox("CaptchaCode")
+                        @Html.ValidationMessage("CaptchaCode")
+                    </div>
+                    @Html.ValidationMessage("CaptchaCode")
+                </div>
+                <div class="modal-footer">
+                    <div>
+                        <input type="submit" class="btn btn-outline-success" />
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
