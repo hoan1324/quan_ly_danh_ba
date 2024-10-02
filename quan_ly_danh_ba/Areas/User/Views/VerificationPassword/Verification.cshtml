@@ -1,5 +1,8 @@
-﻿@model Dtos.UserDto
-
+﻿@model Tuple<string,Dtos.UserDto>
+@{
+    var Type = Model.Item1;
+    var user = Model.Item2;
+}
     Layout = null;
 }
 
@@ -29,8 +32,10 @@
             <hr />
             <div class="body-verification">
                 <form id="form-verification">
-                    <input type="hidden" value="@Model" name="ID" id="user-id"/>
-                    <input class="opacity-0 mh-0 position-absolute z-0" type="text" id="verification-input" name="VerificationCode"  maxlength="6">
+                    <input type="hidden" value="@user.UserID" name="ID" id="user-id" />
+                    <input type="hidden" value="@Type" name="type" id="user-id" />
+                   
+                    <input class="opacity-0 mh-0 position-absolute z-0" type="text" id="verification-input" name="VerificationCode" maxlength="6">
                 </form>
 
                 <div class="verification d-flex align-items-center mt-4  justify-content-center" >

@@ -44,7 +44,7 @@ namespace quan_ly_danh_ba.Areas.User.Controllers
  
             return View();
         }
-        public ActionResult Verification(Guid id,string type,string a)
+        public ActionResult Verification(Guid id,string type)
         {
             var user = _userService.FindById(id);
             string confirmationCode = "";
@@ -57,11 +57,12 @@ namespace quan_ly_danh_ba.Areas.User.Controllers
                 confirmationCode = SmsHelper.SendSms(user.PhoneNumber);
             }
             TempData["confirmationCode"] = confirmationCode;
-            return View(user);
+            var model=Tuple.Create(type, user);
+            return View(model);
         }
 
         [HttpPost]
-        public ActionResult Verification(Guid ID,string VerificationCode)
+        public ActionResult Verification(Guid ID,string VerificationCode,string type)
         {
            var user = _userService.FindById(ID);
             var getCode = TempData["confirmationCode"];
@@ -69,14 +70,23 @@ namespace quan_ly_danh_ba.Areas.User.Controllers
             {
                 return RedirectToAction("ChangePass", new {id=user.UserID});
             }
+            var model = Tuple.Create(type, user);
             TempData["ErrorMessage"] = "Mã xác nhận không chính xác";
-            return View(user);
+            return View(model);
         }
         [HttpPost]
-        public JsonResult DataVerificationJson(Guid id)
+        public JsonResult DataVerificationJson(Guid id,string Type)
         {
             var user = _userService.FindById(id);
-            var confirmationCode = EmailHelper.SendEmail(user.Email);
+            string confirmationCode = "";
+            if (Type == "email")
+            {
+                confirmationCode = EmailHelper.SendEmail(user.Email);
+            }
+            else if (Type == "phone")
+            {
+                confirmationCode = SmsHelper.SendSms(user.PhoneNumber);
+            }
             TempData["confirmationCode"] = confirmationCode;
             return Json(confirmationCode);
         }
